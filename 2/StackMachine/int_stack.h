@@ -25,13 +25,14 @@
 #include <stddef.h>     // need fo size_t
 
 
-
-namespace xi {
+namespace xi
+{
 
 
 /** Declares a stack of integers.
  */
-    class IntStack {
+    class IntStack
+    {
     public:
         // const
         static const int STACK_SIZE = 1024;     ///< Defines a maximum number of stack elements
@@ -39,7 +40,7 @@ namespace xi {
     public:
         // Constructors
         IntStack(size_t sz = STACK_SIZE);           ///< Default constructor
-        virtual ~IntStack() = 0;
+        ~IntStack();
 
     public:
         //----<Main ADT interface>----
@@ -80,9 +81,9 @@ namespace xi {
 
     protected:
         //int     _stack[STACK_SIZE];             ///< Stack elements as an fixed size array
-        int*    _stack;                         ///< Stack as a dynamic array
-        size_t  _ssize;                         ///< Actual stack size
-        size_t  _head;                          ///< Stack head
+        int *_stack;                         ///< Stack as a dynamic array
+        size_t _ssize;                         ///< Actual stack size
+        size_t _head;                          ///< Stack head
     }; // class IntStack
 
 

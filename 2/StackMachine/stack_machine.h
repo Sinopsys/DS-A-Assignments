@@ -23,7 +23,8 @@
 
 #include "int_stack.h"
 
-namespace xi {
+namespace xi
+{
 
 /** Declares an interface for operator (operation)
  *
@@ -36,7 +37,8 @@ namespace xi {
          *  All possible options defined by enum keyword is visible outside the type declaration.
          *  That's why a fairly common practice is to add some prefix to to reduce the probability of name collisions.
          */
-        enum Arity {
+        enum Arity
+        {
             arUno,          ///< Unary
             arDue,          ///< Binary
             arTre           ///< Ternary
@@ -53,6 +55,7 @@ namespace xi {
          *  Method is not intended to change an object's state.
          */
         virtual Arity getArity() const = 0;
+
     protected:
         /** Destructor must not be public due to It is not intended to delete an object through this interface!!
          *
@@ -60,7 +63,8 @@ namespace xi {
          *  or protected and nonvirtual.
          *  http://www.gotw.ca/publications/mill18.htm
          */
-        ~IOperation() {};
+        ~IOperation()
+        {};
     }; // class IOperation
 
 
@@ -68,7 +72,8 @@ namespace xi {
  *
  *  Note, that IOperation interface should be inherited with public modifier
  */
-    class PlusOp : public IOperation {
+    class PlusOp : public IOperation
+    {
 //public:
 //    virtual ~PlusOp() {}
     public:
@@ -77,16 +82,25 @@ namespace xi {
 
         /** If a given operator symb is not '+", an exception is thrown*/
         virtual int operation(char op, int a, int b, int c) override;
+
         virtual Arity getArity() const override;
     }; // class PlusOp
 
+
+    class MulOp : public IOperation
+    {
+    public:
+        virtual int operation(char op, int a, int b, int c) override;
+
+        virtual Arity getArity() const override;
+    }; // class MulOp
 
 
     class StackMachine
     {
     public:
         // types
-        typedef std::map<char, IOperation*> SymbolToOperMap;
+        typedef std::map<char, IOperation *> SymbolToOperMap;
         typedef SymbolToOperMap::const_iterator SymbolToOperMapConstIter;
 
     public:
@@ -96,13 +110,14 @@ namespace xi {
          *
          *  !The method implementation should be shred with students!
          */
-        void registerOperation(char symb, IOperation* oper);
+        void registerOperation(char symb, IOperation *oper);
 
         /** For a given symb returns an operation object.
          *
          *  If the given symbol is not mapped to any operation, a nullptr is returned.
          */
-        IOperation* getOperation(char symb);
+        IOperation *getOperation(char symb);
+
     public:
 
         /** Calculates given expression using the shared stack and returns the value on its top.
@@ -116,12 +131,15 @@ namespace xi {
          *  If given expression is not valid (e.g., in the case of lack of operands or similar),
          *  an exception is thrown.
          */
-        int calculate(const std::string& expr, bool clearStack = true);
+        int calculate(const std::string &expr, bool clearStack = true);
+
     public:
 
         // sets/gets
-        IntStack& getStack() { return _s; }     ///< Returns stack as is
-        const IntStack& getStack() const { return _s; }     ///< Overloaded version of getStack()
+        IntStack &getStack()
+        { return _s; }     ///< Returns stack as is
+        const IntStack &getStack() const
+        { return _s; }     ///< Overloaded version of getStack()
     protected:
         /** Maps of operations */
         SymbolToOperMap _opers;
