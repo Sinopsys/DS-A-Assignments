@@ -11,14 +11,11 @@
 
 #include <iostream>
 #include <assert.h>
-#include <stdexcept>
 
 
 #include "int_stack.h"
 #include "stack_machine.h"
 
-
-using namespace std;
 
 void testStack()
 {
@@ -64,36 +61,57 @@ void testStack()
 
 void testStackMachine()
 {
+    //
+    // declaring and registering operations
     xi::StackMachine sm;
     xi::PlusOp plusop;
     xi::AndOp andop;
+    xi::MulOp mulop;
     xi::SubstrOp substrop;
     sm.registerOperation('+', &plusop);
     sm.registerOperation('&', &andop);
     sm.registerOperation('-', &substrop);
+    sm.registerOperation('*', &mulop);
 
-
+    //
+    // Check for subtraction operation
     int res = sm.calculate("5 3 -");
-    int r2 = sm.getStack().top();
+    int r = sm.getStack().top();
+    assert(res == 2);
+    assert(r == 2);
 
+    //
+    // Check for plus operation
     int res1 = sm.calculate("15 12 +");
-    assert(res1 == 27);
-
-    int res3 = sm.calculate("2 3 &");
-    assert(res3 == 2);
-
-    int res4 = sm.calculate("7 8 10 + +");
     int r1 = sm.getStack().top();
+    assert(res1 == 27);
+    assert(r1 == 27);
 
-    assert(res4 == 25);
-    assert(r1 == 25);
+    //
+    // check for AND operation
+    int res2 = sm.calculate("5 4 &");
+    int r2 = sm.getStack().top();
+    assert(res2 == 4);
+    assert(r2 == 4);
 
+    //
+    // Check for plus operation again
+    int res3 = sm.calculate("7 8 10 + +");
+    int r3 = sm.getStack().top();
+    assert(res3 == 25);
+    assert(r3 == 25);
+
+    //
+    // check for complex set of operations
+    int res4 = sm.calculate("1 5 - 6 + 2   + 4 & 2 - 7 * 8 10 + +");
+    int r4 = sm.getStack().top();
+    assert(res4 == 32);
+    assert(r4 == 32);
 }
+
 
 int main()
 {
-//    cout << "Hello, World!" << endl;
-//
     testStack();
     testStackMachine();
     return 0;

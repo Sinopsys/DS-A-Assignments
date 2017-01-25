@@ -1,12 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:  stack_machine.h/cpp
-// Authors:      Sergey Shershakov
-// Version:      0.2.0
-// Date:         23.01.2017
-//
-// This is a part of the course "Algorithms and Data Structures"
-// provided by  the School of Software Engineering of the Faculty
-// of Computer Science at the Higher School of Economics.
+// Authors:      Kupriyanov Kirill
+// Group:        BSE151
+// Date:         25.01.2017
 ////////////////////////////////////////////////////////////////////////////////
 
 #include <stdexcept>
@@ -118,10 +114,10 @@ namespace xi
     {
         if (_opers.find(symb) == _opers.end())
         {
-            throw logic_error("Operator exists.");
+            _opers[symb] = oper;
         } else
         {
-            _opers[symb] = oper;
+            throw logic_error("Operator exists.");
         }
     }
 

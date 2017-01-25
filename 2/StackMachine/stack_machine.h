@@ -86,7 +86,8 @@ namespace xi
         virtual Arity getArity() const override;
     }; // class PlusOp
 
-
+//================================================================
+// My class definitions
     class MulOp : public IOperation
     {
     public:
@@ -110,6 +111,10 @@ namespace xi
 
         virtual Arity getArity() const override;
     }; // class AndOp
+
+//================================================================
+// /My class definitions
+
 
     class StackMachine
     {
