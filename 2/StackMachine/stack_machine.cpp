@@ -58,13 +58,51 @@ namespace xi
     int MulOp::operation(char op, int a, int b, int c)
     {
         if (op != '*')
-            throw logic_error("Operations other than Plus (+) are not supported");
+            throw logic_error("Operations other than Mul (*) are not supported");
 
 //         here we just ignore unused operands
         return a * b;
     }
 
     IOperation::Arity MulOp::getArity() const
+    {
+        return arDue;
+    }
+
+//==============================================================================
+// class AndOp
+//==============================================================================
+
+
+    int AndOp::operation(char op, int a, int b, int c)
+    {
+        if (op != '&')
+            throw std::logic_error("Operations other than And (&) are not supported");
+
+        // here we just ignore unused operands
+        return a & b;
+    }
+
+    IOperation::Arity AndOp::getArity() const
+    {
+        return arDue;
+    }
+
+//==============================================================================
+// class SubstrOp
+//==============================================================================
+
+
+    int SubstrOp::operation(char op, int a, int b, int c)
+    {
+        if (op != '-')
+            throw std::logic_error("Operations other than Substraction (-) are not supported");
+
+        // here we just ignore unused operands
+        return a - b;
+    }
+
+    IOperation::Arity SubstrOp::getArity() const
     {
         return arDue;
     }
@@ -122,6 +160,10 @@ namespace xi
 
     int StackMachine::calculate(const std::string &expr, bool clearStack)
     {
+        if (clearStack)
+        {
+            _s.clear();
+        }
         //
         // get vector of tokens
         vector<string> tokens = splitString(expr);
@@ -131,31 +173,55 @@ namespace xi
             // if it is an operand
             if (tokens[i] != "*" && tokens[i] != "-" && tokens[i] != "&" && tokens[i] != "+")
             {
-                _s.push(atoi(tokens[i].c_str()));
+                int t = 0;
+                try
+                {
+                    t = std::stoi(tokens[i].c_str());
+                }
+                catch (std::invalid_argument &e)
+                {
+                    throw logic_error("No conversion could be performed");
+                }
+                catch (std::out_of_range &e)
+                {
+                    throw logic_error("Converted value falls out of the range.");
+                }
+                catch (...)
+                {
+                    throw logic_error("Invalid argument.");
+                }
+                _s.push(t);
             } // it is n operator
             else
             {
-                IOperation::Arity arity = _opers[tokens[i][0]]->getArity();
+                IOperation *operation = getOperation(tokens[i][0]);
+                IOperation::Arity arity = operation->getArity();
 
-                int op1, op2, op3;
+                int op1, op2, op3, res;
                 switch (arity)
                 {
                     case IOperation::arUno:
                         op1 = _s.pop();
-                        return _opers[tokens[i][0]]->operation(tokens[i][0], op1);
+                        res = operation->operation(tokens[i][0], op1);
+                        break;
                     case IOperation::arDue:
                         op2 = _s.pop();
                         op1 = _s.pop();
-                        return _opers[tokens[i][0]]->operation(tokens[i][0], op1, op2);
+                        res = operation->operation(tokens[i][0], op1, op2);
+                        break;
                     case IOperation::arTre:
                         op3 = _s.pop();
                         op2 = _s.pop();
                         op1 = _s.pop();
-                        return _opers[tokens[i][0]]->operation(tokens[i][0], op1, op2, op3);
+                        res = operation->operation(tokens[i][0], op1, op2, op3);
+                        break;
+                    default:
+                        throw logic_error("Unregistered arity.");
                 }
+                _s.push(res);
             }
         }
-        return 0;
+        return _s.top();
     }
 } // namespace xi
 

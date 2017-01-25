@@ -66,22 +66,35 @@ void testStackMachine()
 {
     xi::StackMachine sm;
     xi::PlusOp plusop;
+    xi::AndOp andop;
+    xi::SubstrOp substrop;
     sm.registerOperation('+', &plusop);
+    sm.registerOperation('&', &andop);
+    sm.registerOperation('-', &substrop);
 
-    //int res = sm.calculate("15 10 +");
-    int res = sm.calculate("7 8 10 + +");
+
+    int res = sm.calculate("5 3 -");
+    int r2 = sm.getStack().top();
+
+    int res1 = sm.calculate("15 12 +");
+    assert(res1 == 27);
+
+    int res3 = sm.calculate("2 3 &");
+    assert(res3 == 2);
+
+    int res4 = sm.calculate("7 8 10 + +");
     int r1 = sm.getStack().top();
-    assert(res == 25);
+
+    assert(res4 == 25);
     assert(r1 == 25);
 
 }
 
 int main()
 {
-    cout << "Hello, World!" << endl;
-
+//    cout << "Hello, World!" << endl;
+//
     testStack();
     testStackMachine();
-
     return 0;
 }

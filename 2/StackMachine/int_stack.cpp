@@ -29,58 +29,63 @@ namespace xi
     {
         if (sz > 0)
         {
-            _stack = new int[sz];
+            _ssize = sz;
+            _stack = new int[_ssize];
+
+            //
+            // I used head to store the currnet number of elemnets in the array
+            // and head -1 will be the index of the last added element.
+            _head = 0;
         }
     }
 
     void IntStack::push(int el)
     {
-        if (_ssize == STACK_SIZE)
+        if (_head >= _ssize)
         {
             throw logic_error("Stack is full.");
         }
-        _stack[_ssize] = el;
+        _stack[_head++] = el;
     }
 
     IntStack::~IntStack()
     {
         delete _stack;
+        _head = 0;
     }
 
     int IntStack::pop()
     {
-        if (_ssize == 0)
+        if (_head <= 0)
         {
             throw logic_error("Stack is empty.");
         }
-        int tmp = _stack[_ssize - 1];
-        _stack[_ssize - 1] = 0;
-        return tmp;
+        return _stack[--_head];
     }
 
     int IntStack::top()
     {
-        if (_ssize == 0)
+        if (_head <= 0)
         {
             throw logic_error("Stack is empty.");
         }
-        int tmp = _stack[_ssize - 1];
-        return tmp;
+        return _stack[_head - 1];
     }
 
     void IntStack::clear()
     {
-        _stack = {0};
+//        _stack = {0};
+        _head = 0;
     }
 
     bool IntStack::isEmpty() const
     {
-        return _ssize == 0;
+        return _head == 0;
     }
 
     bool IntStack::isFull() const
     {
-        return _ssize == STACK_SIZE;
+        return _head == _ssize;
     }
 
 

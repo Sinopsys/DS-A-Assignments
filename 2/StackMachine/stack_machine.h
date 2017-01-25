@@ -95,6 +95,21 @@ namespace xi
         virtual Arity getArity() const override;
     }; // class MulOp
 
+    class SubstrOp : public IOperation
+    {
+    public:
+        virtual int operation(char op, int a, int b, int c) override;
+
+        virtual Arity getArity() const override;
+    }; // class SubstrOp
+
+    class AndOp : public IOperation
+    {
+    public:
+        virtual int operation(char op, int a, int b, int c) override;
+
+        virtual Arity getArity() const override;
+    }; // class AndOp
 
     class StackMachine
     {
