@@ -9,8 +9,12 @@
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/main.cpp
 iostream
 -
+assert.h
+-
 safearray.h
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
+string
+-
 
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
 stdexcept
@@ -25,6 +29,8 @@ safearray.h
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.cpp
 subject.h
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.h
+string
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/string
 
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.h
 iostream

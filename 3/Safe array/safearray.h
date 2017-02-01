@@ -4,11 +4,11 @@
 /// \author    Sergey Shershakov
 /// \version   0.2.0
 /// \date      30.01.2017
-///            This is a part of the course "Algorithms and Data Structures"
-///            provided by  the School of Software Engineering of the Faculty
+///            This is a part of the course "Algorithms and Data Structures" 
+///            provided by  the School of Software Engineering of the Faculty 
 ///            of Computer Science at the Higher School of Economics.
 ///
-/// "Implementations" (namely, function body template definitions) for the methods declared
+/// "Implementations" (namely, function body template definitions) for the methods declared 
 /// in the classes below must be put in corresponding module named safearray.hpp.
 ///
 ///
@@ -52,6 +52,8 @@ namespace xi
 
 
         // TODO: не забудьте про конструктор копирования!
+        SafeArray(const SafeArray<T>& other);
+        SafeArray<T>& operator= (const SafeArray<T>& other);
 
 
         /** \brief Деструктор.
@@ -113,7 +115,7 @@ namespace xi
 
 
 
-// Here we simply add definitions from a file safearray.hpp. It's the same as we
+// Here we simply add definitions from a file safearray.hpp. It's the same as we 
 // simply put those defitions as a as a continuation of this very file.
 // Not, that neither safearray.h nor safearray.hpp are compiled on their own.
 #include "safearray.hpp"
