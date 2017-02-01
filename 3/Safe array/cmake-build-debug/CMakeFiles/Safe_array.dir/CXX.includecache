@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/main.cpp
+iostream
+-
+safearray.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
+stdexcept
+-
+safearray.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.hpp
+safearray.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.cpp
+subject.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/subject.h
+iostream
+-
+string
+-
+safearray.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/3/Safe array/safearray.h
+

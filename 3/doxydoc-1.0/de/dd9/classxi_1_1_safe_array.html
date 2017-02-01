@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Safe Array / A&amp;DS HSE&#39;s Course: Шаблон класса xi::SafeArray&lt; T &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Safe Array / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">Safe Array / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">SafeArray</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="../../d0/d0a/classxi_1_1_safe_array-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса xi::SafeArray&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс "защищенный массив".  
+ <a href="../../de/dd9/classxi_1_1_safe_array.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/da2/safearray_8h_source.html">safearray.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса xi::SafeArray&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d32/classxi_1_1_safe_array__coll__graph.png" border="0" usemap="#xi_1_1_safe_array_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a47ddf27188b01aba5d2b1198f58e0a9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a47ddf27188b01aba5d2b1198f58e0a9f">SafeArray</a> ()</td></tr>
+<tr class="memdesc:a47ddf27188b01aba5d2b1198f58e0a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию.  <a href="#a47ddf27188b01aba5d2b1198f58e0a9f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a47ddf27188b01aba5d2b1198f58e0a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a036a61c00a42ade4d10b07054a561086"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a036a61c00a42ade4d10b07054a561086">SafeArray</a> (size_t cap)</td></tr>
+<tr class="memdesc:a036a61c00a42ade4d10b07054a561086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор инициализации размером (число объектов) массива.  <a href="#a036a61c00a42ade4d10b07054a561086">Подробнее...</a><br /></td></tr>
+<tr class="separator:a036a61c00a42ade4d10b07054a561086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbab4df53e0633908dbe4829e9677811"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#acbab4df53e0633908dbe4829e9677811">~SafeArray</a> ()</td></tr>
+<tr class="memdesc:acbab4df53e0633908dbe4829e9677811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <a href="#acbab4df53e0633908dbe4829e9677811">Подробнее...</a><br /></td></tr>
+<tr class="separator:acbab4df53e0633908dbe4829e9677811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29e742a2dbb807ce130097b3718ea55"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#af29e742a2dbb807ce130097b3718ea55">operator[]</a> (size_t k)</td></tr>
+<tr class="memdesc:af29e742a2dbb807ce130097b3718ea55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор индексирования.  <a href="#af29e742a2dbb807ce130097b3718ea55">Подробнее...</a><br /></td></tr>
+<tr class="separator:af29e742a2dbb807ce130097b3718ea55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394fdd23ea82ce73a484fe9b28b150cf"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a394fdd23ea82ce73a484fe9b28b150cf">operator[]</a> (size_t k) const </td></tr>
+<tr class="memdesc:a394fdd23ea82ce73a484fe9b28b150cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константная перегруженная версия метода Safearray::operator[].  <a href="#a394fdd23ea82ce73a484fe9b28b150cf">Подробнее...</a><br /></td></tr>
+<tr class="separator:a394fdd23ea82ce73a484fe9b28b150cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3254fda553e550c1c8bb6d47a2fbc8ba"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a3254fda553e550c1c8bb6d47a2fbc8ba">getRawPtr</a> () const </td></tr>
+<tr class="separator:a3254fda553e550c1c8bb6d47a2fbc8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f13ea4aef8c0ea17f546ee84990b2f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f13ea4aef8c0ea17f546ee84990b2f8"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a4f13ea4aef8c0ea17f546ee84990b2f8">getCapacity</a> () const </td></tr>
+<tr class="memdesc:a4f13ea4aef8c0ea17f546ee84990b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает актуальный размер массива. <br /></td></tr>
+<tr class="separator:a4f13ea4aef8c0ea17f546ee84990b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a8e14a825a3905becfabf8975ef9082be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#a8e14a825a3905becfabf8975ef9082be">checkBounds</a> (size_t index) const </td></tr>
+<tr class="separator:a8e14a825a3905becfabf8975ef9082be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ab0ca585d2bc978a284285762f7a4beab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0ca585d2bc978a284285762f7a4beab"></a>
+T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#ab0ca585d2bc978a284285762f7a4beab">_storage</a></td></tr>
+<tr class="memdesc:ab0ca585d2bc978a284285762f7a4beab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив, представленный указателем на параметрический тип. <br /></td></tr>
+<tr class="separator:ab0ca585d2bc978a284285762f7a4beab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2a90ed3cd2bbf9e3531d97c8df957a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb2a90ed3cd2bbf9e3531d97c8df957a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html#aeb2a90ed3cd2bbf9e3531d97c8df957a">_capacity</a></td></tr>
+<tr class="memdesc:aeb2a90ed3cd2bbf9e3531d97c8df957a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реальная память, распределенная под массив (в количестве элементов размера sizeof(T)). <br /></td></tr>
+<tr class="separator:aeb2a90ed3cd2bbf9e3531d97c8df957a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class xi::SafeArray&lt; T &gt;</h3>
+
+<p>Класс "защищенный массив". </p>
+<p>Определяет класс-массив с доступом к элементам с контролем по индексу. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a47ddf27188b01aba5d2b1198f58e0a9f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::<a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">SafeArray</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор по умолчанию. </p>
+<p>Не распределяет память, использует nullptr в качестве адреса массива. </p>
+
+</div>
+</div>
+<a class="anchor" id="a036a61c00a42ade4d10b07054a561086"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::<a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">SafeArray</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>cap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор инициализации размером (число объектов) массива. </p>
+<p>Распределяет память соответствующего размера, устанавливает значение емкости массива. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cap</td><td>Размер (емкость) массива. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acbab4df53e0633908dbe4829e9677811"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::~<a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">SafeArray</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Освобождает занимаемую массивом память. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a8e14a825a3905becfabf8975ef9082be"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::checkBounds </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Вспомогательный метод, проверяющий, что заданный индекс <em>index</em> не выходит за границу распределенной под массив памяти. Если индекс вне диапазона, генерирует исключительную ситуацию <code>std::out_of_range</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a3254fda553e550c1c8bb6d47a2fbc8ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T* <a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::getRawPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Возвращает "сырой" константный указатель на массив. Используется только для специальных целей в позиции <em>rhv</em>. </p>
+
+</div>
+</div>
+<a class="anchor" id="af29e742a2dbb807ce130097b3718ea55"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Оператор индексирования. </p>
+<p>Выполняет «защищенное» обращение к индивидуальным элементам массива. Элемент возвращается по ссылке, и, таким образом, может находиться как в позиции <em>rhv</em>, так и в позиции <em>lhv</em>. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>— индекс элемента. Если указанный индекс находится вне диапазона распределенной памяти, генерируется исключительная ситуация <code>std::out_of_range</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Возвращает ссылку на <em>k</em> -тый элемент массива. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a394fdd23ea82ce73a484fe9b28b150cf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T &amp; <a class="el" href="../../de/dd9/classxi_1_1_safe_array.html">xi::SafeArray</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Константная перегруженная версия метода Safearray::operator[]. </p>
+<p>Возвращает константную ссылку на элемент, которая может находиться только в позиции <em>rhv</em>. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>F:/HSE/training/algo/16_17/part2/projects/safe_array/bitbucket/src/<a class="el" href="../../df/da2/safearray_8h_source.html">safearray.h</a></li>
+<li>F:/HSE/training/algo/16_17/part2/projects/safe_array/bitbucket/src/<a class="el" href="../../dc/dc3/safearray_8hpp_source.html">safearray.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Safe Array / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 30 Янв 2017 05:23:53. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>
