@@ -84,6 +84,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/dna_element.cpp">
+			<Option target="DNA"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/dna_element.h">
+			<Option target="DNA"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/dna_repairer.cpp">
+			<Option target="DNA"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/dna_repairer.h">
+			<Option target="DNA"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.h">
+			<Option target="DNA"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.hpp">
+			<Option target="DNA"/>
+		</Unit>
 		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/main.cpp">
 			<Option target="DNA"/>
 		</Unit>

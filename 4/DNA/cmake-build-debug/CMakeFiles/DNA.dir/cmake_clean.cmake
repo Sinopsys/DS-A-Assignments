@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/DNA.dir/main.cpp.o"
+  "CMakeFiles/DNA.dir/dna_element.cpp.o"
+  "CMakeFiles/DNA.dir/dna_repairer.cpp.o"
   "DNA.pdb"
   "DNA"
 )
