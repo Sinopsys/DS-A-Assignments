@@ -1,0 +1,14 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+TEST	dna_repairer_test.cpp	/^TEST(Subject, DemoFile1)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, CopyConstructor)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, DefConstructor)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, EndNodeEmpty)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, EndNodeOne)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, IndexOper1)$/;"	f
+TEST	linkedlist_test.cpp	/^TEST(StackArray, simplest)$/;"	f
+TEST_FNAMES	dna_repairer_test.cpp	/^static const char* TEST_FNAMES[] = {$/;"	v	file:
