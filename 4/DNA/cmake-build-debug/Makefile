@@ -123,60 +123,6 @@ DNA/fast:
 	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/build
 .PHONY : DNA/fast
 
-dna_element.o: dna_element.cpp.o
-
-.PHONY : dna_element.o
-
-# target to build an object file
-dna_element.cpp.o:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_element.cpp.o
-.PHONY : dna_element.cpp.o
-
-dna_element.i: dna_element.cpp.i
-
-.PHONY : dna_element.i
-
-# target to preprocess a source file
-dna_element.cpp.i:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_element.cpp.i
-.PHONY : dna_element.cpp.i
-
-dna_element.s: dna_element.cpp.s
-
-.PHONY : dna_element.s
-
-# target to generate assembly for a file
-dna_element.cpp.s:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_element.cpp.s
-.PHONY : dna_element.cpp.s
-
-dna_repairer.o: dna_repairer.cpp.o
-
-.PHONY : dna_repairer.o
-
-# target to build an object file
-dna_repairer.cpp.o:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_repairer.cpp.o
-.PHONY : dna_repairer.cpp.o
-
-dna_repairer.i: dna_repairer.cpp.i
-
-.PHONY : dna_repairer.i
-
-# target to preprocess a source file
-dna_repairer.cpp.i:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_repairer.cpp.i
-.PHONY : dna_repairer.cpp.i
-
-dna_repairer.s: dna_repairer.cpp.s
-
-.PHONY : dna_repairer.s
-
-# target to generate assembly for a file
-dna_repairer.cpp.s:
-	$(MAKE) -f CMakeFiles/DNA.dir/build.make CMakeFiles/DNA.dir/dna_repairer.cpp.s
-.PHONY : dna_repairer.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -213,12 +159,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DNA"
-	@echo "... dna_element.o"
-	@echo "... dna_element.i"
-	@echo "... dna_element.s"
-	@echo "... dna_repairer.o"
-	@echo "... dna_repairer.i"
-	@echo "... dna_repairer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

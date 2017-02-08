@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.h
+linked_list.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.hpp
+stdexcept
+-
+linked_list.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/main.cpp
+linked_list.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/4/DNA/linked_list.h
+
