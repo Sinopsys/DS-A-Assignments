@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceQueue.h
+stdexcept
+-
+NiceStack.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.h
+NiceQueue.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceQueue.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceQueue.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.h
+string
+-
+stdexcept
+-
+utility
+-
+vector
+-
+NiceStack.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.hpp
+NiceStack.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/main.cpp
+fstream
+-
+iostream
+-
+NiceStack.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceStack.h
+NiceQueue.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/5/impl/NiceQueue.h
+
