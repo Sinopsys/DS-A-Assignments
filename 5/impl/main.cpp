@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 
+
 #include "NiceStack.h"
 #include "NiceQueue.h"
 
@@ -13,17 +14,43 @@ void testStack(int sample, int result)
     cout << "Stack: Test #" << cntTest;
     if (sample == result)
         cout << " -- passed";
-    else	cout << " -- failed";
+    else cout << " -- failed";
     cout << endl;
 }
 
-int main (int argc, char* argv[])
+void testQueue(int sample, int result)
 {
-    try{
+    static int cntTest = 0;
+    cntTest++;
+    cout << "Queue: Test #" << cntTest;
+    if (sample == result)
+        cout << " -- passed";
+    else cout << " -- failed";
+    cout << endl;
+}
+
+int main(int argc, char *argv[])
+{
+
+//    NiceQueue<int> niceQueue(5);
+//
+//    niceQueue.enq(3);
+//    niceQueue.enq(2);
+//    niceQueue.enq(4);
+//    niceQueue.enq(5);
+//
+//    cout << niceQueue.deq() << endl;
+//    cout << niceQueue.deq() << endl;
+
+
+
+    try
+    {
         NiceStack<int> nicestack(20);
 
         // Test #1
-        try{
+        try
+        {
             nicestack.pop();
             testStack(-1, 1);
         }
@@ -37,7 +64,8 @@ int main (int argc, char* argv[])
         }
 
         // Test #2
-        try{
+        try
+        {
             nicestack.getMinimum();
             testStack(-1, 1);
         }
@@ -89,13 +117,103 @@ int main (int argc, char* argv[])
         // Test #11
         testStack(3, nicestack.getMinimum());
     }
-    catch(exception &e){
+    catch (exception &e)
+    {
         cout << e.what();
     }
-    catch (...){
+    catch (...)
+    {
         cout << "Something wrong happend." << endl;
     }
     cout << endl;
+
+    try
+    {
+        NiceQueue<int> nicequeue(20);
+
+        // Test #1
+        try
+        {
+            nicequeue.deq();
+            testQueue(-1, 1);
+        }
+        catch (out_of_range &ex)
+        {
+            testQueue(1, 1);
+        }
+        catch (...)
+        {
+            testQueue(-1, 1);
+        }
+
+        // Test #2
+        try
+        {
+            nicequeue.getMinimum();
+            testQueue(-1, 1);
+        }
+        catch (out_of_range &ex)
+        {
+            testQueue(1, 1);
+        }
+        catch (...)
+        {
+            testQueue(-1, 1);
+        }
+
+        nicequeue.enq(4);
+        // Test #3
+        testQueue(4, nicequeue.getMinimum());
+
+        nicequeue.enq(5);
+        // Test #4
+        testQueue(4, nicequeue.getMinimum());
+
+        nicequeue.enq(13);
+        nicequeue.enq(7);
+
+        // Test #5
+        testQueue(4, nicequeue.getMinimum());
+
+        nicequeue.enq(6);
+        // Test #6
+        testQueue(4, nicequeue.getMinimum());
+
+        nicequeue.deq();
+        // Test #7
+        testQueue(5, nicequeue.getMinimum());
+
+        nicequeue.enq(3);
+        // Test #8
+        testQueue(3, nicequeue.getMinimum());
+
+        nicequeue.enq(2);
+        // Test #9
+        testQueue(2, nicequeue.getMinimum());
+
+        nicequeue.enq(15);
+        // Test #10
+        testQueue(2, nicequeue.getMinimum());
+
+        nicequeue.deq();
+        nicequeue.deq();
+        nicequeue.deq();
+        nicequeue.deq();
+        nicequeue.deq();
+        nicequeue.deq();
+        // Test #11
+        testQueue(15, nicequeue.getMinimum());
+        cout << endl;
+    }
+    catch (exception &e)
+    {
+        cout << e.what();
+    }
+    catch (...)
+    {
+        cout << "Something wrong happend." << endl;
+    }
+
 
     return EXIT_SUCCESS;
 }
