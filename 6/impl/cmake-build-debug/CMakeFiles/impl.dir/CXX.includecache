@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/BidiLinkedList.h
+BidiLinkedList.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/BidiLinkedList.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/BidiLinkedList.hpp
+stdexcept
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/main.cpp
+iostream
+-
+BidiLinkedList.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/BidiLinkedList.h
+

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src-stdafx">
+      <UniqueIdentifier>{60ce4e5c-8881-4388-88e5-a5cb971921af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{82c92865-4e92-461c-931b-9744208718a6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src-stdafx\stdafx.h">
+      <Filter>src-stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="src-stdafx\targetver.h">
+      <Filter>src-stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BidiLinkedList.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\BidiLinkedList.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src-stdafx\enhList.cpp">
+      <Filter>src-stdafx</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
