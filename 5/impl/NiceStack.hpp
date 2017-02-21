@@ -21,7 +21,6 @@ template<typename T>
 NiceStack<T>::NiceStack(size_t capacity)
 {
     m_capacity = capacity;
-    storage = vector<TypeElementStack>();
     storage.reserve(m_capacity);
     iHead = 0;
 }
