@@ -2,6 +2,13 @@
 // Created by kirill on 21.02.17.
 //
 
+/**
+ *  @student    Kupriyanov Kirill
+ *  @group      BSE 151
+ *  @date       21.02.2017
+ *  @task       Doubly Linked List
+ */
+
 ///////////////////////////////////////////////////////////////////////////////
 /// \file
 /// \brief Contains pseudo-implementation part of bidirectional list structure
@@ -21,6 +28,7 @@
 //#include "BidiLinkedList.h"
 
 
+
 //==============================================================================
 // class BidiList<T>::Node
 //==============================================================================
@@ -30,15 +38,14 @@ template<typename T>
 typename BidiLinkedList<T>::Node *
 BidiLinkedList<T>::Node::insertAfterInternal(Node *insNode)
 {
-    // here we use "this" keyword for enhancing the fact we deal with curent node!
+// here we use "this" keyword for enhancing the fact we deal with curent node!
     Node *afterNode = this->_next;      // an element, which was after node
     this->_next = insNode;
-    afterNode->_prev = insNode;
+//    afterNode->_prev = insNode;
     insNode->_next = afterNode;
     insNode->_prev = this;
     return insNode;
 }
-
 //==============================================================================
 // class BidiList<T>
 //==============================================================================
@@ -137,8 +144,6 @@ BidiLinkedList<T>::insertNodeAfter(Node *node, Node *insNode)
         _head = insNode;
     else
         node->insertAfterInternal(insNode);
-
-
     invalidateSize();
 
     return insNode;
@@ -174,31 +179,22 @@ void BidiLinkedList<T>::insertNodesAfter
 #ifdef IWANNAGET10POINTS
 
 
-template <typename T>
-typename BidiLinkedList<T>::Node*
-    BidiLinkedList<T>::insertNodeBefore(Node* node, Node* insNode)
+template<typename T>
+typename BidiLinkedList<T>::Node *
+BidiLinkedList<T>::insertNodeBefore(Node *node, Node *insNode)
 {
-
-
-
-    // !...
-    // Реализуй метод, если хочешь получит оценку повыше!
-    // !...
-
-
 
 }
 
 
-template <typename T>
-void BidiLinkedList<T>::insertNodesBefore(Node* node, Node* beg, Node* end)
+template<typename T>
+void BidiLinkedList<T>::insertNodesBefore(Node *node, Node *beg, Node *end)
 {
     // !...
     // Реализуй метод, если хочешь получит оценку повыше!
     // !...
 
 }
-
 
 
 #endif // IWANNAGET10POINTS
@@ -255,22 +251,10 @@ BidiLinkedList<T>::findFirst(Node *startFrom, const T &val)
 {
     if (!startFrom)
         return nullptr;
-
-
-
-
-
-
-    // !...
-    // Здесь вырезана часть кода. Ее необходимо реализовать
-    // !...
-
-
-
-
-
-
-
+    while (startFrom && startFrom->getValue() != val)
+        startFrom = startFrom->getNext();
+    if (startFrom)
+        return startFrom;
     return nullptr;     // not found
 }
 
@@ -288,39 +272,27 @@ BidiLinkedList<T>::findAll(Node *startFrom, const T &val, int &size)
 
     while (startFrom)
     {
-
-
-
-
-
-        // !...
-        // Здесь вырезана часть кода. Ее необходимо реализовать
-        // !...
-
-
-
-
-
+        if (startFrom->getValue() == val)
+        {
+            if (res == nullptr)
+            {
+                res = new Node *[this->getSize()];
+                res[size] = startFrom;
+            } else
+                res[size] = startFrom;
+            ++size;
+        }
+        startFrom = startFrom->getNext();
     }
-
     // recreates array if created
     if (res)
     {
-
-
-
-
-
-        // !...
-        // А здесь вырезана еще одна часть кода. И ее тоже необходимо реализовать
-        // !...
-
-
-
-
-
+        Node **tmp = new Node *[size];
+        for (int i = 0; i < size; ++i)
+            tmp[i] = res[i];
+        delete res;
+        res = tmp;
     }
-
     return res;
 }
 
@@ -330,9 +302,9 @@ BidiLinkedList<T>::findAll(Node *startFrom, const T &val, int &size)
 // макрос IWANNAGET10POINTS, взяв тем самым на себя повышенные обязательства
 #ifdef IWANNAGET10POINTS
 
-template <typename T>
-typename BidiLinkedList<T>::Node**
-BidiLinkedList<T>::cutAll(Node* startFrom, const T& val, int& size)
+template<typename T>
+typename BidiLinkedList<T>::Node **
+BidiLinkedList<T>::cutAll(Node *startFrom, const T &val, int &size)
 {
 
     // !...

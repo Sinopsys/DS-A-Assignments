@@ -19,4 +19,6 @@ iostream
 -
 BidiLinkedList.h
 /home/kirill/University/HSE/Algo/2 semestr/Homeworks/6/impl/BidiLinkedList.h
+stdexcept
+-
 
