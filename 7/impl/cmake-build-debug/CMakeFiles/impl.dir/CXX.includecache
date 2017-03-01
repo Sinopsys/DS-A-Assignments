@@ -1,0 +1,80 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.cpp
+iostream
+-
+event.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h
+iostream
+-
+job.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.cpp
+queue
+-
+fstream
+-
+fifo.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.h
+job.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.h
+event.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.h
+simulator.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.cpp
+iostream
+-
+job.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.h
+iostream
+-
+string
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/main.cpp
+iostream
+-
+cstdlib
+-
+stdexcept
+-
+string
+-
+simulator.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.h
+fifo.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.cpp
+iostream
+-
+fstream
+-
+simulator.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.h
+event.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.h
+queue
+-
+string
+-
+event.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h
+

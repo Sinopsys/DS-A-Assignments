@@ -1,7 +1,21 @@
 #include <iostream>
+#include <cstdlib>
+#include <stdexcept>
+#include <string>
 
-int main()
+#include "simulator.h"
+#include "fifo.h"
+
+using namespace std;
+
+int main(int argc, char *argv[])
 {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+
+    string file = "bigfirst.run";
+    simulator *s = new fifo(2);
+    s->simulate(file);
+    delete s;
+
+    return EXIT_SUCCESS;
 }

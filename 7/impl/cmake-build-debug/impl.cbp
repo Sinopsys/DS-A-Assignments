@@ -84,7 +84,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.cpp">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/event.h">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.cpp">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/fifo.h">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.cpp">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/job.h">
+			<Option target="impl"/>
+		</Unit>
 		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/main.cpp">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.cpp">
+			<Option target="impl"/>
+		</Unit>
+		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/simulator.h">
 			<Option target="impl"/>
 		</Unit>
 		<Unit filename="/home/kirill/University/HSE/Algo/2 semestr/Homeworks/7/impl/CMakeLists.txt">
