@@ -21,7 +21,7 @@
 
 
 const int PARKING_SPOTS_PER_AISLE = 3;      ///< Determines a number of cars per an aisle
-const int NUMBER_OF_AISLES = 5;             ///< Determines a number of aisls in the parking
+const int NUMBER_OF_AISLES = 5;             ///< Determines a number of aisles in the parking
 
 
 /** \brief Defines an Aisle in some parking */
@@ -137,11 +137,15 @@ void handle_arrival(Cars &cars, Parking &parking_lot,
                     const std::string &plate)
 {
     // TODO: Handle car arrivals
+    for (int i = 0; i < parking_lot.size(); ++i)
+        if (parking_lot[i].size() < PARKING_SPOTS_PER_AISLE)
+        {
+            parking_lot[i].push(plate);
+            cars.push_back(Car(plate, i));
+            return;
+        }
 
-
-
-
-
+    throw std::overflow_error("Full Aisle.");
 }
 
 //------------------------------------------------------------------------------
@@ -157,12 +161,8 @@ void handle_departure(Cars &cars, Parking &parking_lot, const std::string &plate
 {
     // TODO: Handle car departures
 
-
-
-
-
-
-
+    Car &car = find_car(cars, plate);
+//    parking_lot.
 
 }
 
@@ -185,8 +185,12 @@ Car &find_car(Cars &cars, const std::string &plate)
     // the parameter 'plate'
 
 
+    Cars::iterator it = std::find(Cars.begin(), Cars.end(), plate);
 
+    if (it == Cars.end())
+        throw std::exception();
 
+    return *it;
 
 
 }
