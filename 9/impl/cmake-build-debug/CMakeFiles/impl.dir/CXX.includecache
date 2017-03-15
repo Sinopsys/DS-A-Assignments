@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/City.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/RailSystem.cpp
+RailSystem.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/RailSystem.h
+map
+-
+list
+-
+vector
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/RailSystem.h
+iostream
+-
+fstream
+-
+map
+-
+list
+-
+queue
+-
+vector
+-
+assert.h
+-
+climits
+-
+Service.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/Service.h
+City.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/City.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/Service.h
+string
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/main.cpp
+iostream
+-
+fstream
+-
+string
+-
+City.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/City.h
+Service.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/Service.h
+RailSystem.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/9/impl/RailSystem.h
+
