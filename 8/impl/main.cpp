@@ -7,6 +7,7 @@
 ///
 ///////////////////////////////////////////////////////////////////////////////
 
+// Kupriyanov Kirill BSE 151
 
 #include <iostream>
 #include <fstream>
@@ -35,7 +36,7 @@ typedef std::vector<Car> Cars;
 
 
 /** \brief Iterates through the vector of stacks, looking for the first stack that
- *  does not contain three cars. If all five aisles (stacks) are full, output a message 
+ *  does not contain three cars. If all five aisles (stacks) are full, output a message
  *  indicating such; otherwise place the license plate into the first non-full stack.
  */
 void handle_arrival(Cars &cars, Parking &parking_lot,
@@ -48,7 +49,7 @@ void handle_arrival(Cars &cars, Parking &parking_lot,
 void handle_departure(Cars &cars, Parking &parking_lot, const std::string &plate);
 
 
-/** \brief Returns a reference to the \a Car object stored in the vector \a cars 
+/** \brief Returns a reference to the \a Car object stored in the vector \a cars
  *  whose license plate equals the parameter \a plate.
  */
 Car &find_car(Cars &cars, const std::string &plate);
@@ -59,7 +60,7 @@ Car &find_car(Cars &cars, const std::string &plate);
 
 /** \brief Main entry point of the program
  *
- *  Should obtain at least 1 command line parameter, which is interpreted as the name of a 
+ *  Should obtain at least 1 command line parameter, which is interpreted as the name of a
  *  file with parking day's payload
  */
 int main(int argc, char *argv[])
@@ -104,13 +105,12 @@ int main(int argc, char *argv[])
 
         std::cout << "\nHere are all the cars that visited the lot today:\n";
 
-        // TODO: Output the license plates of all the
-        // cars that visited the lot, in alphabetical order		
+        // : Output the license plates of all the
+        // cars that visited the lot, in alphabetical order
 
-
-
-
-
+        std::sort(cars.begin(), cars.end());
+        for (int i = 0; i < cars.size(); ++i)
+            std::cout << cars[i].getPlate() << " moved " << cars[i].getTimesMoved() << " times" << std::endl;
 
         return EXIT_SUCCESS;
     }
@@ -128,15 +128,15 @@ int main(int argc, char *argv[])
 
 //------------------------------------------------------------------------------
 
-/** 
+/**
  *  This is essentially "parking" the car. For this
- *  arriving car, also add an entry of type \a Car to the vector \a cars. In this \a Car instance, 
- *  make sure to record properly the index of the aisle where this car is parked. 
+ *  arriving car, also add an entry of type \a Car to the vector \a cars. In this \a Car instance,
+ *  make sure to record properly the index of the aisle where this car is parked.
  */
 void handle_arrival(Cars &cars, Parking &parking_lot,
                     const std::string &plate)
 {
-    // TODO: Handle car arrivals
+    // : Handle car arrivals
     for (int i = 0; i < parking_lot.size(); ++i)
         if (parking_lot[i].size() < PARKING_SPOTS_PER_AISLE)
         {
@@ -145,13 +145,13 @@ void handle_arrival(Cars &cars, Parking &parking_lot,
             return;
         }
 
-    throw std::overflow_error("Full Aisle.");
+    std::cerr << ("Full Aisle.") << std::endl;
 }
 
 //------------------------------------------------------------------------------
 
 
-/** 
+/**
  *  Another stack must be used to move, temporarily, any cars that may be in front of the
  *  departing car. Record the number of times a car is moved when accommodating the
  *  departure of another car. For the departing car, display the number of times it was moved
@@ -159,18 +159,36 @@ void handle_arrival(Cars &cars, Parking &parking_lot,
  */
 void handle_departure(Cars &cars, Parking &parking_lot, const std::string &plate)
 {
-    // TODO: Handle car departures
+    // : Handle car_to_remove departures
+    ParkAisle tmp;
+    Car &car_to_remove = find_car(cars, plate);
+    int aisle = car_to_remove.getAisle();
+    ParkAisle &parkAisle = parking_lot[aisle];
 
-    Car &car = find_car(cars, plate);
-//    parking_lot.
+    while (parkAisle.top() != plate)
+    {
+        tmp.push(parkAisle.top());
+        parkAisle.pop();
+    }
 
+    parkAisle.pop();
+    std::cout << car_to_remove.getPlate() << " moved " <<
+              car_to_remove.getTimesMoved() << " times" << std::endl;
+
+    while (tmp.size() > 0)
+    {
+        Car &car = find_car(cars, tmp.top());
+        car.setTimesMoved(car.getTimesMoved() + 1);
+        parkAisle.push(tmp.top());
+        tmp.pop();
+    }
 }
 
 
 //------------------------------------------------------------------------------
 
 
-/** 
+/**
  *  Use the STL \a find() function to perform this task. To use the function correctly, you
  *  must supply it with three arguments. The first two arguments specify a range to search.
  *  The third argument is the value that the function attempts to find. This argument must be
@@ -180,17 +198,14 @@ void handle_departure(Cars &cars, Parking &parking_lot, const std::string &plate
  */
 Car &find_car(Cars &cars, const std::string &plate)
 {
-    // TODO: Return a reference to 
-    // the Car object whose license plate equals 
+    // : Return a reference to
+    // the Car object whose license plate equals
     // the parameter 'plate'
-
-
-    Cars::iterator it = std::find(Cars.begin(), Cars.end(), plate);
-
-    if (it == Cars.end())
-        throw std::exception();
-
+    Cars::iterator it = std::find(cars.begin(), cars.end(), plate);
+    if (it == cars.end())
+        throw std::invalid_argument("No such car.");
     return *it;
-
-
 }
+
+
+// EOF
