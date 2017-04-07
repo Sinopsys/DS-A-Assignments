@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/JournalNetActivity.h
+OrderedList.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/OrderedList.h
+SkipList.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/SkipList.h
+NetActivity.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/NetActivity.h
+TimeStamp.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.h
+JournalNetActivity.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/JournalNetActivity.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/JournalNetActivity.hpp
+fstream
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/NetActivity.cpp
+NetActivity.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/NetActivity.h
+iostream
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/NetActivity.h
+string
+-
+iostream
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/OrderedList.h
+OrderedList.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/OrderedList.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/OrderedList.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/SkipList.h
+OrderedList.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/OrderedList.h
+SkipList.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/SkipList.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/SkipList.hpp
+cstdlib
+-
+random
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.cpp
+TimeStamp.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.h
+TimeStamp.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.h
+iostream
+-
+ctime
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.h
+iostream
+-
+ctime
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/main.cpp
+fstream
+-
+iostream
+-
+string
+-
+ctime
+-
+SkipList.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/SkipList.h
+TimeStamp.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/TimeStamp.h
+JournalNetActivity.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/10/impl/JournalNetActivity.h
+
