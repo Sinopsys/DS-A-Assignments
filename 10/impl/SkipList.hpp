@@ -14,9 +14,7 @@ template<class Value, class Key, int numLevels>
 void NodeSkipList<Value, Key, numLevels>::clear(void)
 {
     for (int i = 0; i < numLevels; ++i)
-    {
         this->m_nextjump[i] = 0;
-    }
     this->m_levelHighest = -1;
 }
 
@@ -30,7 +28,6 @@ template<class Value, class Key, int numLevels>
 NodeSkipList<Value, Key, numLevels>::NodeSkipList(Key key)
 {
     clear();
-
     this->m_key = key;
 }
 
@@ -38,7 +35,6 @@ template<class Value, class Key, int numLevels>
 NodeSkipList<Value, Key, numLevels>::NodeSkipList(Key key, Value value)
 {
     clear();
-
     this->m_key = key;
     this->m_value = value;
 }
@@ -55,12 +51,13 @@ SkipList<Value, Key, numLevels>::SkipList(double probability)
     srand(time(NULL));
     m_probability = probability;
     for (int i = 0; i < numLevels; ++i)
-    {
         // Lets use m_pPreHead as a final sentinel element
         this->m_pPreHead->m_nextjump[i] = this->m_pPreHead;
-    }
     this->m_pPreHead->m_levelHighest = numLevels - 1;
 }
+
+
+///////////////////////------implementation part------///////////////////////
 
 /**
  * a function to generate probability test
@@ -84,15 +81,16 @@ void SkipList<Value, Key, numLevels>::insert(Value value, Key key)
     int layer = level_highest;
     while (layer >= 0)
     {
-        while (last_s_node->m_nextjump[layer] != this->m_pPreHead
-               && last_s_node->m_nextjump[layer]->m_key < key)
+        while (last_s_node->m_nextjump[layer] != this->m_pPreHead &&
+               last_s_node->m_nextjump[layer]->m_key < key)
             last_s_node = last_s_node->m_nextjump[layer];
         arr[layer] = last_s_node;
         --layer;
     }
     layer = -1;
-    while (last_s_node->m_next != this->m_pPreHead
-           && last_s_node->m_next->m_key < key)
+//    todo разобраться с уровнями!
+    while (last_s_node->m_next != this->m_pPreHead &&
+           last_s_node->m_next->m_key < key)
         // find smallest not in the level
         //
         last_s_node = last_s_node->m_next;
@@ -104,6 +102,7 @@ void SkipList<Value, Key, numLevels>::insert(Value value, Key key)
     while (layer < level_highest)
     {
 //        std::cout << gen_0_1_probability() / 100.0 << std::endl;
+//          fixme gen_probability
         if (gen_0_1_probability((const double &) this->m_probability))
             break;
         ++layer;
@@ -126,13 +125,13 @@ void SkipList<Value, Key, numLevels>::remove(SkipList::TypeNode *node)
     TypeNode *last_node = this->m_pPreHead;
     while (level >= 0)
     {
-        while (last_node->m_nextjump[level] != this->m_pPreHead
-               && last_node->m_nextjump[level]->m_key < node->m_key)
+        while (last_node->m_nextjump[level] != this->m_pPreHead &&
+               last_node->m_nextjump[level]->m_key < node->m_key)
             last_node = last_node->m_nextjump[level];
         TypeNode *tmp = last_node;
 
-        while (tmp->m_nextjump[level] != this->m_pPreHead
-               && tmp->m_nextjump[level]->m_key == node->m_key)
+        while (tmp->m_nextjump[level] != this->m_pPreHead &&
+               tmp->m_nextjump[level]->m_key == node->m_key)
 
             // delete if found the key
             //
@@ -149,14 +148,14 @@ void SkipList<Value, Key, numLevels>::remove(SkipList::TypeNode *node)
         //
         --level;
     }
-    while (last_node->m_next != this->m_pPreHead
-           && last_node->m_next->m_key < node->m_key)
-        // find smallest not in the level
+    while (last_node->m_next != this->m_pPreHead &&
+           last_node->m_next->m_key < node->m_key)
+        // find smallest node not in the level
         //
         last_node = last_node->m_next;
     TypeNode *temp = last_node;
-    while (temp->m_next != this->m_pPreHead
-           && temp->m_next->m_key == node->m_key)
+    while (temp->m_next != this->m_pPreHead &&
+           temp->m_next->m_key == node->m_key)
         // delete if found the key
         //
         if (temp->m_next == node)
@@ -166,57 +165,52 @@ void SkipList<Value, Key, numLevels>::remove(SkipList::TypeNode *node)
             return;
         }
 
+    // if we got here throw an exception
+    //
     throw std::invalid_argument("Node does not exist.");
 }
 
 template<class Value, class Key, int numLevels>
 typename SkipList<Value, Key, numLevels>::TypeNode *SkipList<Value, Key, numLevels>::findLastLessThan(Key key) const
 {
-//   todo repair
-//    TypeNode *last_smaller = this->m_pPreHead;
-//    if (last_smaller->m_next == this->m_pPreHead)
-//    {
-//        // if the list is empty
-//        return this->m_pPreHead;
-//    }
-//    // search via levels
-//    int level = this->m_pPreHead->m_levelHighest;
-//    // note: >=
-//    while (level >= 0)
-//    {
-//        while (last_smaller->m_nextjump[level] != this->m_pPreHead
-//               && last_smaller->m_nextjump[level]->m_key < key
-//                )
-//        {
-//            last_smaller = last_smaller->m_nextjump[level];
-//        }
-//        level--;
-//    }
-//    // find smallest outside of level
-//    while (last_smaller->m_next != this->m_pPreHead
-//           && last_smaller->m_next->m_key < key
-//            )
-//    {
-//        last_smaller = last_smaller->m_next;
-//    }
-//    return last_smaller;
+    // check if the list is empty
+    if (this->m_pPreHead->m_next == this->m_pPreHead)
+        throw std::underflow_error("Empty list.");
+
+    int level = this->m_pPreHead->m_levelHighest;
+    TypeNode *last_node = this->m_pPreHead;
+
+    while (level >= 0)
+    {
+        while (last_node->m_nextjump[level] != this->m_pPreHead &&
+               last_node->m_nextjump[level]->m_key < key)
+            last_node = last_node->m_nextjump[level];
+        // decrement level by one
+        //
+        --level;
+    }
+
+    while (last_node->m_next != this->m_pPreHead &&
+           last_node->m_next->m_key < key)
+        // find smallest node not in the level
+        //
+        last_node = last_node->m_next;
+
+    return last_node;
 }
 
 template<class Value, class Key, int numLevels>
 typename SkipList<Value, Key, numLevels>::TypeNode *SkipList<Value, Key, numLevels>::findFirst(Key key) const
 {
-// todo repair
-//    TypeNode *last_smaller = findLastLessThan(key);
-//    if (last_smaller->m_next != this->m_pPreHead
-//        && last_smaller->m_next->m_key == key
-//            )
-//    {
-//        // if the next node after last_smaller is equal to key return it
-//        return last_smaller->m_next;
-//    }
-//    // otherwise the next after last_smaller is bigger
-//    // so no such key exists
-//    return 0;
+    // use findLastLessThan to examin its next node
+    //
+    TypeNode *node = findLastLessThan(key);
+    // return 0 if next does not exist or keys doesnt match
+    //
+    if (node->m_next == this->m_pPreHead
+        || node->m_next->m_key != key)
+        return 0;
+    return node->m_next;
 }
 
 // Put your code here

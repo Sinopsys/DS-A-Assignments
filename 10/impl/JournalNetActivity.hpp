@@ -63,13 +63,12 @@ void JournalNetActivity<numLevels>::outputSuspiciousActivities(
         string hostSuspicious, const TimeStamp &timeFrom, const TimeStamp &timeTo) const
 {
     typename TypeList::TypeNode
-            *begin = m_Journal.findFirst(timeFrom),
-            *end = m_Journal.findLastLessThan(timeTo);
+            *begin = m_Journal.findFirst(timeFrom);
 
-    std::cout << "Estimated time to find:\n";
-    if (begin == 0 || end == 0)
+    if (begin == 0)
         return;
-    while (begin != end)
+
+    while (begin->m_key <= timeTo && begin->m_next != m_Journal.getPreHead())
     {
         if (begin->m_value.m_host == hostSuspicious)
             std::cout << begin->m_value << '\n';
