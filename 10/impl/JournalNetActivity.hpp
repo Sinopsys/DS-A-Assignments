@@ -68,7 +68,8 @@ void JournalNetActivity<numLevels>::outputSuspiciousActivities(
     if (begin == 0)
         return;
 
-    while (begin->m_key <= timeTo && begin->m_next != m_Journal.getPreHead())
+    while (begin->m_key <= timeTo &&
+           begin->m_next != m_Journal.getPreHead())
     {
         if (begin->m_value.m_host == hostSuspicious)
             std::cout << begin->m_value << '\n';

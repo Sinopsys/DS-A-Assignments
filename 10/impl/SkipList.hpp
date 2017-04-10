@@ -207,8 +207,8 @@ typename SkipList<Value, Key, numLevels>::TypeNode *SkipList<Value, Key, numLeve
     TypeNode *node = findLastLessThan(key);
     // return 0 if next does not exist or keys doesnt match
     //
-    if (node->m_next == this->m_pPreHead
-        || node->m_next->m_key != key)
+    if (node->m_next == this->m_pPreHead ||
+        node->m_next->m_key != key)
         return 0;
     return node->m_next;
 }
