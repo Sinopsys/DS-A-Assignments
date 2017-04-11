@@ -101,6 +101,7 @@ int grid::count(int row, int col)
     if (!checkIndex(row, col) || !infected(row, col) || visited(row, col))
         return 0;
     _area->operator[](indexof(row, col)).second = 1;
+
     int sum = 1;
     sum += count(row, col + 1);
     sum += count(row, col - 1);
@@ -118,6 +119,8 @@ int grid::count(int row, int col)
 // Students may need to alter this function
 int grid::getCount(int row, int col)
 {
+    if (!checkIndex(row, col))
+        throw std::invalid_argument("Index out of range");
     return count(row, col);
 }
 

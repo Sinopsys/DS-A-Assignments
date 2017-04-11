@@ -92,7 +92,6 @@ private:
     std::vector<std::pair<bool, bool> > *_area;       ///< Stores dynamically created vector that holds the grid
     int _rows;                      ///< Stores grid's rows number
     int _cols;                      ///< Stores grid's columns number
-
 }; // class grid
 
 
