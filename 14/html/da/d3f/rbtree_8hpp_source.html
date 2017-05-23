@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Red-black tree / A&amp;DS HSE&#39;s Course: Исходный файл src/rbtree.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Red-black tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Red-black tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">rbtree.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d3f/rbtree_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d9c/namespacexi.html">xi</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//==============================================================================</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// class RBTree::node</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//==============================================================================</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a28db2d1ceae986d13269f7969c242971">   24</a></span>&#160;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a28db2d1ceae986d13269f7969c242971">RBTree&lt;Element, Compar&gt;::Node::~Node</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// TODO: убрать!</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">   39</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">RBTree&lt;Element, Compar&gt;::Node::setLeft</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* lf)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// предупреждаем повторное присвоение</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (_left == lf)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// если новый левый — действительный элемент</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (lf)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// если у него был родитель</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (lf-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// ищем у родителя, кем был этот элемент, и вместо него ставим бублик</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (lf-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> == lf)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                lf-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">else</span>                                    <span class="comment">// доп. не проверяем, что он был правым, иначе нарушение целостности</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                lf-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a> = <span class="keyword">nullptr</span>;      </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// задаем нового родителя</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        lf-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// если у текущего уже был один левый — отменяем его родительскую связь и вернем его</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* prevLeft = _left;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    _left = lf;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (prevLeft)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        prevLeft-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> prevLeft;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">   74</a></span>&#160;<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">RBTree&lt;Element, Compar&gt;::Node::setRight</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* rg)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// предупреждаем повторное присвоение</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (_right == rg)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// если новый правый — действительный элемент</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (rg)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// если у него был родитель</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (rg-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// ищем у родителя, кем был этот элемент, и вместо него ставим бублик</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (rg-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> == rg)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                rg-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">else</span>                                    <span class="comment">// доп. не проверяем, что он был правым, иначе нарушение целостности</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                rg-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// задаем нового родителя</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        rg-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// если у текущего уже был один левый — отменяем его родительскую связь и вернем его</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* prevRight = _right;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    _right = rg;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (prevRight)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        prevRight-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> prevRight;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//==============================================================================</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// class RBTree</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//==============================================================================</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a36e324b5c4197b23120340c8ed1f89ce">  113</a></span>&#160;<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a36e324b5c4197b23120340c8ed1f89ce">RBTree&lt;Element, Compar&gt;::RBTree</a>()</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    _dumper = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aa70591e7b3f16645fcf45a127df24c0d">  120</a></span>&#160;<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aa70591e7b3f16645fcf45a127df24c0d">RBTree&lt;Element, Compar&gt;::~RBTree</a>()</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// грохаем пока что всех через корень</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">delete</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#ae09699cc475fda250e4b8709faa2840c">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#ae09699cc475fda250e4b8709faa2840c">RBTree&lt;Element, Compar&gt;::deleteNode</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* nd)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// если переданный узел не существует, просто ничего не делаем, т.к. в вызывающем проверок нет</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (nd == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// потомков убьет в деструкторе</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">delete</span> nd;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2832e14e602b042b753698d898f890db">  141</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2832e14e602b042b753698d898f890db">RBTree&lt;Element, Compar&gt;::insert</a>(<span class="keyword">const</span> Element&amp; key)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// этот метод можно оставить студентам</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* newNode = <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#ad3d23a3ed0c8df5ca9b9d7b2d73ac025">insertNewBstEl</a>(key);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_BST_INS</a>, <span class="keyword">this</span>, newNode);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2f945f0f3518e37761776681d20a2db4">rebalance</a>(newNode);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_INSERT</a>, <span class="keyword">this</span>, newNode);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a034bd3cefd96134ccdf3b6f083ea80e6">  162</a></span>&#160;<span class="keyword">typename</span> <span class="keyword">const</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a034bd3cefd96134ccdf3b6f083ea80e6">RBTree&lt;Element, Compar&gt;::find</a>(<span class="keyword">const</span> Element&amp; key)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* cur = <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// проходимся по дереву, пока не доползем до нулевых листов</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">while</span> (cur != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">const</span> Element&amp; curKey = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#acdc5fdae31910a81926db76046b3ae70">_key</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (curKey == key)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">return</span> cur;       </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (key &lt; curKey)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            cur = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">else</span> <span class="comment">// if (key &gt; curKey)</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            cur = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#ad3d23a3ed0c8df5ca9b9d7b2d73ac025">  183</a></span>&#160;        <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#ad3d23a3ed0c8df5ca9b9d7b2d73ac025">RBTree&lt;Element, Compar&gt;::insertNewBstEl</a>(<span class="keyword">const</span> Element&amp; key)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* cur = <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* prev = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// проходимся по дереву, пока не доползем до нулевых листов</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">while</span> (cur != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        prev = cur;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">const</span> Element&amp; curKey = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">if</span> (key &lt; curKey)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            cur = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key &gt; curKey)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            cur = cur-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">else</span>                        <span class="comment">// запрещенный случай — дубликат</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Can&#39;t insert duplicate value&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// время сконструировать новый нод — красный!</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* newNode = <span class="keyword">new</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>(key, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, RED);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// дошли до листочков, если пред. пустой — значит дерево пусто</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">if</span> (prev)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// определим, куда вставлять относительно предыдущего: влево или вправо</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> (key &lt; prev-&gt;getKey())</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            prev-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(newNode);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            prev-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a>(newNode);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a> = newNode;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">return</span> newNode;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;}</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a80f737fc143896bf4cab90ba36734be0">  222</a></span>&#160;    <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a80f737fc143896bf4cab90ba36734be0">RBTree&lt;Element, Compar&gt;::rebalanceDUG</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* nd)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;{</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// попадание в этот метод уже означает, что папа есть (а вот про дедушку пока не известно)</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">bool</span> leftCase;             <span class="comment">// истина, если левый случай (дядя правый), ложь — правый (дядя левый)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* grandpa = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a07eee95de83b89284b554b2f5d42984c">getDaddy</a>(leftCase);   <span class="comment">// дедушка</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span> (!grandpa)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;             <span class="comment">// если дедушки нет вообще, тогда все</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* uncle = grandpa-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af58cdbc56af09fc48593d8968c46410a">getChild</a>(!leftCase); <span class="comment">// для левого случая нужен правый дядя и наоборот.</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// если дядя такой же красный, как сам нод и его папа...</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">if</span> (uncle &amp;&amp; uncle-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a8422b81615e4ba2e97547b7b6a7f607c">isRed</a>())</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        uncle-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">setBlack</a>();              <span class="comment">// дядю и папу красим в черное</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">setBlack</a>();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        grandpa-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a5c89b38f0181ad7501b839afa3ba48b1">setRed</a>();              <span class="comment">// а дедушку — в коммунистические цвета</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR1</a>, <span class="keyword">this</span>, nd);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment">// теперь чередование цветов &quot;узел-папа-дедушка-дядя&quot; — К-Ч-К-Ч, но надо разобраться, что там</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">// с дедушкой и его предками, поэтому продолжим с дедушкой</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> grandpa;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// дядя черный</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">// смотрим, является ли узел правым у папочки</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ada4b2c62f3c866509dfe9bbb960f6a3b">isSpecificChildPrv</a>(!leftCase))          <span class="comment">// для левого случая нужен правый узел, поэтом отрицание</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {                                           <span class="comment">// CASE2 в действии</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">// двигаемся в сторону папы, чтобы совершить левый переворот...</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        nd = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">if</span> (leftCase)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a0043c01682b6754de440e9ac19ed9f39">rotLeft</a>(nd);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">else</span>                                    <span class="comment">// ... ну, или правый</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aaa6d4c1478ca211ee543a78bed6802df">rotRight</a>(nd);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// к этому моменту nd может уже указывать не на исходный узел, а на его папу, да еще и с переворотом</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// красим:</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">setBlack</a>();                <span class="comment">// папу в черный</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR3D</a>, <span class="keyword">this</span>, nd);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">if</span> (nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a5c89b38f0181ad7501b839afa3ba48b1">setRed</a>();         <span class="comment">// деда в красный</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR3G</a>, <span class="keyword">this</span>, nd);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">if</span> (leftCase)                           <span class="comment">// и вращаем</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aaa6d4c1478ca211ee543a78bed6802df">rotRight</a>(nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">else</span>                                   </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a0043c01682b6754de440e9ac19ed9f39">rotLeft</a>(nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">return</span> nd;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;}</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar &gt;</div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2f945f0f3518e37761776681d20a2db4">  289</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2f945f0f3518e37761776681d20a2db4">RBTree&lt;Element, Compar&gt;::rebalance</a>(<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* nd)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// пока папина физиономия — цвета пионерского галстука, действуем      </span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">while</span> (nd &amp;&amp; nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af6a80c58b55cb3a81dd5c629b0e0d968">isDaddyRed</a>())</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">// локальная перебалансировка семейства &quot;папа, дядя, дедушка&quot; и повторная проверка</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        nd = <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a80f737fc143896bf4cab90ba36734be0">rebalanceDUG</a>(nd);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    } <span class="comment">// while (isDaddyRed())</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// напоследок перекрашиваем корень в черный цвет</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a>-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">setBlack</a>();</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a0043c01682b6754de440e9ac19ed9f39">  309</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a0043c01682b6754de440e9ac19ed9f39">RBTree&lt;Element, Compar&gt;::rotLeft</a>(<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* nd)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// правый потомок, который станет после левого поворота &quot;выше&quot;</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* y = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (!y)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Can&#39;t rotate left since the right child is nil&quot;</span>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keywordtype">bool</span> xIsLeftChild;                      <span class="comment">// истина, если x - левый ребенок, иначе правый</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="comment">// имеет смысл только, если (xParent)</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* xParent = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (xParent)</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">if</span> (xParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> == nd)           <span class="comment">// левый потомок</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            xIsLeftChild = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">else</span>                                <span class="comment">// иначе это может быть только правый (без проверки)</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            xIsLeftChild = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* prevYleft = y-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(nd);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a>(prevYleft);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// наконец, у бывшего родителя y теперь в дочках x</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span> (xParent)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">if</span> (xIsLeftChild)</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            xParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(y);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            xParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a>(y);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">else</span>                                    <span class="comment">// если не было родителя, значит это теперь корень</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a> = y;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_LROT</a>, <span class="keyword">this</span>, nd);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aaa6d4c1478ca211ee543a78bed6802df">  353</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aaa6d4c1478ca211ee543a78bed6802df">RBTree&lt;Element, Compar&gt;::rotRight</a>(<span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">RBTree&lt;Element, Compar&gt;::Node</a>* nd)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="comment">// левый потомок, который станет после левого поворота &quot;выше&quot;</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* x = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a>;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (!x)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Can&#39;t rotate right since the left child is nil&quot;</span>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordtype">bool</span> yIsLeftChild;                      <span class="comment">// истина, если y - левый ребенок, иначе правый</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                                            <span class="comment">// имеет смысл только, если (yParent)</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* yParent = nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">if</span> (yParent)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span> (yParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a> == nd)           <span class="comment">// левый потомок</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            yIsLeftChild = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">else</span>                                <span class="comment">// иначе это может быть только правый (без проверки)</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            yIsLeftChild = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a>* prevXright = x-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a>(nd);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(prevXright);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// наконец, у бывшего родителя y теперь в дочках x</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (yParent)</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">if</span> (yIsLeftChild)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            yParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a>(x);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            yParent-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a>(x);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">else</span>                                    <span class="comment">// если не было родителя, значит это теперь корень</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">_root</a> = x;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// отладочное событие</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">if</span> (_dumper)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        _dumper-&gt;rbTreeEvent(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RROT</a>, <span class="keyword">this</span>, nd);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;} <span class="comment">// namespace xi</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;</div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_ada4b2c62f3c866509dfe9bbb960f6a3b"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ada4b2c62f3c866509dfe9bbb960f6a3b">xi::RBTree::Node::isSpecificChildPrv</a></div><div class="ttdeci">bool isSpecificChildPrv(bool isLeft) const </div><div class="ttdoc">Проверяет, является ли данный узел "правильным" потомком для существующего (без проверки) родителя...</div><div class="ttdef"><b>Definition:</b> rbtree.h:253</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a36e324b5c4197b23120340c8ed1f89ce"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a36e324b5c4197b23120340c8ed1f89ce">xi::RBTree::RBTree</a></div><div class="ttdeci">RBTree()</div><div class="ttdoc">Конструктор по умолчанию. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:113</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a5c89b38f0181ad7501b839afa3ba48b1"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a5c89b38f0181ad7501b839afa3ba48b1">xi::RBTree::Node::setRed</a></div><div class="ttdeci">void setRed()</div><div class="ttdoc">Делает узел красным. </div><div class="ttdef"><b>Definition:</b> rbtree.h:221</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a8422b81615e4ba2e97547b7b6a7f607c"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a8422b81615e4ba2e97547b7b6a7f607c">xi::RBTree::Node::isRed</a></div><div class="ttdeci">bool isRed() const </div><div class="ttdoc">Возвращает истину, если узел красный, иначе ложь. </div><div class="ttdef"><b>Definition:</b> rbtree.h:135</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a2b3f5d87853beb1ec628a957bf5b6668"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2b3f5d87853beb1ec628a957bf5b6668">xi::RBTree::_root</a></div><div class="ttdeci">Node * _root</div><div class="ttdoc">Реальный корневой элемент дерева. Если nullptr, значит дерево пусто. </div><div class="ttdef"><b>Definition:</b> rbtree.h:402</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a4b9b8b287d19de77c23a1fd834cd50bd"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">xi::RBTree::Node::setBlack</a></div><div class="ttdeci">void setBlack()</div><div class="ttdoc">Делает узел черным. </div><div class="ttdef"><b>Definition:</b> rbtree.h:218</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a4c1d11744f20c4d572a6b294ccd18894"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">xi::RBTree::Node::setLeft</a></div><div class="ttdeci">Node * setLeft(Node *lf)</div><div class="ttdoc">Устанавливает левого потомка в lf. Если потомок не ноль, делает для него текущий нод родителем...</div><div class="ttdef"><b>Definition:</b> rbtree.hpp:39</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_acdc5fdae31910a81926db76046b3ae70"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#acdc5fdae31910a81926db76046b3ae70">xi::RBTree::Node::_key</a></div><div class="ttdeci">Element _key</div><div class="ttdoc">Несомая узлом информация. </div><div class="ttdef"><b>Definition:</b> rbtree.h:264</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_af6a80c58b55cb3a81dd5c629b0e0d968"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af6a80c58b55cb3a81dd5c629b0e0d968">xi::RBTree::Node::isDaddyRed</a></div><div class="ttdeci">bool isDaddyRed() const </div><div class="ttdoc">Возвращает истину, если есть отец и он красный. </div><div class="ttdef"><b>Definition:</b> rbtree.h:141</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_ad3d23a3ed0c8df5ca9b9d7b2d73ac025"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#ad3d23a3ed0c8df5ca9b9d7b2d73ac025">xi::RBTree::insertNewBstEl</a></div><div class="ttdeci">Node * insertNewBstEl(const Element &amp;key)</div><div class="ttdoc">Добавляет новый узел в дерево, как в обычном BST. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:183</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_ae09699cc475fda250e4b8709faa2840c"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#ae09699cc475fda250e4b8709faa2840c">xi::RBTree::deleteNode</a></div><div class="ttdeci">void deleteNode(Node *nd)</div><div class="ttdoc">Удаляет нод со всеми его потомками, освобождая память из-под них. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:129</div></div>
+<div class="ttc" id="namespacexi_html"><div class="ttname"><a href="../../db/d9c/namespacexi.html">xi</a></div><div class="ttdef"><b>Definition:</b> rbtree.h:22</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_af8a5bf4cc7a436c071f5ca570ba9cb8f"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">xi::RBTree::Node::getKey</a></div><div class="ttdeci">const Element &amp; getKey() const </div><div class="ttdoc">Возвращает константную ссылку на элемент/ключ, храняющийся в узле. </div><div class="ttdef"><b>Definition:</b> rbtree.h:180</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a034bd3cefd96134ccdf3b6f083ea80e6"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a034bd3cefd96134ccdf3b6f083ea80e6">xi::RBTree::find</a></div><div class="ttdeci">const Node * find(const Element &amp;key)</div><div class="ttdoc">Ищет элемент key в дереве и возвращает соответствующий ему узел. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:162</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_ad36e213e0994cb70be4826b321daf5d0"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">xi::RBTree::Node::setRight</a></div><div class="ttdeci">Node * setRight(Node *rg)</div><div class="ttdoc">Устанавливает правого потомка в rg аналогично левому. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:74</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_aa70591e7b3f16645fcf45a127df24c0d"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#aa70591e7b3f16645fcf45a127df24c0d">xi::RBTree::~RBTree</a></div><div class="ttdeci">~RBTree()</div><div class="ttdoc">Деструктор. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:120</div></div>
+<div class="ttc" id="classxi_1_1_i_r_b_tree_dumper_html"><div class="ttname"><a href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">xi::IRBTreeDumper</a></div><div class="ttdoc">Класс-интерфейс, описывающий коллбек-слушателя для событий, происходящих с деревом. </div><div class="ttdef"><b>Definition:</b> rbtree.h:37</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a7079b7ef71655c103009cfd9a6774838"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">xi::RBTree::Node::_left</a></div><div class="ttdeci">Node * _left</div><div class="ttdoc">Левый потомок. </div><div class="ttdef"><b>Definition:</b> rbtree.h:268</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a3a6f1deff091ed82b7cac3a151b7dca6"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">xi::RBTree::Node::_right</a></div><div class="ttdeci">Node * _right</div><div class="ttdoc">Правый потомок. </div><div class="ttdef"><b>Definition:</b> rbtree.h:269</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_aaa6d4c1478ca211ee543a78bed6802df"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#aaa6d4c1478ca211ee543a78bed6802df">xi::RBTree::rotRight</a></div><div class="ttdeci">void rotRight(Node *nd)</div><div class="ttdoc">Вращает поддерево относительно узла nd вправо. Условия и ограничения аналогичны (симметрично) левому ...</div><div class="ttdef"><b>Definition:</b> rbtree.hpp:353</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a80f737fc143896bf4cab90ba36734be0"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a80f737fc143896bf4cab90ba36734be0">xi::RBTree::rebalanceDUG</a></div><div class="ttdeci">Node * rebalanceDUG(Node *nd)</div><div class="ttdoc">Выполняет перебалансировку локальных предков узла nd: папы, дяди и дедушки. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:222</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">xi::RBTree::Node</a></div><div class="ttdoc">Узел КЧД. </div><div class="ttdef"><b>Definition:</b> rbtree.h:100</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a0043c01682b6754de440e9ac19ed9f39"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a0043c01682b6754de440e9ac19ed9f39">xi::RBTree::rotLeft</a></div><div class="ttdeci">void rotLeft(Node *nd)</div><div class="ttdoc">Вращает поддерево относительно узла nd влево. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:309</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a2832e14e602b042b753698d898f890db"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2832e14e602b042b753698d898f890db">xi::RBTree::insert</a></div><div class="ttdeci">void insert(const Element &amp;key)</div><div class="ttdoc">Вставляет элемент key в дерево. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:141</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_af58cdbc56af09fc48593d8968c46410a"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af58cdbc56af09fc48593d8968c46410a">xi::RBTree::Node::getChild</a></div><div class="ttdeci">Node * getChild(bool isLeft)</div><div class="ttdoc">Возвращает ребенка этого узла: (isLeft) — левого, иначе правого. </div><div class="ttdef"><b>Definition:</b> rbtree.h:243</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a07eee95de83b89284b554b2f5d42984c"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a07eee95de83b89284b554b2f5d42984c">xi::RBTree::Node::getDaddy</a></div><div class="ttdeci">Node * getDaddy(bool &amp;isLeftChild)</div><div class="ttdoc">Еще один метод получение папочки: если он есть, возвращает по значению и устанавливает значение флага...</div><div class="ttdef"><b>Definition:</b> rbtree.h:231</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a28db2d1ceae986d13269f7969c242971"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a28db2d1ceae986d13269f7969c242971">xi::RBTree::Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdoc">Деструктор нода гарантированно грохнет всех потомков. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:24</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_ab82e1cf05df8b9abafaeb2301da10913"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">xi::RBTree::Node::_parent</a></div><div class="ttdeci">Node * _parent</div><div class="ttdoc">Родитель узла. </div><div class="ttdef"><b>Definition:</b> rbtree.h:267</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_a2f945f0f3518e37761776681d20a2db4"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#a2f945f0f3518e37761776681d20a2db4">xi::RBTree::rebalance</a></div><div class="ttdeci">void rebalance(Node *nd)</div><div class="ttdoc">Выполняет перебалансировку дерева после добавления нового элемента в узел nd. </div><div class="ttdef"><b>Definition:</b> rbtree.hpp:289</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Red-black tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 15 Май 2017 21:15:57. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

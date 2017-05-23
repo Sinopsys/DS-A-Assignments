@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Red-black tree / A&amp;DS HSE&#39;s Course: Класс xi::RBTree&lt; Element, Compar &gt;::Node</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Red-black tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Red-black tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">RBTree</a></li><li class="navelem"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../de/d2e/classxi_1_1_r_b_tree_1_1_node-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xi::RBTree&lt; Element, Compar &gt;::Node</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Узел КЧД.  
+ <a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/ddf/rbtree_8h_source.html">rbtree.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса xi::RBTree&lt; Element, Compar &gt;::Node:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dd9/classxi_1_1_r_b_tree_1_1_node__coll__graph.png" border="0" usemap="#xi_1_1_r_b_tree_3_01_element_00_01_compar_01_4_1_1_node_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a2800907314fd0e22f8911f667f745103"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103">WhichChild</a> { <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103a4fd1bb36a91c0e7d825d5833114df3b8">LEFT</a>, 
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103abd40f01c8cfa3acd57cd75a0188bdd43">RIGHT</a>, 
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103a70fe191f8e24067b508b4e68b0e2f673">NONE</a>
+ }<tr class="memdesc:a2800907314fd0e22f8911f667f745103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет варианты принадлежности узла относительно родителя.  <a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2800907314fd0e22f8911f667f745103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a1f13b71041436f76b696174a0fbd55da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f13b71041436f76b696174a0fbd55da"></a>
+const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a1f13b71041436f76b696174a0fbd55da">getLeft</a> () const </td></tr>
+<tr class="memdesc:a1f13b71041436f76b696174a0fbd55da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константный указатель на левый дочерний узел. <br /></td></tr>
+<tr class="separator:a1f13b71041436f76b696174a0fbd55da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d5e54b4110ac9f71ca202af5045434"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5d5e54b4110ac9f71ca202af5045434"></a>
+const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa5d5e54b4110ac9f71ca202af5045434">getRight</a> () const </td></tr>
+<tr class="memdesc:aa5d5e54b4110ac9f71ca202af5045434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константный указатель на правый дочерний узел. <br /></td></tr>
+<tr class="separator:aa5d5e54b4110ac9f71ca202af5045434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c6529ee0e0f9ded31ef175ddf71c39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12c6529ee0e0f9ded31ef175ddf71c39"></a>
+const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a12c6529ee0e0f9ded31ef175ddf71c39">getParent</a> () const </td></tr>
+<tr class="memdesc:a12c6529ee0e0f9ded31ef175ddf71c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константный указатель на родительский узел. <br /></td></tr>
+<tr class="separator:a12c6529ee0e0f9ded31ef175ddf71c39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291bd82feae60f1f0c2aec5bf4cbd797"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a291bd82feae60f1f0c2aec5bf4cbd797"></a>
+<a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aab7f0c0fc4fc9b64f08c37603dcccaad">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a291bd82feae60f1f0c2aec5bf4cbd797">getColor</a> () const </td></tr>
+<tr class="memdesc:a291bd82feae60f1f0c2aec5bf4cbd797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает цвет узла. <br /></td></tr>
+<tr class="separator:a291bd82feae60f1f0c2aec5bf4cbd797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67bd446d739383a49508ab88b01be05b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67bd446d739383a49508ab88b01be05b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a67bd446d739383a49508ab88b01be05b">isBlack</a> () const </td></tr>
+<tr class="memdesc:a67bd446d739383a49508ab88b01be05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если узел черный, иначе ложь. <br /></td></tr>
+<tr class="separator:a67bd446d739383a49508ab88b01be05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8422b81615e4ba2e97547b7b6a7f607c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8422b81615e4ba2e97547b7b6a7f607c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a8422b81615e4ba2e97547b7b6a7f607c">isRed</a> () const </td></tr>
+<tr class="memdesc:a8422b81615e4ba2e97547b7b6a7f607c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если узел красный, иначе ложь. <br /></td></tr>
+<tr class="separator:a8422b81615e4ba2e97547b7b6a7f607c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a80c58b55cb3a81dd5c629b0e0d968"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6a80c58b55cb3a81dd5c629b0e0d968"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af6a80c58b55cb3a81dd5c629b0e0d968">isDaddyRed</a> () const </td></tr>
+<tr class="memdesc:af6a80c58b55cb3a81dd5c629b0e0d968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если есть отец и он красный. <br /></td></tr>
+<tr class="separator:af6a80c58b55cb3a81dd5c629b0e0d968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ba371bda57e73cc844b4873db62a97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3ba371bda57e73cc844b4873db62a97"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa3ba371bda57e73cc844b4873db62a97">isLeftChild</a> () const </td></tr>
+<tr class="memdesc:aa3ba371bda57e73cc844b4873db62a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если у нода есть предок, для которого нод является левым ребенком. Во всех остальных случаях (нет предка или правый) — ложь. <br /></td></tr>
+<tr class="separator:aa3ba371bda57e73cc844b4873db62a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acffc895d2d56a70f4c8081d7eab03470"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acffc895d2d56a70f4c8081d7eab03470"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#acffc895d2d56a70f4c8081d7eab03470">isRightChild</a> () const </td></tr>
+<tr class="memdesc:acffc895d2d56a70f4c8081d7eab03470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если у нода есть предок, для которого нод является правым ребенком. Во всех остальных случаях (нет предка или левый) — ложь. <br /></td></tr>
+<tr class="separator:acffc895d2d56a70f4c8081d7eab03470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94525dcffc9563da7a1cd1826a471b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa94525dcffc9563da7a1cd1826a471b9"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103">WhichChild</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa94525dcffc9563da7a1cd1826a471b9">getWhichChild</a> () const </td></tr>
+<tr class="memdesc:aa94525dcffc9563da7a1cd1826a471b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет, является ли данный узел потомком родителя — левым, правым или не потомком. <br /></td></tr>
+<tr class="separator:aa94525dcffc9563da7a1cd1826a471b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8a5bf4cc7a436c071f5ca570ba9cb8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8a5bf4cc7a436c071f5ca570ba9cb8f"></a>
+const Element &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a> () const </td></tr>
+<tr class="memdesc:af8a5bf4cc7a436c071f5ca570ba9cb8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константную ссылку на элемент/ключ, храняющийся в узле. <br /></td></tr>
+<tr class="separator:af8a5bf4cc7a436c071f5ca570ba9cb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:aa67d86fd47cbceeb1972e02091559c94"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa67d86fd47cbceeb1972e02091559c94"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Node</b> (const Element &amp;key=Element(), <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *left=nullptr, <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *right=nullptr, <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *parent=nullptr, <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aab7f0c0fc4fc9b64f08c37603dcccaad">Color</a> col=BLACK)</td></tr>
+<tr class="separator:aa67d86fd47cbceeb1972e02091559c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28db2d1ceae986d13269f7969c242971"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28db2d1ceae986d13269f7969c242971"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a28db2d1ceae986d13269f7969c242971">~Node</a> ()</td></tr>
+<tr class="memdesc:a28db2d1ceae986d13269f7969c242971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор нода гарантированно грохнет всех потомков. <br /></td></tr>
+<tr class="separator:a28db2d1ceae986d13269f7969c242971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af873f561a1a16e7142657b11b60a162f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af873f561a1a16e7142657b11b60a162f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af873f561a1a16e7142657b11b60a162f">Node</a> (const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> &amp;)</td></tr>
+<tr class="memdesc:af873f561a1a16e7142657b11b60a162f"><td class="mdescLeft">&#160;</td><td class="mdescRight">КК не доступен. <br /></td></tr>
+<tr class="separator:af873f561a1a16e7142657b11b60a162f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33e7e01386fb045502b144804018f3cf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33e7e01386fb045502b144804018f3cf"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a33e7e01386fb045502b144804018f3cf">operator=</a> (<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> &amp;)</td></tr>
+<tr class="memdesc:a33e7e01386fb045502b144804018f3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания недоступен. <br /></td></tr>
+<tr class="separator:a33e7e01386fb045502b144804018f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1d11744f20c4d572a6b294ccd18894"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4c1d11744f20c4d572a6b294ccd18894"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4c1d11744f20c4d572a6b294ccd18894">setLeft</a> (<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *lf)</td></tr>
+<tr class="memdesc:a4c1d11744f20c4d572a6b294ccd18894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает левого потомка в <code>lf</code>. Если потомок не ноль, делает для него текущий нод родителем, а у его предка отключает дочернюю связь. <br /></td></tr>
+<tr class="separator:a4c1d11744f20c4d572a6b294ccd18894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36e213e0994cb70be4826b321daf5d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ad36e213e0994cb70be4826b321daf5d0">setRight</a> (<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *rg)</td></tr>
+<tr class="memdesc:ad36e213e0994cb70be4826b321daf5d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает правого потомка в <code>rg</code> аналогично левому.  <a href="#ad36e213e0994cb70be4826b321daf5d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad36e213e0994cb70be4826b321daf5d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9b8b287d19de77c23a1fd834cd50bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b9b8b287d19de77c23a1fd834cd50bd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a4b9b8b287d19de77c23a1fd834cd50bd">setBlack</a> ()</td></tr>
+<tr class="memdesc:a4b9b8b287d19de77c23a1fd834cd50bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делает узел черным. <br /></td></tr>
+<tr class="separator:a4b9b8b287d19de77c23a1fd834cd50bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c89b38f0181ad7501b839afa3ba48b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c89b38f0181ad7501b839afa3ba48b1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a5c89b38f0181ad7501b839afa3ba48b1">setRed</a> ()</td></tr>
+<tr class="memdesc:a5c89b38f0181ad7501b839afa3ba48b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делает узел красным. <br /></td></tr>
+<tr class="separator:a5c89b38f0181ad7501b839afa3ba48b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07eee95de83b89284b554b2f5d42984c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07eee95de83b89284b554b2f5d42984c"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a07eee95de83b89284b554b2f5d42984c">getDaddy</a> (bool &amp;<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa3ba371bda57e73cc844b4873db62a97">isLeftChild</a>)</td></tr>
+<tr class="memdesc:a07eee95de83b89284b554b2f5d42984c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Еще один метод получение папочки: если он есть, возвращает по значению и устанавливает значение флага isLeftChild в истину, если данный ребенок левый, иначе в ложь. Если папы нет, возвращает null. <br /></td></tr>
+<tr class="separator:a07eee95de83b89284b554b2f5d42984c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58cdbc56af09fc48593d8968c46410a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af58cdbc56af09fc48593d8968c46410a"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af58cdbc56af09fc48593d8968c46410a">getChild</a> (bool isLeft)</td></tr>
+<tr class="memdesc:af58cdbc56af09fc48593d8968c46410a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ребенка этого узла: (isLeft) — левого, иначе правого. <br /></td></tr>
+<tr class="separator:af58cdbc56af09fc48593d8968c46410a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4b2c62f3c866509dfe9bbb960f6a3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ada4b2c62f3c866509dfe9bbb960f6a3b">isSpecificChildPrv</a> (bool isLeft) const </td></tr>
+<tr class="memdesc:ada4b2c62f3c866509dfe9bbb960f6a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, является ли данный узел "правильным" потомком для существующего (без проверки) родителя. Для (isLeft) "правильным" является левый узел, для (!isLeft) — правый.  <a href="#ada4b2c62f3c866509dfe9bbb960f6a3b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ada4b2c62f3c866509dfe9bbb960f6a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:acdc5fdae31910a81926db76046b3ae70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdc5fdae31910a81926db76046b3ae70"></a>
+Element&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#acdc5fdae31910a81926db76046b3ae70">_key</a></td></tr>
+<tr class="memdesc:acdc5fdae31910a81926db76046b3ae70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Несомая узлом информация. <br /></td></tr>
+<tr class="separator:acdc5fdae31910a81926db76046b3ae70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ab7dcb0ffbeee039c83de5e48ea671"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5ab7dcb0ffbeee039c83de5e48ea671"></a>
+<a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html#aab7f0c0fc4fc9b64f08c37603dcccaad">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab5ab7dcb0ffbeee039c83de5e48ea671">_color</a></td></tr>
+<tr class="memdesc:ab5ab7dcb0ffbeee039c83de5e48ea671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Цвет элемента. <br /></td></tr>
+<tr class="separator:ab5ab7dcb0ffbeee039c83de5e48ea671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab82e1cf05df8b9abafaeb2301da10913"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab82e1cf05df8b9abafaeb2301da10913"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#ab82e1cf05df8b9abafaeb2301da10913">_parent</a></td></tr>
+<tr class="memdesc:ab82e1cf05df8b9abafaeb2301da10913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Родитель узла. <br /></td></tr>
+<tr class="separator:ab82e1cf05df8b9abafaeb2301da10913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7079b7ef71655c103009cfd9a6774838"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7079b7ef71655c103009cfd9a6774838"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a7079b7ef71655c103009cfd9a6774838">_left</a></td></tr>
+<tr class="memdesc:a7079b7ef71655c103009cfd9a6774838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Левый потомок. <br /></td></tr>
+<tr class="separator:a7079b7ef71655c103009cfd9a6774838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a6f1deff091ed82b7cac3a151b7dca6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a6f1deff091ed82b7cac3a151b7dca6"></a>
+<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a3a6f1deff091ed82b7cac3a151b7dca6">_right</a></td></tr>
+<tr class="memdesc:a3a6f1deff091ed82b7cac3a151b7dca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Правый потомок. <br /></td></tr>
+<tr class="separator:a3a6f1deff091ed82b7cac3a151b7dca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:aa6a3bdd266ad3c6bb40325840ce233b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6a3bdd266ad3c6bb40325840ce233b8"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>RBTree&lt; Element, Compar &gt;</b></td></tr>
+<tr class="separator:aa6a3bdd266ad3c6bb40325840ce233b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7620c98fbd376e6ebd72e993d10dee67"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7620c98fbd376e6ebd72e993d10dee67"></a>
+template&lt;typename , typename &gt; </td></tr>
+<tr class="memitem:a7620c98fbd376e6ebd72e993d10dee67"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RBTreeTest</b></td></tr>
+<tr class="separator:a7620c98fbd376e6ebd72e993d10dee67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename Element, typename Compar = std::less&lt;Element&gt;&gt;<br />
+class xi::RBTree&lt; Element, Compar &gt;::Node</h3>
+
+<p>Узел КЧД. </p>
+<p>Большая часть элементов класса является закрытой для внешнего мира и доступной только для самого узла и его потомков. Это сделано с целью инкапсуляции, а само дерево объявлено по отношению к данному классу дружественным, чтобы оно имело доступ к своим узлам. </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a class="anchor" id="a2800907314fd0e22f8911f667f745103"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Compar  = std::less&lt;Element&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a2800907314fd0e22f8911f667f745103">xi::RBTree::Node::WhichChild</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Определяет варианты принадлежности узла относительно родителя. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a class="anchor" id="a2800907314fd0e22f8911f667f745103a4fd1bb36a91c0e7d825d5833114df3b8"></a>LEFT&#160;</td><td class="fielddoc">
+<p>левый потомок </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2800907314fd0e22f8911f667f745103abd40f01c8cfa3acd57cd75a0188bdd43"></a>RIGHT&#160;</td><td class="fielddoc">
+<p>правый потомок </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a2800907314fd0e22f8911f667f745103a70fe191f8e24067b508b4e68b0e2f673"></a>NONE&#160;</td><td class="fielddoc">
+<p>вообще не потомок </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="ada4b2c62f3c866509dfe9bbb960f6a3b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Compar  = std::less&lt;Element&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree</a>&lt; Element, Compar &gt;::Node::isSpecificChildPrv </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isLeft</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет, является ли данный узел "правильным" потомком для существующего (без проверки) родителя. Для (isLeft) "правильным" является левый узел, для (!isLeft) — правый. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>возвращает истину, если проверяемый узел является "правильным". </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad36e213e0994cb70be4826b321daf5d0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element , typename Compar &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">RBTree</a>&lt; Element, Compar &gt;::<a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> * <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree</a>&lt; Element, Compar &gt;::Node::setRight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>rg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает правого потомка в <code>rg</code> аналогично левому. </p>
+<p><b style="color:orange">Для реализации студентами.</b> </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="../../d5/ddf/rbtree_8h_source.html">rbtree.h</a></li>
+<li>src/<a class="el" href="../../da/d3f/rbtree_8hpp_source.html">rbtree.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Red-black tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 15 Май 2017 21:15:58. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

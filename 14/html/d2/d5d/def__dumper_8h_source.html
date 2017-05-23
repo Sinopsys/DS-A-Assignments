@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Red-black tree / A&amp;DS HSE&#39;s Course: Исходный файл tests/gtest/src/def_dumper.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Red-black tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Red-black tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="../../dir_3291c6cb888298ddcba2a410413770df.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_04ea101b266f0eb9e0fe0f13e09294a3.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">def_dumper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d5d/def__dumper_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef RBTREE_TESTS_DEF_DUMPER_H_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define RBTREE_TESTS_DEF_DUMPER_H_</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span>     <span class="comment">// std::endl</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/ddf/rbtree_8h.html">rbtree.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt; <span class="comment">// = std::less&lt;Element&gt; &gt;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html">RBTreeGvDumper</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Объявление типов дерева и узла для упрощения доступа</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree&lt;Element, Compar&gt;</a> <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">xi::RBTree&lt;Element, Compar&gt;::Node</a> <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">TTreeNode</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//typedef TTree::Node TTreeNode;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ac337179e09b6d7819ec38a0abbe06714">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ac337179e09b6d7819ec38a0abbe06714">dump</a>(<span class="keyword">const</span> std::string&amp; fn, <span class="keyword">const</span> TTree&amp; tree, <span class="keyword">const</span> <span class="keywordtype">char</span>* grLbl = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//std::invalid_argument</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::ofstream dfile(fn.c_str());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (!dfile.is_open())</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Can&#39;t open dump file for GraphViz&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// заголовок</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#adbd5dc37dc3ad7025abc6174fa67323a">outHeader</a>(dfile, grLbl);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// тело</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ad5f1083afa6a0781ab0dbfe71691ed07">outTree</a>(dfile, tree);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// хвост</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a4092c1346fd21366eed8d20eb7f07ea2">outTail</a>(dfile);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        dfile.flush();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ad5f1083afa6a0781ab0dbfe71691ed07">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ad5f1083afa6a0781ab0dbfe71691ed07">outTree</a>(std::ostream&amp; str, <span class="keyword">const</span> TTree&amp; tree)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (tree.<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#af3b5892f2473d0e79d22f36d940c48bd">getRoot</a>())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">outNode</a>(str, tree.<a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html#af3b5892f2473d0e79d22f36d940c48bd">getRoot</a>());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// TODO: пока-что, если нет корня, просто ничего не выводим</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">outNode</a>(std::ostream&amp; str, <span class="keyword">const</span> TTreeNode* node)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// если переданный узел пустой, ничего не выводим</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (!node)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// выводим информацию об узле: идентификатор берем из оператора operator&lt;&lt;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        str &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt; node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>() &lt;&lt; <span class="stringliteral">&quot; [fillcolor=&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a67bd446d739383a49508ab88b01be05b">isBlack</a>())        <span class="comment">// TODO: могут ли тут быть другие варианты?!</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            str &lt;&lt; <span class="stringliteral">&quot;black]\n&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            str &lt;&lt; <span class="stringliteral">&quot;red]\n&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        str.flush();        <span class="comment">// TODO: временно, убрать!</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// рисуем связи к дочерним элементам</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">outArcBtwNodes</a>(str, node, node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a1f13b71041436f76b696174a0fbd55da">getLeft</a>(), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">outArcBtwNodes</a>(str, node, node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa5d5e54b4110ac9f71ca202af5045434">getRight</a>(), <span class="keyword">false</span>);        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// обраатываем рекурсивно дочерние элементы</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">outNode</a>(str, node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a1f13b71041436f76b696174a0fbd55da">getLeft</a>());</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">outNode</a>(str, node-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa5d5e54b4110ac9f71ca202af5045434">getRight</a>());</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">  110</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">outArcBtwNodes</a>(std::ostream&amp; str, <span class="keyword">const</span> TTreeNode* par, <span class="keyword">const</span> TTreeNode* chld, <span class="keywordtype">bool</span> ifLeft)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        std::stringstream ss;           <span class="comment">// опр. идентификатор дочки</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (chld)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            ss &lt;&lt; chld-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>(); <span class="comment">// &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">// если дочернего элемента реально нет, надо вывести специальный null-узел</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            ss &lt;&lt; <span class="stringliteral">&quot;NULL&quot;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            ss &lt;&lt; (ifLeft ? <span class="stringliteral">&quot;l&quot;</span> : <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            ss &lt;&lt;  par-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>(); <span class="comment">// &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="comment">// собственно дуга</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        str &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt; par-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>() &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            &lt;&lt; ss.str()<span class="comment">//ss.rdbuf()</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        str.flush();        <span class="comment">// TODO: временно, убрать!</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="comment">// если дочка была null, специально под нее элемент</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (!chld)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            str &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                &lt;&lt; ss.str()<span class="comment">//ss.rdbuf()</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; [label=\&quot;nil\&quot;,width=0.3,height=0.2,shape=box,fillcolor=black]\n&quot;</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            str.flush();        <span class="comment">// TODO: временно, убрать!</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#adbd5dc37dc3ad7025abc6174fa67323a">  143</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#adbd5dc37dc3ad7025abc6174fa67323a">outHeader</a>(std::ostream&amp; str, <span class="keyword">const</span> <span class="keywordtype">char</span>* grLbl = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        str &lt;&lt; <span class="stringliteral">&quot;digraph G {\n&quot;</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// если есть метка графа, добавим:</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">if</span> (grLbl)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            str &lt;&lt; <span class="stringliteral">&quot;    label=\&quot;&quot;</span> &lt;&lt; grLbl &lt;&lt; <span class="stringliteral">&quot;\&quot;;\n&quot;</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        str &lt;&lt; <span class="stringliteral">&quot;    node [width=0.5,fontcolor=white,style=filled];\n&quot;</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a4092c1346fd21366eed8d20eb7f07ea2">  155</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a4092c1346fd21366eed8d20eb7f07ea2">outTail</a>(std::ostream&amp; str)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        str &lt;&lt; <span class="stringliteral">&quot;}\n&quot;</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}; <span class="comment">// class RBTreeGvDumper</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Compar&gt;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html">  173</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html">RBTreeDefDumper</a> : <span class="keyword">public</span> <a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">xi::IRBTreeDumper</a>&lt;Element, Compar&gt; {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a04b9f58914c9f7bdad49f3ea3dbf0ecf">  178</a></span>&#160;    <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a04b9f58914c9f7bdad49f3ea3dbf0ecf">RBTreeDefDumper</a>(<span class="keyword">const</span> std::string&amp; evLogFileName, <span class="keyword">const</span> std::string&amp; imgPath) <span class="comment">//;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        : <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a01ed3cf073f530f5c18e201c7e356c71">_imgPath</a>(imgPath)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        , <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">_imgCounter</a>(0)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a>.open(evLogFileName.c_str());</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a>.is_open())</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Error opening event log for output&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Выводим приветствие</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a> &lt;&lt; <span class="stringliteral">&quot;RBTree Event Log opened\n-----------------------\n&quot;</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a728483157f224ab3e45b28cdb87889c5">  193</a></span>&#160;    <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a728483157f224ab3e45b28cdb87889c5">~RBTreeDefDumper</a>() <span class="comment">//;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">//RBTreeDefDumper::~RBTreeDefDumper()</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a> &lt;&lt; <span class="stringliteral">&quot;-----------------------\nRBTree Event Log closed\n&quot;</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a>.close();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a2c3e3d4638150b4873d9ad03406a982a">  201</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a2c3e3d4638150b4873d9ad03406a982a">rbTreeEvent</a>(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html#abe238dd0dd7890ab94adf16854e782ab">RBTreeDumperEvent</a> ev, <a class="code" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a>* tr, <a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">TTreeNode</a>* nd)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">// для любых сообщений формируем имя файла</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordtype">char</span> fnBuf[255];</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        sprintf(fnBuf, <span class="stringliteral">&quot;%s\\dump_#_%04d.gv&quot;</span>, <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a01ed3cf073f530f5c18e201c7e356c71">_imgPath</a>.c_str(), <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">_imgCounter</a>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="comment">// формируем информационную строку с помощью потока-строки       </span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        std::stringstream ss;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        ss &lt;&lt; <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a947d6ed45ec82d7e100bee5ce7dfab86">getInfoStr</a>(ev);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="comment">// для всех сообщений доформируем строку с узлом-инициатором</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        ss &lt;&lt; <span class="stringliteral">&quot; [&quot;</span> &lt;&lt; nd-&gt;<a class="code" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">getKey</a>() &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a> &lt;&lt; ss.str();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a> &lt;&lt; <span class="stringliteral">&quot; # &quot;</span> &lt;&lt; std::setw(4) &lt;&lt; <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">_imgCounter</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a339a821b5c0c787b279ba60dfc371175">_gvDumper</a>.<a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ac337179e09b6d7819ec38a0abbe06714">dump</a>(fnBuf, *tr, ss.str().c_str());</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        ++<a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">_imgCounter</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    } <span class="comment">// RBTreeEvent()</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a947d6ed45ec82d7e100bee5ce7dfab86">  224</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a947d6ed45ec82d7e100bee5ce7dfab86">getInfoStr</a>(<a class="code" href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html#abe238dd0dd7890ab94adf16854e782ab">RBTreeDumperEvent</a> ev)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">// храним строки прямо здесь (в единственном статическом экземпляре)</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="comment">// данный подход не очень хорош, особенно с точки зрения потокобезопасности,</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// однако возвращать адрес на статический объект, объявленный внутри функции,</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// все же возможно, т.к. время жизни этого объекта дольше вызова функции.</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="comment">// этому подходу лучше было бы предпочесть объявление этих констант статическими</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// вне класса, что, однако, несколько громоздко из-за необходимости таскать</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// за каждым выносням объявлением описание шаблона.</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_ROTL   = <span class="stringliteral">&quot;Rot Left&quot;</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_ROTR   = <span class="stringliteral">&quot;Rot Right&quot;</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_BSTINS = <span class="stringliteral">&quot;BST Insert&quot;</span>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_INSERT = <span class="stringliteral">&quot;RBT Insert&quot;</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_REC1   = <span class="stringliteral">&quot;Recolor 1&quot;</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_ROT3D  = <span class="stringliteral">&quot;Recolor 3 dad&quot;</span>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* INFOS_ROT3G  = <span class="stringliteral">&quot;Recolor 3 grandpa&quot;</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">// повороты</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_LROT ||</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RROT)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_LROT)</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">return</span> INFOS_ROTL;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">return</span> INFOS_ROTR;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">// обычная BST-вставка</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_BST_INS)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="keywordflow">return</span> INFOS_BSTINS;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// RBT-вставка после балансировки</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_INSERT)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">return</span> INFOS_INSERT;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// NB: в принципе, в следующем if-е нет необходимости, т.к. это единственная</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// возможная ветка, однако, если вдруг будут свдиги вверх/вниз или появятся новые</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">// секции, обработать этот момент будет проще.</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// перекраски</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">//if (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR1 ||</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">//    ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR3D ||</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment">//    ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR3G)</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">//{</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR1)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">return</span> INFOS_REC1;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> (ev == IRBTreeDumper&lt;Element, Compar&gt;::DE_AFTER_RECOLOR3D)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">return</span> INFOS_ROT3D;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">return</span> INFOS_ROT3G;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">//}</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">  283</a></span>&#160;    std::ofstream <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">_evLogFile</a>;               </div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a01ed3cf073f530f5c18e201c7e356c71">  284</a></span>&#160;    std::string <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a01ed3cf073f530f5c18e201c7e356c71">_imgPath</a>;                   </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">  286</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">_imgCounter</a>;               </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="../../d7/de3/class_r_b_tree_def_dumper.html#a339a821b5c0c787b279ba60dfc371175">  289</a></span>&#160;    <a class="code" href="../../d1/de7/class_r_b_tree_gv_dumper.html">RBTreeGvDumper&lt;int, std::less&lt;int&gt;</a>&gt; <a class="code" href="../../d7/de3/class_r_b_tree_def_dumper.html#a339a821b5c0c787b279ba60dfc371175">_gvDumper</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}; <span class="comment">// class RBTreeDefDumper </span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#endif // RBTREE_TESTS_DEF_DUMPER_H_</span></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_ad5f1083afa6a0781ab0dbfe71691ed07"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#ad5f1083afa6a0781ab0dbfe71691ed07">RBTreeGvDumper::outTree</a></div><div class="ttdeci">void outTree(std::ostream &amp;str, const TTree &amp;tree)</div><div class="ttdoc">Выводит в поток собственно элементы дерева. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:73</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html">RBTreeDefDumper</a></div><div class="ttdoc">Реализация по умолчанию отладочного дампера дерева. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:173</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_adbd5dc37dc3ad7025abc6174fa67323a"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#adbd5dc37dc3ad7025abc6174fa67323a">RBTreeGvDumper::outHeader</a></div><div class="ttdeci">void outHeader(std::ostream &amp;str, const char *grLbl=nullptr)</div><div class="ttdoc">Выводит в поток заголовочную часть графа. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:143</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a67bd446d739383a49508ab88b01be05b"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a67bd446d739383a49508ab88b01be05b">xi::RBTree::Node::isBlack</a></div><div class="ttdeci">bool isBlack() const </div><div class="ttdoc">Возвращает истину, если узел черный, иначе ложь. </div><div class="ttdef"><b>Definition:</b> rbtree.h:132</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a728483157f224ab3e45b28cdb87889c5"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a728483157f224ab3e45b28cdb87889c5">RBTreeDefDumper::~RBTreeDefDumper</a></div><div class="ttdeci">~RBTreeDefDumper()</div><div class="ttdoc">Деструктор. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:193</div></div>
+<div class="ttc" id="rbtree_8h_html"><div class="ttname"><a href="../../d5/ddf/rbtree_8h.html">rbtree.h</a></div><div class="ttdoc">Определение классов красно-черного дерева </div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a01ed3cf073f530f5c18e201c7e356c71"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a01ed3cf073f530f5c18e201c7e356c71">RBTreeDefDumper::_imgPath</a></div><div class="ttdeci">std::string _imgPath</div><div class="ttdoc">Путь к каталогу с картинками. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:284</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree</a></div><div class="ttdoc">Главный класс красно-черного дерева. </div><div class="ttdef"><b>Definition:</b> rbtree.h:28</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a947d6ed45ec82d7e100bee5ce7dfab86"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a947d6ed45ec82d7e100bee5ce7dfab86">RBTreeDefDumper::getInfoStr</a></div><div class="ttdeci">const char * getInfoStr(RBTreeDumperEvent ev)</div><div class="ttdoc">Для переданного типа события, возвращает соответствующую ему информационную строку. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:224</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_aa5d5e54b4110ac9f71ca202af5045434"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#aa5d5e54b4110ac9f71ca202af5045434">xi::RBTree::Node::getRight</a></div><div class="ttdeci">const Node * getRight() const </div><div class="ttdoc">Возвращает константный указатель на правый дочерний узел. </div><div class="ttdef"><b>Definition:</b> rbtree.h:123</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_ac337179e09b6d7819ec38a0abbe06714"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#ac337179e09b6d7819ec38a0abbe06714">RBTreeGvDumper::dump</a></div><div class="ttdeci">void dump(const std::string &amp;fn, const TTree &amp;tree, const char *grLbl=nullptr)</div><div class="ttdoc">Выполняет дамп. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:45</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_a4092c1346fd21366eed8d20eb7f07ea2"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#a4092c1346fd21366eed8d20eb7f07ea2">RBTreeGvDumper::outTail</a></div><div class="ttdeci">void outTail(std::ostream &amp;str)</div><div class="ttdoc">Выводит в поток хвостовую часть графа. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:155</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_af8a5bf4cc7a436c071f5ca570ba9cb8f"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#af8a5bf4cc7a436c071f5ca570ba9cb8f">xi::RBTree::Node::getKey</a></div><div class="ttdeci">const Element &amp; getKey() const </div><div class="ttdoc">Возвращает константную ссылку на элемент/ключ, храняющийся в узле. </div><div class="ttdef"><b>Definition:</b> rbtree.h:180</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html_a1f13b71041436f76b696174a0fbd55da"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html#a1f13b71041436f76b696174a0fbd55da">xi::RBTree::Node::getLeft</a></div><div class="ttdeci">const Node * getLeft() const </div><div class="ttdoc">Возвращает константный указатель на левый дочерний узел. </div><div class="ttdef"><b>Definition:</b> rbtree.h:120</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_html_af3b5892f2473d0e79d22f36d940c48bd"><div class="ttname"><a href="../../d4/dbf/classxi_1_1_r_b_tree.html#af3b5892f2473d0e79d22f36d940c48bd">xi::RBTree::getRoot</a></div><div class="ttdeci">const Node * getRoot() const </div><div class="ttdoc">Возвращает неизменяемый указатель на корневой элемент. </div><div class="ttdef"><b>Definition:</b> rbtree.h:315</div></div>
+<div class="ttc" id="classxi_1_1_i_r_b_tree_dumper_html_abe238dd0dd7890ab94adf16854e782ab"><div class="ttname"><a href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html#abe238dd0dd7890ab94adf16854e782ab">xi::IRBTreeDumper&lt; int, std::less&lt; int &gt; &gt;::RBTreeDumperEvent</a></div><div class="ttdeci">RBTreeDumperEvent</div><div class="ttdoc">Типы событий, на которые реагируем дампер. </div><div class="ttdef"><b>Definition:</b> rbtree.h:44</div></div>
+<div class="ttc" id="classxi_1_1_i_r_b_tree_dumper_html"><div class="ttname"><a href="../../d1/dd3/classxi_1_1_i_r_b_tree_dumper.html">xi::IRBTreeDumper</a></div><div class="ttdoc">Класс-интерфейс, описывающий коллбек-слушателя для событий, происходящих с деревом. </div><div class="ttdef"><b>Definition:</b> rbtree.h:37</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_a51b61046d3436939e1651c3118f21c46"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">RBTreeGvDumper::outArcBtwNodes</a></div><div class="ttdeci">void outArcBtwNodes(std::ostream &amp;str, const TTreeNode *par, const TTreeNode *chld, bool ifLeft)</div><div class="ttdoc">Рисует дугу между родительским нодом par и одной из его дочек chld. ifLeft определяет, что узел левый, иначе — правый — нужен для формирования идентификатора </div><div class="ttdef"><b>Definition:</b> def_dumper.h:110</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html_af686e1b3b8c2fc146795d0de16065bf6"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">RBTreeGvDumper::outNode</a></div><div class="ttdeci">void outNode(std::ostream &amp;str, const TTreeNode *node)</div><div class="ttdoc">Выводит в поток информацию об узле \с и связей с его дочками, но не с предком: предок должен сам эту ...</div><div class="ttdef"><b>Definition:</b> def_dumper.h:84</div></div>
+<div class="ttc" id="class_r_b_tree_gv_dumper_html"><div class="ttname"><a href="../../d1/de7/class_r_b_tree_gv_dumper.html">RBTreeGvDumper</a></div><div class="ttdoc">Осуществляет вывод дерева в виде структуры на языке DOT утилиты GraphViz. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:33</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a6b2982bd1074516b343501a5f528f5f5"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a6b2982bd1074516b343501a5f528f5f5">RBTreeDefDumper::_evLogFile</a></div><div class="ttdeci">std::ofstream _evLogFile</div><div class="ttdoc">Файл журнала. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:283</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a339a821b5c0c787b279ba60dfc371175"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a339a821b5c0c787b279ba60dfc371175">RBTreeDefDumper::_gvDumper</a></div><div class="ttdeci">RBTreeGvDumper&lt; int, std::less&lt; int &gt; &gt; _gvDumper</div><div class="ttdoc">Выводить в формате GraphViz. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:289</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a2c3e3d4638150b4873d9ad03406a982a"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a2c3e3d4638150b4873d9ad03406a982a">RBTreeDefDumper::rbTreeEvent</a></div><div class="ttdeci">virtual void rbTreeEvent(RBTreeDumperEvent ev, TTree *tr, TTreeNode *nd) override</div><div class="ttdoc">Событие, происходящее с деревом. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:201</div></div>
+<div class="ttc" id="classxi_1_1_r_b_tree_1_1_node_html"><div class="ttname"><a href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">xi::RBTree::Node</a></div><div class="ttdoc">Узел КЧД. </div><div class="ttdef"><b>Definition:</b> rbtree.h:100</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a65768bffab69793b4c3ee8d8d301a407"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a65768bffab69793b4c3ee8d8d301a407">RBTreeDefDumper::_imgCounter</a></div><div class="ttdeci">unsigned int _imgCounter</div><div class="ttdoc">Счетчик для номеров картинок. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:286</div></div>
+<div class="ttc" id="class_r_b_tree_def_dumper_html_a04b9f58914c9f7bdad49f3ea3dbf0ecf"><div class="ttname"><a href="../../d7/de3/class_r_b_tree_def_dumper.html#a04b9f58914c9f7bdad49f3ea3dbf0ecf">RBTreeDefDumper::RBTreeDefDumper</a></div><div class="ttdeci">RBTreeDefDumper(const std::string &amp;evLogFileName, const std::string &amp;imgPath)</div><div class="ttdoc">Создает дампер с путями к файлу журнала evLogFile и каталогу для картинок imgPath. </div><div class="ttdef"><b>Definition:</b> def_dumper.h:178</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Red-black tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 15 Май 2017 21:15:57. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

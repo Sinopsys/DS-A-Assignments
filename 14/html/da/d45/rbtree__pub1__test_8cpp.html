@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Red-black tree / A&amp;DS HSE&#39;s Course: Файл tests/gtest/src/rbtree_pub1_test.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Red-black tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Red-black tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="../../dir_3291c6cb888298ddcba2a410413770df.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_04ea101b266f0eb9e0fe0f13e09294a3.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#typedef-members">Определения типов</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл rbtree_pub1_test.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Unit tests for <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html" title="Главный класс красно-черного дерева. ">xi::RBTree</a> interfaces.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/ddf/rbtree_8h_source.html">rbtree.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d5d/def__dumper_8h_source.html">def_dumper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d1f/individual_8h_source.html">individual.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для rbtree_pub1_test.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/db3/rbtree__pub1__test_8cpp__incl.png" border="0" usemap="#tests_2gtest_2src_2rbtree__pub1__test_8cpp" alt=""/></div>
+<map name="tests_2gtest_2src_2rbtree__pub1__test_8cpp" id="tests_2gtest_2src_2rbtree__pub1__test_8cpp">
+<area shape="rect" id="node3" href="../../d5/ddf/rbtree_8h.html" title="Определение классов красно&#45;черного дерева " alt="" coords="105,169,171,196"/>
+<area shape="rect" id="node5" href="../../d2/d5d/def__dumper_8h.html" title="Реализация дампера дерева по умолчанию " alt="" coords="176,95,276,121"/>
+<area shape="rect" id="node9" href="../../d5/d1f/individual_8h.html" title="Описание индивидуальных настроек тестирования, находящих свое отображение в программном коде..." alt="" coords="301,95,386,121"/>
+<area shape="rect" id="node4" href="../../da/d3f/rbtree_8hpp.html" title="Реализация классов красно&#45;черного дерева " alt="" coords="98,244,178,271"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d1d/class_r_b_tree_pub_test.html">RBTreePubTest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тестовый класс для тестирования открытых интерфейсов классов КЧД в виде черного ящика.  <a href="../../d5/d1d/class_r_b_tree_pub_test.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:a5ba67c28ceabb2a67ac273941372f947"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ba67c28ceabb2a67ac273941372f947"></a>
+typedef <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">RBTree</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RBTreeInt</b></td></tr>
+<tr class="separator:a5ba67c28ceabb2a67ac273941372f947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a56a1cc06e9c87ea48ab396ecb48edeaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56a1cc06e9c87ea48ab396ecb48edeaa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d5/d1d/class_r_b_tree_pub_test.html">RBTreePubTest</a>, Simplest)</td></tr>
+<tr class="separator:a56a1cc06e9c87ea48ab396ecb48edeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208da7b3196fc0bec9208cd4b2a16a7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a208da7b3196fc0bec9208cd4b2a16a7c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d5/d1d/class_r_b_tree_pub_test.html">RBTreePubTest</a>, insert1)</td></tr>
+<tr class="separator:a208da7b3196fc0bec9208cd4b2a16a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24395ee9a5b8c90853178d972afc7c90"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24395ee9a5b8c90853178d972afc7c90"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d5/d1d/class_r_b_tree_pub_test.html">RBTreePubTest</a>, find1)</td></tr>
+<tr class="separator:a24395ee9a5b8c90853178d972afc7c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd06b2cc98fa48ba94b38d73e69e2253"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd06b2cc98fa48ba94b38d73e69e2253"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d5/d1d/class_r_b_tree_pub_test.html">RBTreePubTest</a>, find2)</td></tr>
+<tr class="separator:abd06b2cc98fa48ba94b38d73e69e2253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Unit tests for <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html" title="Главный класс красно-черного дерева. ">xi::RBTree</a> interfaces. </p>
+<dl class="section author"><dt>Автор</dt><dd>Sergey Shershakov </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>01.05.2017 This is a part of the course "Algorithms and Data Structures" provided by the School of Software Engineering of the Faculty of Computer Science at the Higher School of Economics.</dd></dl>
+<p>Gtest-based unit test. The naming conventions imply the name of a unit-test module is the same as the name of the corresponding tested module with _test suffix</p>
+<p>Тестирование публичных методов, то есть "правильное" тестирование. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Red-black tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 15 Май 2017 21:15:57. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Red-black tree / A&amp;DS HSE&#39;s Course: Шаблон класса RBTreeGvDumper&lt; Element, Compar &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Red-black tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">Red-black tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="../../d5/d58/class_r_b_tree_gv_dumper-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса RBTreeGvDumper&lt; Element, Compar &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Осуществляет вывод дерева в виде структуры на языке DOT утилиты GraphViz.  
+ <a href="../../d1/de7/class_r_b_tree_gv_dumper.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d5d/def__dumper_8h_source.html">def_dumper.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a19cd0538eb4c427abb802639969b96eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19cd0538eb4c427abb802639969b96eb"></a>
+typedef <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree</a>&lt; Element, Compar &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TTree</b></td></tr>
+<tr class="separator:a19cd0538eb4c427abb802639969b96eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d82bf35fc7c593a72b6572e508a9c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1d82bf35fc7c593a72b6572e508a9c6"></a>
+typedef <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">xi::RBTree</a>&lt; Element, Compar &gt;::Node&#160;</td><td class="memItemRight" valign="bottom"><b>TTreeNode</b></td></tr>
+<tr class="separator:ac1d82bf35fc7c593a72b6572e508a9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ac337179e09b6d7819ec38a0abbe06714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ac337179e09b6d7819ec38a0abbe06714">dump</a> (const std::string &amp;fn, const <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a> &amp;tree, const char *grLbl=nullptr)</td></tr>
+<tr class="memdesc:ac337179e09b6d7819ec38a0abbe06714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет дамп.  <a href="#ac337179e09b6d7819ec38a0abbe06714">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac337179e09b6d7819ec38a0abbe06714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:ad5f1083afa6a0781ab0dbfe71691ed07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#ad5f1083afa6a0781ab0dbfe71691ed07">outTree</a> (std::ostream &amp;str, const <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a> &amp;tree)</td></tr>
+<tr class="memdesc:ad5f1083afa6a0781ab0dbfe71691ed07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в поток собственно элементы дерева.  <a href="#ad5f1083afa6a0781ab0dbfe71691ed07">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad5f1083afa6a0781ab0dbfe71691ed07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af686e1b3b8c2fc146795d0de16065bf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af686e1b3b8c2fc146795d0de16065bf6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#af686e1b3b8c2fc146795d0de16065bf6">outNode</a> (std::ostream &amp;str, const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">TTreeNode</a> *node)</td></tr>
+<tr class="memdesc:af686e1b3b8c2fc146795d0de16065bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в поток информацию об узле \с и связей с его дочками, но не с предком: предок должен сам эту информацию про этого своего потока вывести будет <br /></td></tr>
+<tr class="separator:af686e1b3b8c2fc146795d0de16065bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b61046d3436939e1651c3118f21c46"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51b61046d3436939e1651c3118f21c46"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a51b61046d3436939e1651c3118f21c46">outArcBtwNodes</a> (std::ostream &amp;str, const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">TTreeNode</a> *par, const <a class="el" href="../../de/d0f/classxi_1_1_r_b_tree_1_1_node.html">TTreeNode</a> *chld, bool ifLeft)</td></tr>
+<tr class="memdesc:a51b61046d3436939e1651c3118f21c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Рисует дугу между родительским нодом <code>par</code> и одной из его дочек <code>chld</code>. <code>ifLeft</code> определяет, что узел левый, иначе — правый — нужен для формирования идентификатора <br /></td></tr>
+<tr class="separator:a51b61046d3436939e1651c3118f21c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd5dc37dc3ad7025abc6174fa67323a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbd5dc37dc3ad7025abc6174fa67323a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#adbd5dc37dc3ad7025abc6174fa67323a">outHeader</a> (std::ostream &amp;str, const char *grLbl=nullptr)</td></tr>
+<tr class="memdesc:adbd5dc37dc3ad7025abc6174fa67323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в поток заголовочную часть графа. <br /></td></tr>
+<tr class="separator:adbd5dc37dc3ad7025abc6174fa67323a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4092c1346fd21366eed8d20eb7f07ea2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4092c1346fd21366eed8d20eb7f07ea2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html#a4092c1346fd21366eed8d20eb7f07ea2">outTail</a> (std::ostream &amp;str)</td></tr>
+<tr class="memdesc:a4092c1346fd21366eed8d20eb7f07ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в поток хвостовую часть графа. <br /></td></tr>
+<tr class="separator:a4092c1346fd21366eed8d20eb7f07ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename Element, typename Compar&gt;<br />
+class RBTreeGvDumper&lt; Element, Compar &gt;</h3>
+
+<p>Осуществляет вывод дерева в виде структуры на языке DOT утилиты GraphViz. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="ac337179e09b6d7819ec38a0abbe06714"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element, typename Compar&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html">RBTreeGvDumper</a>&lt; Element, Compar &gt;::dump </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a> &amp;&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>grLbl</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет дамп. </p>
+<p>Если файл не может быть открыт, кидает исключение <code>std::invalid_argument</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad5f1083afa6a0781ab0dbfe71691ed07"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Element, typename Compar&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d1/de7/class_r_b_tree_gv_dumper.html">RBTreeGvDumper</a>&lt; Element, Compar &gt;::outTree </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dbf/classxi_1_1_r_b_tree.html">TTree</a> &amp;&#160;</td>
+          <td class="paramname"><em>tree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выводит в поток собственно элементы дерева. </p>
+<p>Для возможности работы этого метода необходимо, чтобы для типа Element был перегружен оператор вывода в поток: <code>ostream&amp; operator&lt;&lt;(ostream&amp;, const Element&amp; el)</code>. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>tests/gtest/src/<a class="el" href="../../d2/d5d/def__dumper_8h_source.html">def_dumper.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Red-black tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 15 Май 2017 21:15:58. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

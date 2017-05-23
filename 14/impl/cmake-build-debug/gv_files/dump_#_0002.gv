@@ -1,0 +1,13 @@
+digraph G {
+    label="BST Insert [5]";
+    node [width=0.5,fontcolor=white,style=filled];
+    10 [fillcolor=black]
+    10 -> 5
+    10 -> NULLr10
+    NULLr10 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
+    5 [fillcolor=black]
+    5 -> NULLl5
+    NULLl5 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
+    5 -> NULLr5
+    NULLr5 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
+}

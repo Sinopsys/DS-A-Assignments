@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/def_dumper.h
+string
+-
+iostream
+-
+fstream
+-
+sstream
+-
+iomanip
+-
+rbtree.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/rbtree.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/main.cpp
+iostream
+-
+rbtree.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/rbtree.h
+def_dumper.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/def_dumper.h
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/rbtree.h
+rbtree.hpp
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/rbtree.hpp
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/14/impl/rbtree.hpp
+stdexcept
+-
+
