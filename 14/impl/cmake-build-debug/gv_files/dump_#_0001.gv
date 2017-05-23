@@ -1,9 +1,9 @@
 digraph G {
-    label="RBT Insert [10]";
+    label="RBT Insert [4]";
     node [width=0.5,fontcolor=white,style=filled];
-    10 [fillcolor=black]
-    10 -> NULLl10
-    NULLl10 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
-    10 -> NULLr10
-    NULLr10 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
+    4 [fillcolor=black]
+    4 -> NULLl4
+    NULLl4 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
+    4 -> NULLr4
+    NULLr4 [label="nil",width=0.3,height=0.2,shape=box,fillcolor=black]
 }

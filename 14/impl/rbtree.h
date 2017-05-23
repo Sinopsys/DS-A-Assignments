@@ -17,6 +17,8 @@
 #define RBTREE_RBTREE_H_
 
 
+#define RBTREE_WITH_DELETION
+
 namespace xi
 {
 // Предварительное описание
@@ -190,6 +192,7 @@ namespace xi
             const Element &getKey() const
             { return _key; }
 
+
         protected:
 
             Node(const Element &key = Element(),
@@ -310,7 +313,8 @@ namespace xi
          *
          *  Если соответствующего ключа нет в дереве, генерирует исключительную ситуацию \c std::invalid_argument.
          */
-        void remove(const Element& key);
+        void remove(const Element &key);
+        void remove_fixup(Node * x);
 #endif
 
         /** \brief Ищет элемент \c key в дереве и возвращает соответствующий ему узел.
@@ -394,6 +398,7 @@ namespace xi
           */
         void rotRight(Node *nd);
 
+        Node *get_successor(Node *);
 
     protected:
         RBTree(const RBTree &);                      ///< КК не доступен.

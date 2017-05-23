@@ -131,7 +131,6 @@ namespace xi
         delete nd;
     }
 
-
     template<typename Element, typename Compar>
     void RBTree<Element, Compar>::insert(const Element &key)
     {
@@ -141,6 +140,9 @@ namespace xi
         // отладочное событие
         if (_dumper)
             _dumper->rbTreeEvent(IRBTreeDumper<Element, Compar>::DE_AFTER_BST_INS, this, newNode);
+
+        if (newNode != _root)
+            newNode->_color = RED;
 
         rebalance(newNode);
 
@@ -154,7 +156,20 @@ namespace xi
     template<typename Element, typename Compar>
     const typename RBTree<Element, Compar>::Node *RBTree<Element, Compar>::find(const Element &key)
     {
-        // TODO: метод реализуют студенты
+        if (_root == nullptr)
+            return nullptr;
+        else
+        {
+            Node *x = _root;
+            while (x != nullptr)
+                if (key < x->_key)
+                    x = x->_left;
+                else if (key > x->_key)
+                    x = x->_right;
+                else
+                    return x;
+        }
+        return nullptr;
     }
 
     template<typename Element, typename Compar>
@@ -163,14 +178,14 @@ namespace xi
     {
         Node *z = new Node(key);
         Node *y = nullptr;
-        Node *x = _root;
-        while (x)
+        Node *nd = _root;
+        while (nd)
         {
-            y = x;
-            if (z->_key < x->_key)
-                x = x->_left;
-            else if (z->_key > x->_key)
-                x = x->_right;
+            y = nd;
+            if (z->_key < nd->_key)
+                nd = nd->_left;
+            else if (z->_key > nd->_key)
+                nd = nd->_right;
             else
             {
                 std::cerr << "key already exists" << std::endl;
@@ -261,7 +276,7 @@ namespace xi
             if (z->_parent == z->_parent->_parent->_left)
             {
                 y = z->_parent->_parent->_right;
-                if (y->_color == RED) //case1
+                if (y && y->_color == RED) //case1
                 {
                     z->_parent->_color = BLACK;
                     y->_color = BLACK;
@@ -283,7 +298,7 @@ namespace xi
             } else
             {
                 y = z->_parent->_parent->_left;
-                if (y->_color == RED) //case4
+                if (y && y->_color == RED) //case4
                 {
                     z->_parent->_color = BLACK;
                     y->_color = BLACK;
@@ -312,19 +327,31 @@ namespace xi
     template<typename Element, typename Compar>
     void RBTree<Element, Compar>::rotLeft(typename RBTree<Element, Compar>::Node *nd)
     {
-        // TODO: метод реализуют студенты
-
-        // правый потомок, который станет после левого поворота "выше"
         Node *y = nd->_right;
-
         if (!y)
-            throw std::invalid_argument("Can't rotate left since the right child is nil");
+            throw std::invalid_argument("Can't rotate _left since the _right child is nil");
+        nd->_right = y->_left;
 
+        if (y->_left)
+        {
+            y->_left->_parent = nd;
+        }
 
+        y->_parent = nd->_parent;
 
-        // ...
+        if (!nd->_parent)
+        {
+            _root = y;
+        } else if (nd == nd->_parent->_left)
+        {
+            nd->_parent->_left = y;
+        } else
+        {
+            nd->_parent->_right = y;
+        }
 
-
+        y->_left = nd;
+        nd->_parent = y;
         // отладочное событие
         if (_dumper)
             _dumper->rbTreeEvent(IRBTreeDumper<Element, Compar>::DE_AFTER_LROT, this, nd);
@@ -334,14 +361,197 @@ namespace xi
     template<typename Element, typename Compar>
     void RBTree<Element, Compar>::rotRight(typename RBTree<Element, Compar>::Node *nd)
     {
-        // TODO: метод реализуют студенты
+        Node *x = nd->_left;
+        nd->_left = x->_right;
 
+        if (x->_right != nullptr)
+        {
+            x->_right->_parent = nd;
+        }
 
-        // ...
+        x->_parent = nd->_parent;
+
+        if (nd->_parent == nullptr)
+        {
+            _root = x;
+        } else if (nd == nd->_parent->_left)
+        {
+            nd->_parent->_left = x;
+        } else
+        {
+            nd->_parent->_right = x;
+        }
+
+        x->_right = nd;
+        nd->_parent = x;
 
         // отладочное событие
         if (_dumper)
             _dumper->rbTreeEvent(IRBTreeDumper<Element, Compar>::DE_AFTER_RROT, this, nd);
+    }
+// todo REFACTOR TO SETBLACK ETC
+
+    template<typename Element, typename Compar>
+    void RBTree<Element, Compar>::remove(const Element &key)
+    {
+        Node *z = (Node *) find(key);
+
+        if (z == nullptr)
+            std::cout << "key doesn't exist!" << std::endl;
+        else
+        {
+            Node *y = nullptr;
+            Node *x = nullptr;
+
+            if (z->_left == nullptr || z->_right == nullptr)
+                y = z;
+            else
+                y = get_successor(z);
+
+            if (y->_left != nullptr)
+                x = y->_left;
+            else
+                x = y->_right;
+
+            x->_parent = y->_parent;
+
+            if (y->_parent == nullptr)
+                _root = x;
+            else if (y == y->_parent->_left)
+                y->_parent->_left = x;
+            else
+                y->_parent->_right = x;
+
+            if (y != z)
+                z->_key = y->_key;
+
+            if (y->_color == BLACK)
+                remove_fixup(x);
+            delete y;
+            std::cout << "node deleted" << std::endl;
+        }
+        return;
+    }
+
+    template<typename Element, typename Compar>
+    typename RBTree<Element, Compar>::Node *RBTree<Element, Compar>::get_successor(RBTree::Node *x)
+    {
+        if (x->_right != nullptr)
+        {
+            Node *t = x->_right;
+            while (t->_left != nullptr)
+                t = t->_left;
+            return t;
+        } else
+        {
+            Node *y = x->_parent;
+            while (y != nullptr && x == y->_right)
+            {
+                x = y;
+                y = y->_parent;
+            }
+            return y;
+        }
+
+    }
+
+    template<typename Element, typename Compar>
+    void RBTree<Element, Compar>::remove_fixup(RBTree::Node *x)
+    {
+        Node *uncle = nullptr;
+        if (x->_color == RED)
+        {
+            x->_color = BLACK;
+        } else
+        {
+            while (x->_color == BLACK && x != _root)
+            {
+                if (x == x->_parent->_left)
+                {
+                    uncle = x->_parent->_right;
+                    // case1 for _left
+                    //
+                    if (uncle->_color == RED)
+                    {
+                        uncle->_color = BLACK;
+                        x->_parent->_color = RED;
+                        rotLeft(x->_parent);
+                        uncle = x->_parent->_right;
+                    } else
+                    {
+                        // case2 for _left
+                        //
+                        if (uncle->_left->_color == BLACK && uncle->_right->_color == BLACK)
+                        {
+                            uncle->_color = RED;
+                            x = x->_parent;
+                        } else
+                        {
+                            // case3 for _left
+                            //
+                            if (uncle->_right->_color == BLACK)
+                            {
+                                uncle->_left->_color = BLACK;
+                                uncle->_color = RED;
+                                rotRight(uncle);
+                                uncle = x->_parent->_right;
+                            }
+                            // case4 for _left
+                            //
+                            uncle->_color = x->_parent->_color;
+                            x->_parent->_color = BLACK;
+                            uncle->_right->_color = BLACK;
+                            rotLeft(x->_parent);
+                            x = _root;
+                        }
+                    }
+                } else
+                {
+                    uncle = x->_parent->_left;
+
+                    // case1 for right
+                    //
+                    if (uncle->_color == RED)
+                    {
+                        uncle->_color = BLACK;
+                        x->_parent->_color = RED;
+                        rotRight(x->_parent);
+                        uncle = x->_parent->_left;
+                    } else
+                    {
+                        // case2 for right
+                        //
+                        if (uncle->_left->_color == BLACK && uncle->_right->_color == BLACK)
+                        {
+                            uncle->_color = RED;
+                            x = x->_parent;
+                        } else
+                        {
+                            // case3 for right
+                            //
+                            if (uncle->_left->_color == BLACK)
+                            {
+                                uncle->_right->_color = BLACK;
+                                uncle->_color = RED;
+                                rotLeft(uncle);
+                                uncle = x->_parent->_left;
+                            }
+
+                            // case4 for right
+                            //
+                            uncle->_color = x->_parent->_color;
+                            x->_parent->_color = BLACK;
+                            uncle->_left->_color = BLACK;
+                            rotRight(x->_parent);
+                            x = _root;
+                        }
+                    }
+                }
+            }
+        }
+        _root->_color = BLACK;
+
+        return;
     }
 
 
