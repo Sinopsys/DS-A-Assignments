@@ -16,8 +16,9 @@
 #ifndef RBTREE_RBTREE_H_
 #define RBTREE_RBTREE_H_
 
-
-#define RBTREE_WITH_DELETION
+//
+// KUPRIYANOV KIRILL BSE 151
+//
 
 namespace xi
 {
@@ -314,7 +315,9 @@ namespace xi
          *  Если соответствующего ключа нет в дереве, генерирует исключительную ситуацию \c std::invalid_argument.
          */
         void remove(const Element &key);
-        void remove_fixup(Node * x);
+
+        void remove_fixup(Node *x);
+
 #endif
 
         /** \brief Ищет элемент \c key в дереве и возвращает соответствующий ему узел.
@@ -323,7 +326,7 @@ namespace xi
          *
          *  \returns узел элемента \c key, если он есть в дереве, иначе \c nullptr.
          */
-        const Node *find(const Element &key);
+        //const Node *find(const Element &key);
 
         /** \brief Возвращает истину, если дерево пусто, ложь иначе. */
         bool isEmpty() const
@@ -367,15 +370,6 @@ namespace xi
          */
         void rebalance(Node *nd);
 
-
-        /** \brief Выполняет перебалансировку локальных предков узла \c nd: папы, дяди и дедушки.
-         *
-         *  <b style='color:orange'>Метод может быть реализован студентами в порядке декомпозиции.</b>
-         *
-         *  \returns Новый актуальный узел, для которого могут нарушаться правила.
-         */
-        Node *rebalanceDUG(Node *nd);
-
         /** \brief Удаляет нод со всеми его потомками, освобождая память из-под них. */
         void deleteNode(Node *nd);
 
@@ -397,8 +391,6 @@ namespace xi
           *  <b style='color:orange'>Для реализации студентами.</b>
           */
         void rotRight(Node *nd);
-
-        Node *get_successor(Node *);
 
     protected:
         RBTree(const RBTree &);                      ///< КК не доступен.

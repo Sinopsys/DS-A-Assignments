@@ -41,6 +41,14 @@ void simplestTest()
     tree1.insert(21);
     tree1.insert(1);
     tree1.insert(30);
+
+//    tree1.insert(10);
+//    tree1.insert(5);
+//    tree1.insert(6);
+//    tree1.insert(3);
+//
+//    tree1.remove(6);
+//    tree1.remove(50);
 }
 
 

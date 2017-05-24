@@ -226,7 +226,7 @@ public:
 protected:
 
     /** \brief Для переданного типа события, возвращает соответствующую ему информационную строку. */
-    const char* getInfoStr(typename IRBTreeDumper<Element, Compar>::RBTreeDumperEvent ev)
+    const char *getInfoStr(typename IRBTreeDumper<Element, Compar>::RBTreeDumperEvent ev)
     {
         // храним строки прямо здесь (в единственном статическом экземпляре)
         // данный подход не очень хорош, особенно с точки зрения потокобезопасности,
@@ -243,6 +243,9 @@ protected:
         static const char *INFOS_ROT3D = "Recolor 3 dad";
         static const char *INFOS_ROT3G = "Recolor 3 grandpa";
 
+
+        static const char *INFOS_BSTREM = "BST Remove";
+        static const char *INFOS_REMOVE = "RBT Remove";
 
         // повороты
         if (ev == IRBTreeDumper<Element, Compar>::DE_AFTER_LROT ||
@@ -262,6 +265,15 @@ protected:
         // RBT-вставка после балансировки
         if (ev == IRBTreeDumper<Element, Compar>::DE_AFTER_INSERT)
             return INFOS_INSERT;
+
+//        // обычное BST-удаление
+//        if (ev == IRBTreeDumper<Element, Compar>::DE_AFTER_BST_REMOVE)
+//            return INFOS_BSTREM;
+//
+//
+//        // RBT-удаление после балансировки
+//        if (ev == IRBTreeDumper<Element, Compar>::DE_AFTER_REMOVE)
+//            return INFOS_REMOVE;
 
         // NB: в принципе, в следующем if-е нет необходимости, т.к. это единственная
         // возможная ветка, однако, если вдруг будут свдиги вверх/вниз или появятся новые

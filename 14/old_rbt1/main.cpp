@@ -491,7 +491,7 @@ void RBT<T>::delete_tree()
 
 int main()
 {
-    int count = 5;
+    int count = 4;
     RBT<int> *a = new RBT<int>();
     int key;
     int value;
