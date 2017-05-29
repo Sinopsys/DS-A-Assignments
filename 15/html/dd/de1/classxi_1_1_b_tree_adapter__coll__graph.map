@@ -1,0 +1,6 @@
+<map id="xi::BTreeAdapter&lt; T, Traits, Compar &gt;" name="xi::BTreeAdapter&lt; T, Traits, Compar &gt;">
+<area shape="rect" id="node2" href="$d9/d7a/classxi_1_1_file_base_b_tree.html" title="B&#45;дерево, основанное на файловом потоке. " alt="" coords="14,184,139,211"/>
+<area shape="rect" id="node3" href="$d0/d3c/classxi_1_1_base_b_tree.html" title="Базовое B&#45;дерево. " alt="" coords="143,95,247,121"/>
+<area shape="rect" id="node4" href="$d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html" title="Маска (нег.) для выделения флага, что нод — листовой. " alt="" coords="164,184,355,211"/>
+<area shape="rect" id="node5" href="$da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html" title="Интерфейс, определяющий операцию сравнения двух ключей дерева. " alt="" coords="104,5,287,32"/>
+</map>

@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Шаблон класса xi::BTreeAdapter&lt; T, Traits, Compar &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="../../df/dc1/classxi_1_1_b_tree_adapter-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса xi::BTreeAdapter&lt; T, Traits, Compar &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Адаптер для B-дерева, получающий тип ключа из параметра шаблона, а дополнительную информацию из специального класса свойств (traits).  
+ <a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d6d/btree__adapters_8h_source.html">btree_adapters.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса xi::BTreeAdapter&lt; T, Traits, Compar &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/de1/classxi_1_1_b_tree_adapter__coll__graph.png" border="0" usemap="#xi_1_1_b_tree_adapter_3_01_t_00_01_traits_00_01_compar_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="xi_1_1_b_tree_adapter_3_01_t_00_01_traits_00_01_compar_01_4_coll__map" id="xi_1_1_b_tree_adapter_3_01_t_00_01_traits_00_01_compar_01_4_coll__map">
+<area shape="rect" id="node2" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html" title="B&#45;дерево, основанное на файловом потоке. " alt="" coords="14,184,139,211"/>
+<area shape="rect" id="node3" href="../../d0/d3c/classxi_1_1_base_b_tree.html" title="Базовое B&#45;дерево. " alt="" coords="143,95,247,121"/>
+<area shape="rect" id="node4" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html" title="Маска (нег.) для выделения флага, что нод — листовой. " alt="" coords="164,184,355,211"/>
+<area shape="rect" id="node5" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html" title="Интерфейс, определяющий операцию сравнения двух ключей дерева. " alt="" coords="104,5,287,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a0f9ca7f3fcc179fd0c0b56b5ee4ea1aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f9ca7f3fcc179fd0c0b56b5ee4ea1aa"></a>
+typedef Traits::TArg&#160;</td><td class="memItemRight" valign="bottom"><b>TArg</b></td></tr>
+<tr class="separator:a0f9ca7f3fcc179fd0c0b56b5ee4ea1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9356f232cb18b5e6cf39f007e6638c66"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9356f232cb18b5e6cf39f007e6638c66"></a>
+typedef Traits::TRes&#160;</td><td class="memItemRight" valign="bottom"><b>TRes</b></td></tr>
+<tr class="separator:a9356f232cb18b5e6cf39f007e6638c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a72702de15eb0de6681244896e7fea6b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a72702de15eb0de6681244896e7fea6b5">BTreeAdapter</a> ()</td></tr>
+<tr class="memdesc:a72702de15eb0de6681244896e7fea6b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию.  <a href="#a72702de15eb0de6681244896e7fea6b5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a72702de15eb0de6681244896e7fea6b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58748b6e910150eacff02448d68b022b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58748b6e910150eacff02448d68b022b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b">BTreeAdapter</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a58748b6e910150eacff02448d68b022b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует дерево и загружает его содержимое из файла <code>fileName</code>. <br /></td></tr>
+<tr class="separator:a58748b6e910150eacff02448d68b022b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a975010972e4509e88849343133ac6618"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a975010972e4509e88849343133ac6618"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618">BTreeAdapter</a> (UShort order, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a975010972e4509e88849343133ac6618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует дерево с заданным порядком <code>order</code> и и ассоциирует его с файлом <code>fileName</code>. <br /></td></tr>
+<tr class="separator:a975010972e4509e88849343133ac6618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4edfec3b99ee5a9f1f09e1f8e216c49"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4edfec3b99ee5a9f1f09e1f8e216c49"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af4edfec3b99ee5a9f1f09e1f8e216c49">~BTreeAdapter</a> ()</td></tr>
+<tr class="memdesc:af4edfec3b99ee5a9f1f09e1f8e216c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор. <br /></td></tr>
+<tr class="separator:af4edfec3b99ee5a9f1f09e1f8e216c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a1dcbd44a42767f36f723f7c61e3b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6a1dcbd44a42767f36f723f7c61e3b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#ac6a1dcbd44a42767f36f723f7c61e3b2">open</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:ac6a1dcbd44a42767f36f723f7c61e3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует дерево по типу конструктора <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b" title="Конструирует дерево и загружает его содержимое из файла fileName. ">BTreeAdapter(const std::string&amp; fileName)</a>. <br /></td></tr>
+<tr class="separator:ac6a1dcbd44a42767f36f723f7c61e3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1373651c306df7aece2c787dbc5c920b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1373651c306df7aece2c787dbc5c920b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1373651c306df7aece2c787dbc5c920b">create</a> (UShort order, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a1373651c306df7aece2c787dbc5c920b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует дерево по типу конструктора <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618" title="Конструирует дерево с заданным порядком order и и ассоциирует его с файлом fileName. ">BTreeAdapter(UShort order, const std::string&amp; fileName)</a>. <br /></td></tr>
+<tr class="separator:a1373651c306df7aece2c787dbc5c920b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd43075357d5c7cb5e2d10ee064d5a17"><td class="memItemLeft" align="right" valign="top">TRes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afd43075357d5c7cb5e2d10ee064d5a17">getKey</a> (<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a> &amp;pw, UShort num)</td></tr>
+<tr class="memdesc:afd43075357d5c7cb5e2d10ee064d5a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получает ключ по значению, номер ключа — <code>num</code>.  <a href="#afd43075357d5c7cb5e2d10ee064d5a17">Подробнее...</a><br /></td></tr>
+<tr class="separator:afd43075357d5c7cb5e2d10ee064d5a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739d61176e549942fa511ca7855c6854"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a739d61176e549942fa511ca7855c6854">setKey</a> (<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a> &amp;pw, UShort num, TArg key)</td></tr>
+<tr class="memdesc:a739d61176e549942fa511ca7855c6854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает ключ по значению, номер ключа — <code>num</code>.  <a href="#a739d61176e549942fa511ca7855c6854">Подробнее...</a><br /></td></tr>
+<tr class="separator:a739d61176e549942fa511ca7855c6854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bac460b27cbd605e2d3a78fef17a69a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bac460b27cbd605e2d3a78fef17a69a"></a>
+<a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6bac460b27cbd605e2d3a78fef17a69a">getTree</a> ()</td></tr>
+<tr class="memdesc:a6bac460b27cbd605e2d3a78fef17a69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает подлежащее дерево. <br /></td></tr>
+<tr class="separator:a6bac460b27cbd605e2d3a78fef17a69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3e399b2e5f9d7c955618f6e44f7e54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa3e399b2e5f9d7c955618f6e44f7e54"></a>
+const <a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afa3e399b2e5f9d7c955618f6e44f7e54">getTree</a> () const </td></tr>
+<tr class="memdesc:afa3e399b2e5f9d7c955618f6e44f7e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константно подлежащее дерево. <br /></td></tr>
+<tr class="separator:afa3e399b2e5f9d7c955618f6e44f7e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:af9d3a055c0b6a8cbe86d55026fb4691e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9d3a055c0b6a8cbe86d55026fb4691e"></a>
+static const UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af9d3a055c0b6a8cbe86d55026fb4691e">REC_SIZE</a> = Traits::REC_SIZE</td></tr>
+<tr class="memdesc:af9d3a055c0b6a8cbe86d55026fb4691e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер записи, по умолчанию определяется размером типа. <br /></td></tr>
+<tr class="separator:af9d3a055c0b6a8cbe86d55026fb4691e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a2540e647d97b25fcc7eee57c04d1f21f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2540e647d97b25fcc7eee57c04d1f21f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a2540e647d97b25fcc7eee57c04d1f21f">BTreeAdapter</a> (const <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a> &amp;)</td></tr>
+<tr class="memdesc:a2540e647d97b25fcc7eee57c04d1f21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">КК не доступен. <br /></td></tr>
+<tr class="separator:a2540e647d97b25fcc7eee57c04d1f21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6773266809699b534572bf49e5e42a13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6773266809699b534572bf49e5e42a13"></a>
+<a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6773266809699b534572bf49e5e42a13">operator=</a> (<a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a> &amp;)</td></tr>
+<tr class="memdesc:a6773266809699b534572bf49e5e42a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания недоступен. <br /></td></tr>
+<tr class="separator:a6773266809699b534572bf49e5e42a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dcf38b14d7edb1721dffae0d36eea73"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dcf38b14d7edb1721dffae0d36eea73"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">openInternal</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a1dcf38b14d7edb1721dffae0d36eea73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализует конструктор <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b" title="Конструирует дерево и загружает его содержимое из файла fileName. ">BTreeAdapter(const std::string&amp; fileName)</a>. <br /></td></tr>
+<tr class="separator:a1dcf38b14d7edb1721dffae0d36eea73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3dc9ece899bee5c8868d9e02b4f2ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb3dc9ece899bee5c8868d9e02b4f2ca"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">createInternal</a> (UShort order, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:acb3dc9ece899bee5c8868d9e02b4f2ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализует конструктор <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618" title="Конструирует дерево с заданным порядком order и и ассоциирует его с файлом fileName. ">BTreeAdapter(UShort order, const std::string&amp; fileName)</a>. <br /></td></tr>
+<tr class="separator:acb3dc9ece899bee5c8868d9e02b4f2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a02b1fa8e8911d7ed1ba7c8bad0217ba8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02b1fa8e8911d7ed1ba7c8bad0217ba8"></a>
+<a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a></td></tr>
+<tr class="memdesc:a02b1fa8e8911d7ed1ba7c8bad0217ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подлежащий объект-дерево. <br /></td></tr>
+<tr class="separator:a02b1fa8e8911d7ed1ba7c8bad0217ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41cc4a5aa59c266e20b86a093b528811"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41cc4a5aa59c266e20b86a093b528811"></a>
+Compar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">_comparator</a></td></tr>
+<tr class="memdesc:a41cc4a5aa59c266e20b86a093b528811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Компаратор, как отдельный объект <br /></td></tr>
+<tr class="separator:a41cc4a5aa59c266e20b86a093b528811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename T, typename Traits = BTreeAdapterTraits&lt;T&gt;, typename Compar = BTreeComparator&lt;T, Traits&gt;&gt;<br />
+class xi::BTreeAdapter&lt; T, Traits, Compar &gt;</h3>
+
+<p>Адаптер для B-дерева, получающий тип ключа из параметра шаблона, а дополнительную информацию из специального класса свойств (traits). </p>
+<p>elaborate </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a72702de15eb0de6681244896e7fea6b5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Traits  = BTreeAdapterTraits&lt;T&gt;, typename Compar  = BTreeComparator&lt;T, Traits&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">xi::BTreeAdapter</a>&lt; T, Traits, Compar &gt;::<a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор по умолчанию. </p>
+<p>Для "открытия" дерева необходимо использовать метод <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#ac6a1dcbd44a42767f36f723f7c61e3b2" title="Конструирует дерево по типу конструктора BTreeAdapter(const std::string& fileName). ">open()</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="afd43075357d5c7cb5e2d10ee064d5a17"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Traits  = BTreeAdapterTraits&lt;T&gt;, typename Compar  = BTreeComparator&lt;T, Traits&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TRes <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">xi::BTreeAdapter</a>&lt; T, Traits, Compar &gt;::getKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a> &amp;&#160;</td>
+          <td class="paramname"><em>pw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UShort&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Получает ключ по значению, номер ключа — <code>num</code>. </p>
+<p>Политика относительно номера ключа та же, что и для метода <a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a623a2d5aa5a04cde050f647fd9888774" title="Возвращает указатель на область памяти, соответствующую ключу номер num. ">BaseBTree::PageWrapper::getKey()</a> . </p>
+
+</div>
+</div>
+<a class="anchor" id="a739d61176e549942fa511ca7855c6854"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Traits  = BTreeAdapterTraits&lt;T&gt;, typename Compar  = BTreeComparator&lt;T, Traits&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">xi::BTreeAdapter</a>&lt; T, Traits, Compar &gt;::setKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a> &amp;&#160;</td>
+          <td class="paramname"><em>pw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UShort&#160;</td>
+          <td class="paramname"><em>num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TArg&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Устанавливает ключ по значению, номер ключа — <code>num</code>. </p>
+<p>Политика относительно номера ключа та же, что и для метода <a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a623a2d5aa5a04cde050f647fd9888774" title="Возвращает указатель на область памяти, соответствующую ключу номер num. ">BaseBTree::PageWrapper::getKey()</a> . В зависимости от типа в адаптере, значение для установки передается либо по ссылке, либо по значению (опреляется типом TArg). </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="../../d1/d6d/btree__adapters_8h_source.html">btree_adapters.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

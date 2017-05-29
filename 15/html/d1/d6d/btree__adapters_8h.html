@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Файл src/btree_adapters.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#typedef-members">Определения типов</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл btree_adapters.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Адаптеры для некоторых типов для B-дерева.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для btree_adapters.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/df7/btree__adapters_8h__incl.png" border="0" usemap="#src_2btree__adapters_8h" alt=""/></div>
+<map name="src_2btree__adapters_8h" id="src_2btree__adapters_8h">
+<area shape="rect" id="node4" href="../../d9/d13/btree_8h.html" title="Определение классов B&#45;дерева " alt="" coords="145,80,208,107"/>
+<area shape="rect" id="node6" href="../../d5/d60/utils_8h.html" title="Вспомогательные определения (типов и др.) " alt="" coords="236,155,293,181"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d80/btree__adapters_8h__dep__incl.png" border="0" usemap="#src_2btree__adapters_8hdep" alt=""/></div>
+<map name="src_2btree__adapters_8hdep" id="src_2btree__adapters_8hdep">
+<area shape="rect" id="node2" href="../../d8/dc0/adapters1__tests_8cpp.html" title="Unit&#45;тесты для адаптеров для B&#45;деревьев " alt="" coords="5,80,172,121"/>
+</map>
+</div>
+</div>
+<p><a href="../../d1/d6d/btree__adapters_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">xi::BTreeAdapterTraits&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс свойств (черт, traits), определяющий необходимые всопомогательные компоненты, ассоциированные с типом данных T.  <a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/deb/structxi_1_1_b_tree_comparator.html">xi::BTreeComparator&lt; T, Traits &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Реализация компаратора по умолчанию, основанная на соответствуем методе <a class="el" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69" title="Выполняет сравнение двух ключей: левого lhv и правого rhv. ">compare()</a> из класса свойств.  <a href="../../da/deb/structxi_1_1_b_tree_comparator.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">xi::BTreeAdapter&lt; T, Traits, Compar &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Адаптер для B-дерева, получающий тип ключа из параметра шаблона, а дополнительную информацию из специального класса свойств (traits).  <a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:af54b7b760d8fe5b573c10d836f6fd4d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af54b7b760d8fe5b573c10d836f6fd4d5"></a>
+typedef BTreeAdapter&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>xi::BTreeIntAdapter</b></td></tr>
+<tr class="separator:af54b7b760d8fe5b573c10d836f6fd4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Адаптеры для некоторых типов для B-дерева. </p>
+<dl class="section author"><dt>Автор</dt><dd>Sergey Shershakov </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>01.05.2017 This is a part of the course "Algorithms and Data Structures" provided by the School of Software Engineering of the Faculty of Computer Science at the Higher School of Economics. </dd></dl>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

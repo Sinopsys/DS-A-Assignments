@@ -1,0 +1,677 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Класс xi::FileBaseBTree</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="#pro-attribs">Защищенные данные</a> &#124;
+<a href="../../d9/d6d/classxi_1_1_file_base_b_tree-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xi::FileBaseBTree</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>B-дерево, основанное на файловом потоке.  
+ <a href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:xi::FileBaseBTree:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d54/classxi_1_1_file_base_b_tree__inherit__graph.png" border="0" usemap="#xi_1_1_file_base_b_tree_inherit__map" alt="Inheritance graph"/></div>
+<map name="xi_1_1_file_base_b_tree_inherit__map" id="xi_1_1_file_base_b_tree_inherit__map">
+<area shape="rect" id="node2" href="../../d0/d3c/classxi_1_1_base_b_tree.html" title="Базовое B&#45;дерево. " alt="" coords="16,5,120,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса xi::FileBaseBTree:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d62/classxi_1_1_file_base_b_tree__coll__graph.png" border="0" usemap="#xi_1_1_file_base_b_tree_coll__map" alt="Collaboration graph"/></div>
+<map name="xi_1_1_file_base_b_tree_coll__map" id="xi_1_1_file_base_b_tree_coll__map">
+<area shape="rect" id="node2" href="../../d0/d3c/classxi_1_1_base_b_tree.html" title="Базовое B&#45;дерево. " alt="" coords="135,95,239,121"/>
+<area shape="rect" id="node3" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html" title="Маска (нег.) для выделения флага, что нод — листовой. " alt="" coords="155,184,346,211"/>
+<area shape="rect" id="node4" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html" title="Интерфейс, определяющий операцию сравнения двух ключей дерева. " alt="" coords="95,5,278,32"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6c5bc2a954a10bf605a9d119220889c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a6c5bc2a954a10bf605a9d119220889c0">FileBaseBTree</a> ()</td></tr>
+<tr class="memdesc:a6c5bc2a954a10bf605a9d119220889c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор по умолчанию.  <a href="#a6c5bc2a954a10bf605a9d119220889c0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6c5bc2a954a10bf605a9d119220889c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b56e5d92a9769a30e3c4a95a49c69ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9b56e5d92a9769a30e3c4a95a49c69ba">FileBaseBTree</a> (UShort order, UShort recSize, <a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *comparator, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a9b56e5d92a9769a30e3c4a95a49c69ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует новое B-дерево со структурой, определяемой переданными параметрами.  <a href="#a9b56e5d92a9769a30e3c4a95a49c69ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9b56e5d92a9769a30e3c4a95a49c69ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0d681e223fd391e0372783af90433b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#afb0d681e223fd391e0372783af90433b">FileBaseBTree</a> (const std::string &amp;fileName, <a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *comparator)</td></tr>
+<tr class="memdesc:afb0d681e223fd391e0372783af90433b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует дерево на основе существующего файла B-дерева.  <a href="#afb0d681e223fd391e0372783af90433b">Подробнее...</a><br /></td></tr>
+<tr class="separator:afb0d681e223fd391e0372783af90433b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a890621395aba6297b05ecc85f7ae9143"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a890621395aba6297b05ecc85f7ae9143">~FileBaseBTree</a> ()</td></tr>
+<tr class="memdesc:a890621395aba6297b05ecc85f7ae9143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <a href="#a890621395aba6297b05ecc85f7ae9143">Подробнее...</a><br /></td></tr>
+<tr class="separator:a890621395aba6297b05ecc85f7ae9143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12dc6df69b20eee7ab02d40883b31db7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12dc6df69b20eee7ab02d40883b31db7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a12dc6df69b20eee7ab02d40883b31db7">create</a> (UShort order, UShort recSize, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a12dc6df69b20eee7ab02d40883b31db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Открывает неактивное к моменту вызова метода дерево по типу конструктора с таким же набором параметров. Если дерево уже открыто, генерирует исключительную ситуацию. <br /></td></tr>
+<tr class="separator:a12dc6df69b20eee7ab02d40883b31db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9153fe1600226370477a4083ee34f788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788">open</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a9153fe1600226370477a4083ee34f788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает дерево из файла.  <a href="#a9153fe1600226370477a4083ee34f788">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9153fe1600226370477a4083ee34f788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547c5e269358159dabf74aee83b84b91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a547c5e269358159dabf74aee83b84b91">close</a> ()</td></tr>
+<tr class="memdesc:a547c5e269358159dabf74aee83b84b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрывает открытое дерево.  <a href="#a547c5e269358159dabf74aee83b84b91">Подробнее...</a><br /></td></tr>
+<tr class="separator:a547c5e269358159dabf74aee83b84b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74d15ea703836f059ba10981ad00f44d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74d15ea703836f059ba10981ad00f44d"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a74d15ea703836f059ba10981ad00f44d">isOpen</a> () const  override</td></tr>
+<tr class="memdesc:a74d15ea703836f059ba10981ad00f44d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает истину, если дерево открыто, ложь иначе. <br /></td></tr>
+<tr class="separator:a74d15ea703836f059ba10981ad00f44d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classxi_1_1_base_b_tree"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxi_1_1_base_b_tree')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">xi::BaseBTree</a></td></tr>
+<tr class="memitem:a39ceb19ca00f2a66df2467cd4b5ba986 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39ceb19ca00f2a66df2467cd4b5ba986"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a39ceb19ca00f2a66df2467cd4b5ba986">~BaseBTree</a> ()</td></tr>
+<tr class="memdesc:a39ceb19ca00f2a66df2467cd4b5ba986 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор. <br /></td></tr>
+<tr class="separator:a39ceb19ca00f2a66df2467cd4b5ba986 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6db1a6b5c53564f934ab9ed7b27b4937 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6db1a6b5c53564f934ab9ed7b27b4937">readPage</a> (UInt pnum, Byte *dst)</td></tr>
+<tr class="memdesc:a6db1a6b5c53564f934ab9ed7b27b4937 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает содержимое страницы номер <code>pnum</code> из файла в память в <code>dst</code>.  <a href="#a6db1a6b5c53564f934ab9ed7b27b4937">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6db1a6b5c53564f934ab9ed7b27b4937 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4a744796c5e2712440f2dce7830bf8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a1e4a744796c5e2712440f2dce7830bf8">writePage</a> (UInt pnum, const Byte *dst)</td></tr>
+<tr class="memdesc:a1e4a744796c5e2712440f2dce7830bf8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает страницу в рабочую обертку. Остальное аналогично <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6db1a6b5c53564f934ab9ed7b27b4937" title="Читает содержимое страницы номер pnum из файла в память в dst. ">readPage()</a>.  <a href="#a1e4a744796c5e2712440f2dce7830bf8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1e4a744796c5e2712440f2dce7830bf8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3538c23d956728563ba9f6cef34ae1f inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aa3538c23d956728563ba9f6cef34ae1f">allocPage</a> (<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a> &amp;pw, UShort keysNum, bool isLeaf=false)</td></tr>
+<tr class="memdesc:aa3538c23d956728563ba9f6cef34ae1f inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает рабочую страницу. Остальное аналогично <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a1e4a744796c5e2712440f2dce7830bf8" title="Читает страницу в рабочую обертку. Остальное аналогично readPage(). ">writePage()</a>.  <a href="#aa3538c23d956728563ba9f6cef34ae1f">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa3538c23d956728563ba9f6cef34ae1f inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacffcc93eeaea9fad21e23375aefac3a inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacffcc93eeaea9fad21e23375aefac3a"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aacffcc93eeaea9fad21e23375aefac3a">allocNewRootPage</a> (<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a> &amp;pw)</td></tr>
+<tr class="memdesc:aacffcc93eeaea9fad21e23375aefac3a inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Распределяет страницу для нового корня. <br /></td></tr>
+<tr class="separator:aacffcc93eeaea9fad21e23375aefac3a inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a4deb20f998c7cdca4d1460bd9804a inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a91a4deb20f998c7cdca4d1460bd9804a">insert</a> (const Byte *k)</td></tr>
+<tr class="memdesc:a91a4deb20f998c7cdca4d1460bd9804a inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вставляет в дерево ключ k с учетом порядка.  <a href="#a91a4deb20f998c7cdca4d1460bd9804a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a91a4deb20f998c7cdca4d1460bd9804a inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88855070793c41f0672b3404af7c69ee inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88855070793c41f0672b3404af7c69ee"></a>
+Byte *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a88855070793c41f0672b3404af7c69ee">search</a> (const Byte *k)</td></tr>
+<tr class="memdesc:a88855070793c41f0672b3404af7c69ee inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Для заданного ключа <code>k</code> ищет первое его вхождение в дерево по принципу эквивалентности. Если ключ найден, возвращает указатель на подлежащий массив, иначе nullptr. <br /></td></tr>
+<tr class="separator:a88855070793c41f0672b3404af7c69ee inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4178a68dc81a246877292ef6cd2ee0 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#add4178a68dc81a246877292ef6cd2ee0">searchAll</a> (const Byte *k, std::list&lt; Byte * &gt; &amp;keys)</td></tr>
+<tr class="memdesc:add4178a68dc81a246877292ef6cd2ee0 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Для заданного ключа <code>k</code> ищет все его его вхождения в дерево по принципу эквивалентности. Каждый найденный ключ добавляется в переданный список ключей <code>keys</code>.  <a href="#add4178a68dc81a246877292ef6cd2ee0">Подробнее...</a><br /></td></tr>
+<tr class="separator:add4178a68dc81a246877292ef6cd2ee0 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5171483046f0c81dd7fd69686ef659f6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5171483046f0c81dd7fd69686ef659f6"></a>
+UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a5171483046f0c81dd7fd69686ef659f6">getOrder</a> () const </td></tr>
+<tr class="memdesc:a5171483046f0c81dd7fd69686ef659f6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает порядок (order) <code>b</code> B-дерева. <br /></td></tr>
+<tr class="separator:a5171483046f0c81dd7fd69686ef659f6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70387a395e8cb42fcd8127a85e5f38b6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70387a395e8cb42fcd8127a85e5f38b6"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a70387a395e8cb42fcd8127a85e5f38b6">getMaxKeys</a> () const </td></tr>
+<tr class="memdesc:a70387a395e8cb42fcd8127a85e5f38b6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает максимальное число ключей в ноде. Определяется порядком дерева: <em>(2* _order - 1)&lt;<em></em> &gt;. </em><br /></td></tr>
+<tr class="separator:a70387a395e8cb42fcd8127a85e5f38b6 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c4801447cf64f715b11c0058e0c9f1 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9c4801447cf64f715b11c0058e0c9f1"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ae9c4801447cf64f715b11c0058e0c9f1">getMinKeys</a> () const </td></tr>
+<tr class="memdesc:ae9c4801447cf64f715b11c0058e0c9f1 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает минимальное число ключей в ноде. Определяется порядком дерева: <em>(_order - 1)&lt;<em></em> &gt;. </em><br /></td></tr>
+<tr class="separator:ae9c4801447cf64f715b11c0058e0c9f1 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf76acc037d8a98bcf2c0cb90b74776 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf76acc037d8a98bcf2c0cb90b74776"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a0bf76acc037d8a98bcf2c0cb90b74776">getKeysSize</a> () const </td></tr>
+<tr class="memdesc:a0bf76acc037d8a98bcf2c0cb90b74776 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает размер области под ключи, как максимальное число ключей в ноде на их размер. Поле требуется рассчитывать для определения смещения области указателей. <br /></td></tr>
+<tr class="separator:a0bf76acc037d8a98bcf2c0cb90b74776 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2906e29194d9db234358e04f3787caa9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2906e29194d9db234358e04f3787caa9"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a2906e29194d9db234358e04f3787caa9">getCursorsOfs</a> () const </td></tr>
+<tr class="memdesc:a2906e29194d9db234358e04f3787caa9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает смещение области курсоров на дочерние элементы, как конец области ключей. <br /></td></tr>
+<tr class="separator:a2906e29194d9db234358e04f3787caa9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683badde2abf99f6294fae73218629a9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a683badde2abf99f6294fae73218629a9"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a683badde2abf99f6294fae73218629a9">getNodePageSize</a> () const </td></tr>
+<tr class="memdesc:a683badde2abf99f6294fae73218629a9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает размер всего узла, он же определяет размер страницы. <br /></td></tr>
+<tr class="separator:a683badde2abf99f6294fae73218629a9 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca7b922af73d4cb6bfb46f5050aa493 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ca7b922af73d4cb6bfb46f5050aa493"></a>
+UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a2ca7b922af73d4cb6bfb46f5050aa493">getRecSize</a> () const </td></tr>
+<tr class="memdesc:a2ca7b922af73d4cb6bfb46f5050aa493 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает длину записи ключа. <br /></td></tr>
+<tr class="separator:a2ca7b922af73d4cb6bfb46f5050aa493 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1caac2dedf536158f58f1ada19f50c69 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a1caac2dedf536158f58f1ada19f50c69">getLastPageNum</a> () const </td></tr>
+<tr class="memdesc:a1caac2dedf536158f58f1ada19f50c69 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает номер последней записанной страницы и оно же — число записанных страниц.  <a href="#a1caac2dedf536158f58f1ada19f50c69">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1caac2dedf536158f58f1ada19f50c69 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6cb5c477ad969cc0c8aae0799eee6a2 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa6cb5c477ad969cc0c8aae0799eee6a2"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aa6cb5c477ad969cc0c8aae0799eee6a2">getRootPageNum</a> () const </td></tr>
+<tr class="memdesc:aa6cb5c477ad969cc0c8aae0799eee6a2 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ненулевой номер страницы корня дерева или 0, если в д. нет ни одного узла. <br /></td></tr>
+<tr class="separator:aa6cb5c477ad969cc0c8aae0799eee6a2 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76dff21100ae49eb8d94228c4674a9ac inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76dff21100ae49eb8d94228c4674a9ac"></a>
+<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a76dff21100ae49eb8d94228c4674a9ac">getRootPage</a> ()</td></tr>
+<tr class="memdesc:a76dff21100ae49eb8d94228c4674a9ac inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает ссылку на текущую корневую страницу. <br /></td></tr>
+<tr class="separator:a76dff21100ae49eb8d94228c4674a9ac inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeaf46000005558d9df0b274f9d604e8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeeaf46000005558d9df0b274f9d604e8"></a>
+const <a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aeeaf46000005558d9df0b274f9d604e8">getRootPage</a> () const </td></tr>
+<tr class="memdesc:aeeaf46000005558d9df0b274f9d604e8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Константный вариант метода <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a76dff21100ae49eb8d94228c4674a9ac" title="Возвращает ссылку на текущую корневую страницу. ">getRootPage()</a>. <br /></td></tr>
+<tr class="separator:aeeaf46000005558d9df0b274f9d604e8 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf1be39590655b5cf925b4f21c371d3 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#acbf1be39590655b5cf925b4f21c371d3">setComparator</a> (<a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *c)</td></tr>
+<tr class="memdesc:acbf1be39590655b5cf925b4f21c371d3 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает константный указатель на текущую корневую страницу.  <a href="#acbf1be39590655b5cf925b4f21c371d3">Подробнее...</a><br /></td></tr>
+<tr class="separator:acbf1be39590655b5cf925b4f21c371d3 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb51c3a1b957ecd39d5bf5e351155d7 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3eb51c3a1b957ecd39d5bf5e351155d7"></a>
+<a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a3eb51c3a1b957ecd39d5bf5e351155d7">getComparator</a> () const </td></tr>
+<tr class="memdesc:a3eb51c3a1b957ecd39d5bf5e351155d7 inherit pub_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает компаратор. <br /></td></tr>
+<tr class="separator:a3eb51c3a1b957ecd39d5bf5e351155d7 inherit pub_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a6d793493767351536d49579cdd2cb41a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d793493767351536d49579cdd2cb41a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a6d793493767351536d49579cdd2cb41a">FileBaseBTree</a> (const <a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> &amp;)</td></tr>
+<tr class="memdesc:a6d793493767351536d49579cdd2cb41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">КК не доступен. <br /></td></tr>
+<tr class="separator:a6d793493767351536d49579cdd2cb41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed7fd345514f6343f91a85d72d0a0bbf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed7fd345514f6343f91a85d72d0a0bbf"></a>
+<a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#aed7fd345514f6343f91a85d72d0a0bbf">operator=</a> (<a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> &amp;)</td></tr>
+<tr class="memdesc:aed7fd345514f6343f91a85d72d0a0bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания недоступен. <br /></td></tr>
+<tr class="separator:aed7fd345514f6343f91a85d72d0a0bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c9426a0f569bf1510687923bf8111f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c9426a0f569bf1510687923bf8111f9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a8c9426a0f569bf1510687923bf8111f9">createInternal</a> (UShort order, UShort recSize, const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a8c9426a0f569bf1510687923bf8111f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Открывает поток и подготавливает дерево. В отличие от соответствующего конструктора и метода <a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788" title="Загружает дерево из файла. ">open()</a> не выполняет никаких проверок, которые подразумеваются быть сделанными там. <br /></td></tr>
+<tr class="separator:a8c9426a0f569bf1510687923bf8111f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d73d024f6f680f0ff68bcf0ffeeeef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a0d73d024f6f680f0ff68bcf0ffeeeef3">loadInternal</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memdesc:a0d73d024f6f680f0ff68bcf0ffeeeef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает дерево из файла <code>fileName</code>.  <a href="#a0d73d024f6f680f0ff68bcf0ffeeeef3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0d73d024f6f680f0ff68bcf0ffeeeef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf30a45c8b27e02f31c7d180cfa38ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a2bf30a45c8b27e02f31c7d180cfa38ae">closeInternal</a> ()</td></tr>
+<tr class="memdesc:a2bf30a45c8b27e02f31c7d180cfa38ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрывает файловые потоки, ассоциированные с деревом.  <a href="#a2bf30a45c8b27e02f31c7d180cfa38ae">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2bf30a45c8b27e02f31c7d180cfa38ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dbb37a6df9a1c39d2bde7f2e1514cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0dbb37a6df9a1c39d2bde7f2e1514cd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#af0dbb37a6df9a1c39d2bde7f2e1514cd">checkTreeParams</a> (UShort order, UShort recSize)</td></tr>
+<tr class="memdesc:af0dbb37a6df9a1c39d2bde7f2e1514cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет параметры дерева и, если они некорректны, киает исключение. <br /></td></tr>
+<tr class="separator:af0dbb37a6df9a1c39d2bde7f2e1514cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classxi_1_1_base_b_tree"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxi_1_1_base_b_tree')"><img src="../../closed.png" alt="-"/>&#160;Защищенные члены унаследованные от <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">xi::BaseBTree</a></td></tr>
+<tr class="memitem:aedca9e3bfb93fa23954fe4c246075b34 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aedca9e3bfb93fa23954fe4c246075b34">BaseBTree</a> (UShort order, UShort recSize, <a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *comparator, std::iostream *stream)</td></tr>
+<tr class="memdesc:aedca9e3bfb93fa23954fe4c246075b34 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует новое B-дерево со структурой, определяемой переданными параметрами.  <a href="#aedca9e3bfb93fa23954fe4c246075b34">Подробнее...</a><br /></td></tr>
+<tr class="separator:aedca9e3bfb93fa23954fe4c246075b34 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a898aec5283de7a74d522f1beefa2e367 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a898aec5283de7a74d522f1beefa2e367"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a898aec5283de7a74d522f1beefa2e367">BaseBTree</a> (<a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *comparator, std::iostream *stream)</td></tr>
+<tr class="memdesc:a898aec5283de7a74d522f1beefa2e367 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструирует заготовку под B-дерево, параметры которого будут прочитаны из существующего деревофайла. <br /></td></tr>
+<tr class="separator:a898aec5283de7a74d522f1beefa2e367 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77589420774ff929badcd7b69cfd4a96 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77589420774ff929badcd7b69cfd4a96"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a77589420774ff929badcd7b69cfd4a96">BaseBTree</a> (const <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">BaseBTree</a> &amp;)</td></tr>
+<tr class="memdesc:a77589420774ff929badcd7b69cfd4a96 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">КК не доступен. <br /></td></tr>
+<tr class="separator:a77589420774ff929badcd7b69cfd4a96 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af17949390b90143c0b83c91feb6d9bbc inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af17949390b90143c0b83c91feb6d9bbc"></a>
+<a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">BaseBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#af17949390b90143c0b83c91feb6d9bbc">operator=</a> (<a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">BaseBTree</a> &amp;)</td></tr>
+<tr class="memdesc:af17949390b90143c0b83c91feb6d9bbc inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Оператор присваивания недоступен. <br /></td></tr>
+<tr class="separator:af17949390b90143c0b83c91feb6d9bbc inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a6176e12541ad648b828375be546ba inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#af6a6176e12541ad648b828375be546ba">loadTree</a> ()</td></tr>
+<tr class="memdesc:af6a6176e12541ad648b828375be546ba inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает дерево из потока.  <a href="#af6a6176e12541ad648b828375be546ba">Подробнее...</a><br /></td></tr>
+<tr class="separator:af6a6176e12541ad648b828375be546ba inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac576cddb8f59cf94581709d7325432ca inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ac576cddb8f59cf94581709d7325432ca">loadRootPage</a> ()</td></tr>
+<tr class="memdesc:ac576cddb8f59cf94581709d7325432ca inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загружает корневую страницу в одну из рабочих страниц, переданных параметром <code>pw</code>.  <a href="#ac576cddb8f59cf94581709d7325432ca">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac576cddb8f59cf94581709d7325432ca inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0cf5d47df75945d1947247e318a88b inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6b0cf5d47df75945d1947247e318a88b">createTree</a> (UShort order, UShort recSize)</td></tr>
+<tr class="memdesc:a6b0cf5d47df75945d1947247e318a88b inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает дерево и записывает его в поток.  <a href="#a6b0cf5d47df75945d1947247e318a88b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6b0cf5d47df75945d1947247e318a88b inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f139646ac1829398e9f2fab6a190231 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f139646ac1829398e9f2fab6a190231"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a5f139646ac1829398e9f2fab6a190231">createRootPage</a> ()</td></tr>
+<tr class="memdesc:a5f139646ac1829398e9f2fab6a190231 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создает и записывает корневую страницу при создании дерева с нуля. <br /></td></tr>
+<tr class="separator:a5f139646ac1829398e9f2fab6a190231 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a5e436e333833adfea658728c3697b inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74a5e436e333833adfea658728c3697b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a74a5e436e333833adfea658728c3697b">checkForOpenStream</a> ()</td></tr>
+<tr class="memdesc:a74a5e436e333833adfea658728c3697b inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод проверяет, открыт ли поток (готово ли дерево), если нет, кидает исключение. <br /></td></tr>
+<tr class="separator:a74a5e436e333833adfea658728c3697b inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8809a3369750d096372a150b5f685ce1 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a8809a3369750d096372a150b5f685ce1">checkKeysNumber</a> (UShort keysNum, bool isRoot)</td></tr>
+<tr class="memdesc:a8809a3369750d096372a150b5f685ce1 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Для заданного порядка и переданного числа ключей определяет, соответствует ли оно ограничениям на число ключей в ноде для данного порядка, или нет.  <a href="#a8809a3369750d096372a150b5f685ce1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8809a3369750d096372a150b5f685ce1 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd42e066d82001beb4633eb5a83fac76 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd42e066d82001beb4633eb5a83fac76"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#acd42e066d82001beb4633eb5a83fac76">checkKeysNumberExc</a> (UShort keysNum, bool isRoot)</td></tr>
+<tr class="memdesc:acd42e066d82001beb4633eb5a83fac76 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вариант метода <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a8809a3369750d096372a150b5f685ce1" title="Для заданного порядка и переданного числа ключей определяет, соответствует ли оно ограничениям на чис...">checkKeysNumber()</a>, кидающий исключение для неправильного числа ключей. <br /></td></tr>
+<tr class="separator:acd42e066d82001beb4633eb5a83fac76 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b1834bc0731d5b7c871bbdc53210ccc inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4b1834bc0731d5b7c871bbdc53210ccc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a4b1834bc0731d5b7c871bbdc53210ccc">writeHeader</a> ()</td></tr>
+<tr class="memdesc:a4b1834bc0731d5b7c871bbdc53210ccc inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает в поток (в текущую позицию!) заголовок дерева. <br /></td></tr>
+<tr class="separator:a4b1834bc0731d5b7c871bbdc53210ccc inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6ff50c4cf57d29f75b72f3895737e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f6ff50c4cf57d29f75b72f3895737e7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a0f6ff50c4cf57d29f75b72f3895737e7">readHeader</a> (<a class="el" href="../../d5/dea/structxi_1_1_base_b_tree_1_1_header.html">Header</a> &amp;hdr)</td></tr>
+<tr class="memdesc:a0f6ff50c4cf57d29f75b72f3895737e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает из потока заголовок дерева. <br /></td></tr>
+<tr class="separator:a0f6ff50c4cf57d29f75b72f3895737e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33913241f5f6c21214f7248a04f09c44 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a33913241f5f6c21214f7248a04f09c44">writePageCounter</a> ()</td></tr>
+<tr class="memdesc:a33913241f5f6c21214f7248a04f09c44 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Записывает в потоктекущее значение числа страниц (последняя записанная).  <a href="#a33913241f5f6c21214f7248a04f09c44">Подробнее...</a><br /></td></tr>
+<tr class="separator:a33913241f5f6c21214f7248a04f09c44 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81dde15ba392f85885c9683f8a9fba7d inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81dde15ba392f85885c9683f8a9fba7d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a81dde15ba392f85885c9683f8a9fba7d">readPageCounter</a> ()</td></tr>
+<tr class="memdesc:a81dde15ba392f85885c9683f8a9fba7d inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает из потока поле <code>pc</code>, обозначающее число страниц (последняя записанная), в поле. <br /></td></tr>
+<tr class="separator:a81dde15ba392f85885c9683f8a9fba7d inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77098aa84bb5eea0c7d4875b4f10720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab77098aa84bb5eea0c7d4875b4f10720"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ab77098aa84bb5eea0c7d4875b4f10720">writeRootPageNum</a> ()</td></tr>
+<tr class="memdesc:ab77098aa84bb5eea0c7d4875b4f10720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Осуществляет запись номера страницы/нода, соответствующего корню дерева. <br /></td></tr>
+<tr class="separator:ab77098aa84bb5eea0c7d4875b4f10720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9d11c24454bc5cdef3d35c882ec7e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#acc9d11c24454bc5cdef3d35c882ec7e7">readRootPageNum</a> ()</td></tr>
+<tr class="memdesc:acc9d11c24454bc5cdef3d35c882ec7e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запись текущего номера корневой страницы.  <a href="#acc9d11c24454bc5cdef3d35c882ec7e7">Подробнее...</a><br /></td></tr>
+<tr class="separator:acc9d11c24454bc5cdef3d35c882ec7e7 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a457ce3f1fcbbe3d26e8c9e7d9b4b6720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a457ce3f1fcbbe3d26e8c9e7d9b4b6720">setRootPageNum</a> (UInt pnum, bool writeFlag=true)</td></tr>
+<tr class="memdesc:a457ce3f1fcbbe3d26e8c9e7d9b4b6720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устаналивает значение номера корневой страницы.  <a href="#a457ce3f1fcbbe3d26e8c9e7d9b4b6720">Подробнее...</a><br /></td></tr>
+<tr class="separator:a457ce3f1fcbbe3d26e8c9e7d9b4b6720 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9b64503375ca2cba6e4f8d5f4a15a6f inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9b64503375ca2cba6e4f8d5f4a15a6f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#af9b64503375ca2cba6e4f8d5f4a15a6f">setOrder</a> (UShort order, UShort recSize)</td></tr>
+<tr class="memdesc:af9b64503375ca2cba6e4f8d5f4a15a6f inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Задает порядок дерва и пересчитывает связанные значения. <br /></td></tr>
+<tr class="separator:af9b64503375ca2cba6e4f8d5f4a15a6f inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b3caefc87cbdc29f5313e314fac3072 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b3caefc87cbdc29f5313e314fac3072"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6b3caefc87cbdc29f5313e314fac3072">reallocWorkPages</a> ()</td></tr>
+<tr class="memdesc:a6b3caefc87cbdc29f5313e314fac3072 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перераспределяе память для/под рабочие страницы. <br /></td></tr>
+<tr class="separator:a6b3caefc87cbdc29f5313e314fac3072 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560c1226359c5cca4a825408b3cfdec5 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a560c1226359c5cca4a825408b3cfdec5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a560c1226359c5cca4a825408b3cfdec5">readPageInternal</a> (UInt pnum, Byte *dst)</td></tr>
+<tr class="memdesc:a560c1226359c5cca4a825408b3cfdec5 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрытая и основная часть метода <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6db1a6b5c53564f934ab9ed7b27b4937" title="Читает содержимое страницы номер pnum из файла в память в dst. ">readPage()</a>. <br /></td></tr>
+<tr class="separator:a560c1226359c5cca4a825408b3cfdec5 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6853bd1144c92268e2d09054aafd9ffe inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6853bd1144c92268e2d09054aafd9ffe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6853bd1144c92268e2d09054aafd9ffe">writePageInternal</a> (UInt pnum, const Byte *dst)</td></tr>
+<tr class="memdesc:a6853bd1144c92268e2d09054aafd9ffe inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрытая и основная часть метода <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a1e4a744796c5e2712440f2dce7830bf8" title="Читает страницу в рабочую обертку. Остальное аналогично readPage(). ">writePage()</a>. <br /></td></tr>
+<tr class="separator:a6853bd1144c92268e2d09054aafd9ffe inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7e3a65ea301e8652e8726471ee2172 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d7e3a65ea301e8652e8726471ee2172"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a2d7e3a65ea301e8652e8726471ee2172">gotoPage</a> (UInt pnum)</td></tr>
+<tr class="memdesc:a2d7e3a65ea301e8652e8726471ee2172 inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Позиционируется на смещение в файле, соответствующее номеру страницы <code>pnum</code>. <br /></td></tr>
+<tr class="separator:a2d7e3a65ea301e8652e8726471ee2172 inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55220079a8d41e6c32b4426a7afeffdd inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55220079a8d41e6c32b4426a7afeffdd"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a55220079a8d41e6c32b4426a7afeffdd">allocPageInternal</a> (<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a> &amp;pw, UShort keysNum, bool isRoot, bool isLeaf)</td></tr>
+<tr class="memdesc:a55220079a8d41e6c32b4426a7afeffdd inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Закрытая и основная часть метода <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aa3538c23d956728563ba9f6cef34ae1f" title="Записывает рабочую страницу. Остальное аналогично writePage(). ">allocPage()</a>. <br /></td></tr>
+<tr class="separator:a55220079a8d41e6c32b4426a7afeffdd inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c2ecbf1170c68558a867b5cb38f72cf inherit pro_methods_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a8c2ecbf1170c68558a867b5cb38f72cf">resetBTree</a> ()</td></tr>
+<tr class="memdesc:a8c2ecbf1170c68558a867b5cb38f72cf inherit pro_methods_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет "сброс" параметров дерева.  <a href="#a8c2ecbf1170c68558a867b5cb38f72cf">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8c2ecbf1170c68558a867b5cb38f72cf inherit pro_methods_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Защищенные данные</h2></td></tr>
+<tr class="memitem:a58f5f883b29c2e4d3aa22081d4a91cd5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58f5f883b29c2e4d3aa22081d4a91cd5"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a58f5f883b29c2e4d3aa22081d4a91cd5">_fileName</a></td></tr>
+<tr class="memdesc:a58f5f883b29c2e4d3aa22081d4a91cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя файла с деревом. <br /></td></tr>
+<tr class="separator:a58f5f883b29c2e4d3aa22081d4a91cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94bad8b67b213faf053014bbd317aba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae94bad8b67b213faf053014bbd317aba"></a>
+std::fstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#ae94bad8b67b213faf053014bbd317aba">_fileStream</a></td></tr>
+<tr class="memdesc:ae94bad8b67b213faf053014bbd317aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Файловый поток, храняющий дерево. <br /></td></tr>
+<tr class="separator:ae94bad8b67b213faf053014bbd317aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classxi_1_1_base_b_tree"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classxi_1_1_base_b_tree')"><img src="../../closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">xi::BaseBTree</a></td></tr>
+<tr class="memitem:a7d90f99d3b8772b477e2a5fd6e6bb118 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d90f99d3b8772b477e2a5fd6e6bb118"></a>
+UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a7d90f99d3b8772b477e2a5fd6e6bb118">_order</a></td></tr>
+<tr class="memdesc:a7d90f99d3b8772b477e2a5fd6e6bb118 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет порядок (order) <code>b</code> B-дерева. <br /></td></tr>
+<tr class="separator:a7d90f99d3b8772b477e2a5fd6e6bb118 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8430d38f6be40a8f6ed82754d557bb inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd8430d38f6be40a8f6ed82754d557bb"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#acd8430d38f6be40a8f6ed82754d557bb">_maxKeys</a></td></tr>
+<tr class="memdesc:acd8430d38f6be40a8f6ed82754d557bb inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Максимальное число ключей в ноде. Определяется порядком дерева: <em>(2* _order - 1)&lt;<em></em> &gt;. </em><br /></td></tr>
+<tr class="separator:acd8430d38f6be40a8f6ed82754d557bb inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0addc46e78d23c30be1b5efc20cbfe97 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0addc46e78d23c30be1b5efc20cbfe97"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a0addc46e78d23c30be1b5efc20cbfe97">_minKeys</a></td></tr>
+<tr class="memdesc:a0addc46e78d23c30be1b5efc20cbfe97 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальное число ключей в ноде. Определяется порядком дерева: <em>(_order - 1)&lt;<em></em> &gt;. </em><br /></td></tr>
+<tr class="separator:a0addc46e78d23c30be1b5efc20cbfe97 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b1a8674685b7f2ff49d7d17859a4df2 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b1a8674685b7f2ff49d7d17859a4df2"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a0b1a8674685b7f2ff49d7d17859a4df2">_keysSize</a></td></tr>
+<tr class="memdesc:a0b1a8674685b7f2ff49d7d17859a4df2 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет размер области под ключи, как максимальное число ключей в ноде на их размер. Поле требуется рассчитывать для определения смещения области указателей. <br /></td></tr>
+<tr class="separator:a0b1a8674685b7f2ff49d7d17859a4df2 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9073ac22b422f69c6c2e8f706fead1dc inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9073ac22b422f69c6c2e8f706fead1dc"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a9073ac22b422f69c6c2e8f706fead1dc">_cursorsOfs</a></td></tr>
+<tr class="memdesc:a9073ac22b422f69c6c2e8f706fead1dc inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет смещение области курсоров на дочерние элементы, как конец области ключей. <br /></td></tr>
+<tr class="separator:a9073ac22b422f69c6c2e8f706fead1dc inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07755b4664ede4b3129cc1e22ceb248 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab07755b4664ede4b3129cc1e22ceb248"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ab07755b4664ede4b3129cc1e22ceb248">_nodePageSize</a></td></tr>
+<tr class="memdesc:ab07755b4664ede4b3129cc1e22ceb248 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер всего узла, он же определяет размер страницы. <br /></td></tr>
+<tr class="separator:ab07755b4664ede4b3129cc1e22ceb248 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6624713cdb1b14b7f9393e4014067ed7 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6624713cdb1b14b7f9393e4014067ed7"></a>
+UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a6624713cdb1b14b7f9393e4014067ed7">_recSize</a></td></tr>
+<tr class="memdesc:a6624713cdb1b14b7f9393e4014067ed7 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет длину записи ключа. <br /></td></tr>
+<tr class="separator:a6624713cdb1b14b7f9393e4014067ed7 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa01e0cfb1262f01e29aaa6a1eb67e560 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa01e0cfb1262f01e29aaa6a1eb67e560"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aa01e0cfb1262f01e29aaa6a1eb67e560">_lastPageNum</a></td></tr>
+<tr class="memdesc:aa01e0cfb1262f01e29aaa6a1eb67e560 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Номер текущей свободной страницы и оно же — число записанных страниц + 1. <br /></td></tr>
+<tr class="separator:aa01e0cfb1262f01e29aaa6a1eb67e560 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf086451bd7aa9b3b2c04c7ef986f3e inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8bf086451bd7aa9b3b2c04c7ef986f3e"></a>
+UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a8bf086451bd7aa9b3b2c04c7ef986f3e">_rootPageNum</a></td></tr>
+<tr class="memdesc:a8bf086451bd7aa9b3b2c04c7ef986f3e inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хранит номер текущей страницы с корневым элементом дерева. <br /></td></tr>
+<tr class="separator:a8bf086451bd7aa9b3b2c04c7ef986f3e inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9b48709437dbeaf668c05f1dda8a6f inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top">std::iostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a4b9b48709437dbeaf668c05f1dda8a6f">_stream</a></td></tr>
+<tr class="memdesc:a4b9b48709437dbeaf668c05f1dda8a6f inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Минимальное число элементов — определяется порядком (order - 1)  <a href="#a4b9b48709437dbeaf668c05f1dda8a6f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4b9b48709437dbeaf668c05f1dda8a6f inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0cf19582c883638833b611352000e32 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0cf19582c883638833b611352000e32"></a>
+<a class="el" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">PageWrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#af0cf19582c883638833b611352000e32">_rootPage</a></td></tr>
+<tr class="memdesc:af0cf19582c883638833b611352000e32 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обертка над корневой страницей, которая всегда в памяти хранится. <br /></td></tr>
+<tr class="separator:af0cf19582c883638833b611352000e32 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc701f75c0740f156400b760ae152109 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#afc701f75c0740f156400b760ae152109">_comparator</a></td></tr>
+<tr class="memdesc:afc701f75c0740f156400b760ae152109 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на корневую страницу, если существует.  <a href="#afc701f75c0740f156400b760ae152109">Подробнее...</a><br /></td></tr>
+<tr class="separator:afc701f75c0740f156400b760ae152109 inherit pro_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_static_attribs_classxi_1_1_base_b_tree"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classxi_1_1_base_b_tree')"><img src="../../closed.png" alt="-"/>&#160;Статические открытые данные унаследованные от <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">xi::BaseBTree</a></td></tr>
+<tr class="memitem:a3e9b681c77cce609a6329e9627e9e60a inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e9b681c77cce609a6329e9627e9e60a"></a>
+static const Byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a3e9b681c77cce609a6329e9627e9e60a">HEADER_OFS</a> = 0</td></tr>
+<tr class="memdesc:a3e9b681c77cce609a6329e9627e9e60a inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение структуры заголовка известен уже на этапе компиляции. <br /></td></tr>
+<tr class="separator:a3e9b681c77cce609a6329e9627e9e60a inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed917e74e281d954729cbfa8648b6f36 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed917e74e281d954729cbfa8648b6f36"></a>
+static const Byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aed917e74e281d954729cbfa8648b6f36">HEADER_SIZE</a> = sizeof(<a class="el" href="../../d5/dea/structxi_1_1_base_b_tree_1_1_header.html">Header</a>)</td></tr>
+<tr class="memdesc:aed917e74e281d954729cbfa8648b6f36 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер структуры заголовка известен уже на этапе компиляции. <br /></td></tr>
+<tr class="separator:aed917e74e281d954729cbfa8648b6f36 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4572585075ea598e6ff82c1157cc84dc inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4572585075ea598e6ff82c1157cc84dc"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a4572585075ea598e6ff82c1157cc84dc">PAGE_COUNTER_OFS</a> = <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#aed917e74e281d954729cbfa8648b6f36">HEADER_SIZE</a></td></tr>
+<tr class="memdesc:a4572585075ea598e6ff82c1157cc84dc inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение для поля записи номера текущей свободной страницы (оно же — число страниц). <br /></td></tr>
+<tr class="separator:a4572585075ea598e6ff82c1157cc84dc inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15792310c3419379b128bf2b5dc5eb01 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15792310c3419379b128bf2b5dc5eb01"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a15792310c3419379b128bf2b5dc5eb01">PAGE_COUNTER_SZ</a> = 4</td></tr>
+<tr class="memdesc:a15792310c3419379b128bf2b5dc5eb01 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер поля записи номера текущей свободной страницы. <br /></td></tr>
+<tr class="separator:a15792310c3419379b128bf2b5dc5eb01 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e983af68161f4757923f4f18893c17 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3e983af68161f4757923f4f18893c17"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ad3e983af68161f4757923f4f18893c17">CURSOR_SZ</a> = 4</td></tr>
+<tr class="memdesc:ad3e983af68161f4757923f4f18893c17 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер одного курсора (номера страницы). <br /></td></tr>
+<tr class="separator:ad3e983af68161f4757923f4f18893c17 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7deeb54dc0f5e84fb22e03ccf8f3870f inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7deeb54dc0f5e84fb22e03ccf8f3870f"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a7deeb54dc0f5e84fb22e03ccf8f3870f">ROOT_PAGE_NUM_OFS</a> = <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a4572585075ea598e6ff82c1157cc84dc">PAGE_COUNTER_OFS</a> + <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a15792310c3419379b128bf2b5dc5eb01">PAGE_COUNTER_SZ</a></td></tr>
+<tr class="memdesc:a7deeb54dc0f5e84fb22e03ccf8f3870f inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение для поля записи номера корневой страницы. <br /></td></tr>
+<tr class="separator:a7deeb54dc0f5e84fb22e03ccf8f3870f inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24aa2845b7a062d1e3891def56b76dcb inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24aa2845b7a062d1e3891def56b76dcb"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a24aa2845b7a062d1e3891def56b76dcb">ROOT_PAGE_NUM_SZ</a> = <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#ad3e983af68161f4757923f4f18893c17">CURSOR_SZ</a></td></tr>
+<tr class="memdesc:a24aa2845b7a062d1e3891def56b76dcb inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер поля записи номера корневой страницы. <br /></td></tr>
+<tr class="separator:a24aa2845b7a062d1e3891def56b76dcb inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5948c98850ee94758a15bbbab2a23940 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5948c98850ee94758a15bbbab2a23940"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a5948c98850ee94758a15bbbab2a23940">FIRST_PAGE_OFS</a> = <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a7deeb54dc0f5e84fb22e03ccf8f3870f">ROOT_PAGE_NUM_OFS</a> + <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a24aa2845b7a062d1e3891def56b76dcb">ROOT_PAGE_NUM_SZ</a></td></tr>
+<tr class="memdesc:a5948c98850ee94758a15bbbab2a23940 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение первой реальной страницы. <br /></td></tr>
+<tr class="separator:a5948c98850ee94758a15bbbab2a23940 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a444cb1cc868b81e2928b1c47ca8e0218 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a444cb1cc868b81e2928b1c47ca8e0218"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a444cb1cc868b81e2928b1c47ca8e0218">NODE_INFO_OFS</a> = 0</td></tr>
+<tr class="memdesc:a444cb1cc868b81e2928b1c47ca8e0218 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение поля информации об узле/странице. <br /></td></tr>
+<tr class="separator:a444cb1cc868b81e2928b1c47ca8e0218 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d20dce0b254bbf3277ae61da304498 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a51d20dce0b254bbf3277ae61da304498"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a51d20dce0b254bbf3277ae61da304498">NODE_INFO_SZ</a> = 2</td></tr>
+<tr class="memdesc:a51d20dce0b254bbf3277ae61da304498 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер поля информации об узле/странице. <br /></td></tr>
+<tr class="separator:a51d20dce0b254bbf3277ae61da304498 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcceccfa7510dbb39250e7841242d5ae inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcceccfa7510dbb39250e7841242d5ae"></a>
+static const UInt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#abcceccfa7510dbb39250e7841242d5ae">KEYS_OFS</a> = <a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a51d20dce0b254bbf3277ae61da304498">NODE_INFO_SZ</a></td></tr>
+<tr class="memdesc:abcceccfa7510dbb39250e7841242d5ae inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смещение области ключей в узле. <br /></td></tr>
+<tr class="separator:abcceccfa7510dbb39250e7841242d5ae inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5d5dc422836be26b7577b6fd418705 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b5d5dc422836be26b7577b6fd418705"></a>
+static const UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a8b5d5dc422836be26b7577b6fd418705">MAX_KEYS_NUM</a> = 32767</td></tr>
+<tr class="memdesc:a8b5d5dc422836be26b7577b6fd418705 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет максимальное возможное число для дерева любого порядка. <br /></td></tr>
+<tr class="separator:a8b5d5dc422836be26b7577b6fd418705 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7603d94b5e9f62c06338ef8c626f52 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a7603d94b5e9f62c06338ef8c626f52"></a>
+static const UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a4a7603d94b5e9f62c06338ef8c626f52">LEAF_NODE_MASK</a> = 0x8000</td></tr>
+<tr class="memdesc:a4a7603d94b5e9f62c06338ef8c626f52 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="mdescLeft">&#160;</td><td class="mdescRight">Маска (поз.) для выделения флага, что нод — листовой. <br /></td></tr>
+<tr class="separator:a4a7603d94b5e9f62c06338ef8c626f52 inherit pub_static_attribs_classxi_1_1_base_b_tree"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>B-дерево, основанное на файловом потоке. </p>
+<p>Конкретизирует понятие дерево на случай использования файла для хранения. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a6c5bc2a954a10bf605a9d119220889c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xi::FileBaseBTree::FileBaseBTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор по умолчанию. </p>
+<p>Для "открытия" дерева необходимо использовать метод <a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788" title="Загружает дерево из файла. ">open()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b56e5d92a9769a30e3c4a95a49c69ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xi::FileBaseBTree::FileBaseBTree </td>
+          <td>(</td>
+          <td class="paramtype">UShort&#160;</td>
+          <td class="paramname"><em>order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UShort&#160;</td>
+          <td class="paramname"><em>recSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *&#160;</td>
+          <td class="paramname"><em>comparator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструирует новое B-дерево со структурой, определяемой переданными параметрами. </p>
+<p>Создает новое дерево и записывает его в файл <code>fileName</code>. Если файл существует, он перезаписывается. Если файл не может быть открыт, генерируется исключительная ситуация.</p>
+<p>Конструктор эквивалентен созданию объекта с параметрами по умолчанию с последующим открытием методом <a class="el" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788" title="Загружает дерево из файла. ">open()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="afb0d681e223fd391e0372783af90433b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xi::FileBaseBTree::FileBaseBTree </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a> *&#160;</td>
+          <td class="paramname"><em>comparator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструирует дерево на основе существующего файла B-дерева. </p>
+<p>Если файл не может быть открыт, прочитан или содержит неверную структуру, кидает исключительную ситуацию. </p>
+
+</div>
+</div>
+<a class="anchor" id="a890621395aba6297b05ecc85f7ae9143"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xi::FileBaseBTree::~FileBaseBTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Не забывает закрыть открытые файловые потоки. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a547c5e269358159dabf74aee83b84b91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xi::FileBaseBTree::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Закрывает открытое дерево. </p>
+<p>Закрывает дерево и ассоциированные с ним потоки. Если дерево не открыто, просто ничего не делает (искл. НЕ генерирует для удобства). </p>
+
+</div>
+</div>
+<a class="anchor" id="a2bf30a45c8b27e02f31c7d180cfa38ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xi::FileBaseBTree::closeInternal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Закрывает файловые потоки, ассоциированные с деревом. </p>
+<p>Выполняет инициализацию объекта к такому состоянию, чтобы можно было повторно открыть. </p>
+
+</div>
+</div>
+<a class="anchor" id="a0d73d024f6f680f0ff68bcf0ffeeeef3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xi::FileBaseBTree::loadInternal </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загружает дерево из файла <code>fileName</code>. </p>
+<p>Если файл не может быть открыт, прочитан или содержит неверную структуру, кидает исключительную ситуацию. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9153fe1600226370477a4083ee34f788"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xi::FileBaseBTree::open </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Загружает дерево из файла. </p>
+<p>Если дерево уже открыто, генерирует исключительную ситуацию. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a></li>
+<li>src/btree.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

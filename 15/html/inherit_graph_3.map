@@ -1,0 +1,5 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html" title="Интерфейс, определяющий операцию сравнения двух ключей дерева. " alt="" coords="5,35,188,61"/>
+<area shape="rect" id="node2" href="$d7/dcc/struct_byte_comparator.html" title="ByteComparator" alt="" coords="249,5,365,32"/>
+<area shape="rect" id="node3" href="$da/deb/structxi_1_1_b_tree_comparator.html" title="Реализация компаратора по умолчанию, основанная на соответствуем методе compare() из класса свойств..." alt="" coords="236,57,377,98"/>
+</map>

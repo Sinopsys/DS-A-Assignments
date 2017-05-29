@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Класс xi::BaseBTree::IComparator</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../d0/d3c/classxi_1_1_base_b_tree.html">BaseBTree</a></li><li class="navelem"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">IComparator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../db/da6/classxi_1_1_base_b_tree_1_1_i_comparator-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс xi::BaseBTree::IComparator<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс, определяющий операцию сравнения двух ключей дерева.  
+ <a href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:xi::BaseBTree::IComparator:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/dcb/classxi_1_1_base_b_tree_1_1_i_comparator__inherit__graph.png" border="0" usemap="#xi_1_1_base_b_tree_1_1_i_comparator_inherit__map" alt="Inheritance graph"/></div>
+<map name="xi_1_1_base_b_tree_1_1_i_comparator_inherit__map" id="xi_1_1_base_b_tree_1_1_i_comparator_inherit__map">
+<area shape="rect" id="node2" href="../../d7/dcc/struct_byte_comparator.html" title="ByteComparator" alt="" coords="5,87,121,114"/>
+<area shape="rect" id="node3" href="../../da/deb/structxi_1_1_b_tree_comparator.html" title="Реализация компаратора по умолчанию, основанная на соответствуем методе compare() из класса свойств..." alt="" coords="146,80,287,121"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a625fc9440bec076203ecd2394edf3a66"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html#a625fc9440bec076203ecd2394edf3a66">compare</a> (const Byte *lhv, const Byte *rhv, UInt sz)=0</td></tr>
+<tr class="memdesc:a625fc9440bec076203ecd2394edf3a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет сравнение двух ключей: левого <code>lhv</code> и правого <code>rhv</code>.  <a href="#a625fc9440bec076203ecd2394edf3a66">Подробнее...</a><br /></td></tr>
+<tr class="separator:a625fc9440bec076203ecd2394edf3a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa838299c46a4567f8cb9c37a3795ae7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html#aaa838299c46a4567f8cb9c37a3795ae7">isEqual</a> (const Byte *lhv, const Byte *rhv, UInt sz)=0</td></tr>
+<tr class="memdesc:aaa838299c46a4567f8cb9c37a3795ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает два ключа и если они считаются эквивалентными, возвращает истину, иначе ложь.  <a href="#aaa838299c46a4567f8cb9c37a3795ae7">Подробнее...</a><br /></td></tr>
+<tr class="separator:aaa838299c46a4567f8cb9c37a3795ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Интерфейс, определяющий операцию сравнения двух ключей дерева. </p>
+<p>Конкретная реализация зависит от типов ключей и подразумевает явное приведение нетипизированного потока байт ключа к нужному значению. </p>
+</div><h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a625fc9440bec076203ecd2394edf3a66"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool xi::BaseBTree::IComparator::compare </td>
+          <td>(</td>
+          <td class="paramtype">const Byte *&#160;</td>
+          <td class="paramname"><em>lhv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Byte *&#160;</td>
+          <td class="paramname"><em>rhv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UInt&#160;</td>
+          <td class="paramname"><em>sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Выполняет сравнение двух ключей: левого <code>lhv</code> и правого <code>rhv</code>. </p>
+<p>(Максимальный) размер ключей определяется параметром <code>sz</code>.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>истину, если <code>lhv &lt; rhv&lt;&gt;; иначе ложь.</code></dd></dl>
+<p>Если по какой-то причине ключи не могут быть сравнены (красное с квадратным), генерируется исключительная ситуация std::invalid_argument. </p>
+
+<p>Замещается в <a class="el" href="../../d7/dcc/struct_byte_comparator.html#aab5cfec951320c3cd3e78af00036bf63">ByteComparator</a> и <a class="el" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69">xi::BTreeComparator&lt; T, Traits &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa838299c46a4567f8cb9c37a3795ae7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool xi::BaseBTree::IComparator::isEqual </td>
+          <td>(</td>
+          <td class="paramtype">const Byte *&#160;</td>
+          <td class="paramname"><em>lhv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Byte *&#160;</td>
+          <td class="paramname"><em>rhv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UInt&#160;</td>
+          <td class="paramname"><em>sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сравнивает два ключа и если они считаются эквивалентными, возвращает истину, иначе ложь. </p>
+<p>Если два ключа являются эквивалентными, это не обязательно значит, что подлежащие под ними массивы побайтно равны. </p>
+
+<p>Замещается в <a class="el" href="../../d7/dcc/struct_byte_comparator.html#a4a8459eac82cb269713db04bb726bd7b">ByteComparator</a> и <a class="el" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a6196b9805203bf52939d40b50a7e9fc0">xi::BTreeComparator&lt; T, Traits &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['_5fbtree',['_btree',['../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8',1,'xi::BTreeAdapter']]],
+  ['_5fcomparator',['_comparator',['../d0/d3c/classxi_1_1_base_b_tree.html#afc701f75c0740f156400b760ae152109',1,'xi::BaseBTree::_comparator()'],['../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811',1,'xi::BTreeAdapter::_comparator()']]],
+  ['_5fcursorsofs',['_cursorsOfs',['../d0/d3c/classxi_1_1_base_b_tree.html#a9073ac22b422f69c6c2e8f706fead1dc',1,'xi::BaseBTree']]],
+  ['_5fdata',['_data',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a6e1b19437cabc091f4fd8fc0d969008f',1,'xi::BaseBTree::PageWrapper']]],
+  ['_5ffilename',['_fileName',['../d9/d7a/classxi_1_1_file_base_b_tree.html#a58f5f883b29c2e4d3aa22081d4a91cd5',1,'xi::FileBaseBTree']]],
+  ['_5ffilestream',['_fileStream',['../d9/d7a/classxi_1_1_file_base_b_tree.html#ae94bad8b67b213faf053014bbd317aba',1,'xi::FileBaseBTree']]],
+  ['_5ffn',['_fn',['../d8/d98/class_b_tree_test.html#a770f7426a148b140c85f9eccd8097149',1,'BTreeTest']]],
+  ['_5fkeyssize',['_keysSize',['../d0/d3c/classxi_1_1_base_b_tree.html#a0b1a8674685b7f2ff49d7d17859a4df2',1,'xi::BaseBTree']]],
+  ['_5flastpagenum',['_lastPageNum',['../d0/d3c/classxi_1_1_base_b_tree.html#aa01e0cfb1262f01e29aaa6a1eb67e560',1,'xi::BaseBTree']]],
+  ['_5fmaxkeys',['_maxKeys',['../d0/d3c/classxi_1_1_base_b_tree.html#acd8430d38f6be40a8f6ed82754d557bb',1,'xi::BaseBTree']]],
+  ['_5fminkeys',['_minKeys',['../d0/d3c/classxi_1_1_base_b_tree.html#a0addc46e78d23c30be1b5efc20cbfe97',1,'xi::BaseBTree']]],
+  ['_5fnodepagesize',['_nodePageSize',['../d0/d3c/classxi_1_1_base_b_tree.html#ab07755b4664ede4b3129cc1e22ceb248',1,'xi::BaseBTree']]],
+  ['_5forder',['_order',['../d0/d3c/classxi_1_1_base_b_tree.html#a7d90f99d3b8772b477e2a5fd6e6bb118',1,'xi::BaseBTree']]],
+  ['_5fpagenum',['_pageNum',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a00ec0c263e3772a168f20c126fe13931',1,'xi::BaseBTree::PageWrapper']]],
+  ['_5frecsize',['_recSize',['../d0/d3c/classxi_1_1_base_b_tree.html#a6624713cdb1b14b7f9393e4014067ed7',1,'xi::BaseBTree']]],
+  ['_5frootpage',['_rootPage',['../d0/d3c/classxi_1_1_base_b_tree.html#af0cf19582c883638833b611352000e32',1,'xi::BaseBTree']]],
+  ['_5frootpagenum',['_rootPageNum',['../d0/d3c/classxi_1_1_base_b_tree.html#a8bf086451bd7aa9b3b2c04c7ef986f3e',1,'xi::BaseBTree']]],
+  ['_5fstream',['_stream',['../d0/d3c/classxi_1_1_base_b_tree.html#a4b9b48709437dbeaf668c05f1dda8a6f',1,'xi::BaseBTree']]],
+  ['_5ftree',['_tree',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a9f82271a00dfa3221f5ddcc353c1e4c3',1,'xi::BaseBTree::PageWrapper']]]
+];

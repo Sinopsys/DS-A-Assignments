@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Исходный файл src/btree_adapters.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">btree_adapters.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d6d/btree__adapters_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef BTREE_BTREEADAPTERS_H_</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define BTREE_BTREEADAPTERS_H_</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d13/btree_8h.html">btree.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/d9c/namespacexi.html">xi</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">   34</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">BTreeAdapterTraits</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//-----&lt;объявляем нужные типы&gt;-----</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa63e0a648dbe9c5660951397c56ae55c">   42</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T&amp;                <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa63e0a648dbe9c5660951397c56ae55c">TArg</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ad8be2ff9a677c785f4470694cd3a116a">   45</a></span>&#160;    <span class="keyword">typedef</span> T&amp;                      <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ad8be2ff9a677c785f4470694cd3a116a">TRef</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a525199e37b8d19987816d3df7cf4d743">   53</a></span>&#160;    <span class="keyword">typedef</span> T                       <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a525199e37b8d19987816d3df7cf4d743">TRes</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ab57bbcacfb5b3a784438cd1f67c3cfb8">   57</a></span>&#160;    <span class="keyword">typedef</span> T&amp;                      <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ab57bbcacfb5b3a784438cd1f67c3cfb8">TRefRes</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">   61</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T*                <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//-----&lt;Константы&gt;-----</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa6f5a3e991e4d38177d830aa555faa9b">   71</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keyword">const</span> UShort <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa6f5a3e991e4d38177d830aa555faa9b">REC_SIZE</a> = <span class="keyword">sizeof</span>(T);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//-----&lt;статические методы&gt;-----</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//static int compare(const Byte* lhv, const Byte* rhv, UInt sz)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ac5bccdcf379ee0461361e1dacf309929">   81</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ac5bccdcf379ee0461361e1dacf309929">compare</a>(<span class="keyword">const</span> Byte* lhv, <span class="keyword">const</span> Byte* rhv, UInt sz)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        TConstPtr lp = (<a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a>)lhv;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        TConstPtr rp = (<a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a>)rhv;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (*lp &lt; *rp)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//if (*lp &lt; *rp)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">//    return -1;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//if (*lp &gt; *rp)</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//    return 1;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//return 0;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// простейшая реализация — побайтное сравнение</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isEqual(<span class="keyword">const</span> Byte* lhv, <span class="keyword">const</span> Byte* rhv, UInt sz)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        TConstPtr lp = (<a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a>)lhv;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        TConstPtr rp = (<a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a>)rhv;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> (UInt i = 0; i &lt; sz; ++i)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (*lp != *rp)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a230c685052cae5053e6f7bdc16177ef7">  113</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a230c685052cae5053e6f7bdc16177ef7">raw2keyRes</a>(<span class="keyword">const</span> Byte* raw, TRef key)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        key = *((<span class="keyword">const</span> T*)raw);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a74c89619bdaead4f041d4ba30d78d45b">  119</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a74c89619bdaead4f041d4ba30d78d45b">key2Raw</a>(Byte* raw, TArg key)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        *((T*)raw) = key;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}; <span class="comment">//  class BTreeAdapterTraits</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">template</span>&lt;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">typename</span> T,                                 <span class="comment">// тип данных, как его видит программист</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">typename</span> Traits = BTreeAdapterTraits&lt;T&gt;      <span class="comment">// класс свойств ПО УМОЛЧАНИЮ</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;&gt;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="../../da/deb/structxi_1_1_b_tree_comparator.html">  136</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../da/deb/structxi_1_1_b_tree_comparator.html">BTreeComparator</a> : <span class="keyword">public</span> <a class="code" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">BaseBTree::IComparator</a> {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69">  138</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69">compare</a>(<span class="keyword">const</span> Byte* lhv, <span class="keyword">const</span> Byte* rhv, UInt sz)<span class="keyword"> override </span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// по умолчанию — передаем право выполнить сравнение классу свойств</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span> Traits::compare(lhv, rhv, sz);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// простейшая реализация — побайтное сравнение</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a6196b9805203bf52939d40b50a7e9fc0">  145</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/deb/structxi_1_1_b_tree_comparator.html#a6196b9805203bf52939d40b50a7e9fc0">isEqual</a>(<span class="keyword">const</span> Byte* lhv, <span class="keyword">const</span> Byte* rhv, UInt sz)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> Traits::isEqual(lhv, rhv, sz);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}; <span class="comment">// struct BTreeComparator</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keyword">template</span>&lt;   </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">typename</span> T,                                 <span class="comment">// тип данных, как его видит программист</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">typename</span> Traits = BTreeAdapterTraits&lt;T&gt;,     <span class="comment">// класс свойств ПО УМОЛЧАНИЮ</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">typename</span> Compar = BTreeComparator&lt;T, Traits&gt; <span class="comment">// компаратор</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        &gt;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">  163</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a> {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// основные рабочие типы берем из класса свойств!</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> Traits::TArg       TArg;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> Traits::TRes       TRes;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// основные рабочие константы берем из класса свойств!</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af9d3a055c0b6a8cbe86d55026fb4691e">  175</a></span>&#160;<span class="comment"></span>    <span class="keyword">static</span> <span class="keyword">const</span> UShort REC_SIZE = Traits::REC_SIZE;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a72702de15eb0de6681244896e7fea6b5">  184</a></span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a72702de15eb0de6681244896e7fea6b5">BTreeAdapter</a>() { <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>.<a class="code" href="../../d0/d3c/classxi_1_1_base_b_tree.html#acbf1be39590655b5cf925b4f21c371d3">setComparator</a>(&amp;<a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">_comparator</a>); };</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b">  187</a></span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b">BTreeAdapter</a>(<span class="keyword">const</span> std::string&amp; fileName) : <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a>()</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">openInternal</a>(fileName);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618">  194</a></span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618">BTreeAdapter</a>(UShort order, <span class="keyword">const</span> std::string&amp; fileName) : <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a>()</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">createInternal</a>(order, fileName);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af4edfec3b99ee5a9f1f09e1f8e216c49">  201</a></span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af4edfec3b99ee5a9f1f09e1f8e216c49">~BTreeAdapter</a>()</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>.<a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a547c5e269358159dabf74aee83b84b91">close</a>();</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a72702de15eb0de6681244896e7fea6b5">BTreeAdapter</a>(<span class="keyword">const</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a>&amp;);                          </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a>&amp; <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6773266809699b534572bf49e5e42a13">operator= </a>(<a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter</a>&amp;);                    </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#ac6a1dcbd44a42767f36f723f7c61e3b2">  213</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#ac6a1dcbd44a42767f36f723f7c61e3b2">open</a>(<span class="keyword">const</span> std::string&amp; fileName)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">openInternal</a>(fileName);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1373651c306df7aece2c787dbc5c920b">  220</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1373651c306df7aece2c787dbc5c920b">create</a>(UShort order, <span class="keyword">const</span> std::string&amp; fileName)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">createInternal</a>(order, fileName);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">// основные методы доступа к типизированным объектам</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">//TRes getKeyWork(UShort num)</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afd43075357d5c7cb5e2d10ee064d5a17">  235</a></span>&#160;    TRes <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afd43075357d5c7cb5e2d10ee064d5a17">getKey</a>(<a class="code" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a>&amp; pw, UShort num)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// получаем указатель на сырые данные, представляющие ключ</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">//Byte* kp = _btree.getWorkPage().getKey(num);</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        Byte* kp = pw.<a class="code" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a623a2d5aa5a04cde050f647fd9888774">getKey</a>(num);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        TRes res;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        Traits::raw2keyRes(kp, res);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> res;         <span class="comment">// вот это чуть дороговато</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">//void setKeyWork(UShort num, TArg key)</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a739d61176e549942fa511ca7855c6854">  257</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a739d61176e549942fa511ca7855c6854">setKey</a>(<a class="code" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">BaseBTree::PageWrapper</a>&amp; pw, UShort num, TArg key)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// получаем указатель на сырые данные, представляющие ключ</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">//Byte* kp = _btree.getWorkPage().getKey(num);</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        Byte* kp = pw.<a class="code" href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a623a2d5aa5a04cde050f647fd9888774">getKey</a>(num);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        Traits::key2Raw(kp, key);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">//public:</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">//    // некоторые прокси-методы, для удо</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// сеттеры/геттеры</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6bac460b27cbd605e2d3a78fef17a69a">  277</a></span>&#160;    <a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a>&amp; <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6bac460b27cbd605e2d3a78fef17a69a">getTree</a>() { <span class="keywordflow">return</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>;  }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afa3e399b2e5f9d7c955618f6e44f7e54">  280</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a>&amp; <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afa3e399b2e5f9d7c955618f6e44f7e54">getTree</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>; }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">  286</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">openInternal</a>(<span class="keyword">const</span> std::string&amp; fileName)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>.<a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788">open</a>(fileName, &amp;<a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">_comparator</a>);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="comment">// если открылось нормально, проверим, подходит ли дерево под параметры шаблона</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>.<a class="code" href="../../d0/d3c/classxi_1_1_base_b_tree.html#a2ca7b922af73d4cb6bfb46f5050aa493">getRecSize</a>() != <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af9d3a055c0b6a8cbe86d55026fb4691e">REC_SIZE</a>)                <span class="comment">// размер записи</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Key size mismatch. Wrong file&quot;</span>);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">//if (_btree.getOrder() != REC_SIZE)                // размер записи</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">//    throw std::runtime_error(&quot;Key size mismatch. Wrong file&quot;)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">  300</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">createInternal</a>(UShort order, <span class="keyword">const</span> std::string&amp; fileName)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>.<a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a12dc6df69b20eee7ab02d40883b31db7">create</a>(order, REC_SIZE, fileName);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00308"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">  308</a></span>&#160;    <a class="code" href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">FileBaseBTree</a> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">_btree</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">  311</a></span>&#160;    Compar <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">_comparator</a>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}; <span class="comment">// class Int32BTree </span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="comment">//class BTreeIntAdapter : public BTreeAdapter&lt;&gt;</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeAdapter&lt;int&gt;</a> <a class="code" href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">BTreeIntAdapter</a>;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;} <span class="comment">// namespace xi</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;<span class="preprocessor">#endif // BTREE_BTREEADAPTERS_H_</span></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_af4edfec3b99ee5a9f1f09e1f8e216c49"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af4edfec3b99ee5a9f1f09e1f8e216c49">xi::BTreeAdapter::~BTreeAdapter</a></div><div class="ttdeci">~BTreeAdapter()</div><div class="ttdoc">Деструктор. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:201</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_aa6f5a3e991e4d38177d830aa555faa9b"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa6f5a3e991e4d38177d830aa555faa9b">xi::BTreeAdapterTraits::REC_SIZE</a></div><div class="ttdeci">static const UShort REC_SIZE</div><div class="ttdoc">Размер записи, по умолчанию определяется размером типа. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:71</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_a525199e37b8d19987816d3df7cf4d743"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a525199e37b8d19987816d3df7cf4d743">xi::BTreeAdapterTraits::TRes</a></div><div class="ttdeci">T TRes</div><div class="ttdoc">Тип результата получения ключа. В большинстве случаев по значению, так как придется выполнять преобра...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:53</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a739d61176e549942fa511ca7855c6854"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a739d61176e549942fa511ca7855c6854">xi::BTreeAdapter::setKey</a></div><div class="ttdeci">void setKey(BaseBTree::PageWrapper &amp;pw, UShort num, TArg key)</div><div class="ttdoc">Устанавливает ключ по значению, номер ключа — num. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:257</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_comparator_html_a6196b9805203bf52939d40b50a7e9fc0"><div class="ttname"><a href="../../da/deb/structxi_1_1_b_tree_comparator.html#a6196b9805203bf52939d40b50a7e9fc0">xi::BTreeComparator::isEqual</a></div><div class="ttdeci">virtual bool isEqual(const Byte *lhv, const Byte *rhv, UInt sz) override</div><div class="ttdoc">Сравнивает два ключа и если они считаются эквивалентными, возвращает истину, иначе ложь...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:145</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a975010972e4509e88849343133ac6618"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a975010972e4509e88849343133ac6618">xi::BTreeAdapter::BTreeAdapter</a></div><div class="ttdeci">BTreeAdapter(UShort order, const std::string &amp;fileName)</div><div class="ttdoc">Конструирует дерево с заданным порядком order и и ассоциирует его с файлом fileName. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:194</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_ac6a1dcbd44a42767f36f723f7c61e3b2"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#ac6a1dcbd44a42767f36f723f7c61e3b2">xi::BTreeAdapter::open</a></div><div class="ttdeci">void open(const std::string &amp;fileName)</div><div class="ttdoc">Конструирует дерево по типу конструктора BTreeAdapter(const std::string& fileName). </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:213</div></div>
+<div class="ttc" id="btree_8h_html"><div class="ttname"><a href="../../d9/d13/btree_8h.html">btree.h</a></div><div class="ttdoc">Определение классов B-дерева </div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html">xi::BTreeAdapter</a></div><div class="ttdoc">Адаптер для B-дерева, получающий тип ключа из параметра шаблона, а дополнительную информацию из специ...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:163</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a72702de15eb0de6681244896e7fea6b5"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a72702de15eb0de6681244896e7fea6b5">xi::BTreeAdapter::BTreeAdapter</a></div><div class="ttdeci">BTreeAdapter()</div><div class="ttdoc">Конструктор по умолчанию. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:184</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_af9d3a055c0b6a8cbe86d55026fb4691e"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#af9d3a055c0b6a8cbe86d55026fb4691e">xi::BTreeAdapter::REC_SIZE</a></div><div class="ttdeci">static const UShort REC_SIZE</div><div class="ttdoc">Размер записи, по умолчанию определяется размером типа. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:175</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_ab57bbcacfb5b3a784438cd1f67c3cfb8"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ab57bbcacfb5b3a784438cd1f67c3cfb8">xi::BTreeAdapterTraits::TRefRes</a></div><div class="ttdeci">T &amp; TRefRes</div><div class="ttdoc">Тип для получение значения ключа через ссылку, передаваемую в параметр метода. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:57</div></div>
+<div class="ttc" id="classxi_1_1_base_b_tree_html_acbf1be39590655b5cf925b4f21c371d3"><div class="ttname"><a href="../../d0/d3c/classxi_1_1_base_b_tree.html#acbf1be39590655b5cf925b4f21c371d3">xi::BaseBTree::setComparator</a></div><div class="ttdeci">void setComparator(IComparator *c)</div><div class="ttdoc">Возвращает константный указатель на текущую корневую страницу. </div><div class="ttdef"><b>Definition:</b> btree.h:571</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_afa3e399b2e5f9d7c955618f6e44f7e54"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afa3e399b2e5f9d7c955618f6e44f7e54">xi::BTreeAdapter::getTree</a></div><div class="ttdeci">const FileBaseBTree &amp; getTree() const </div><div class="ttdoc">Возвращает константно подлежащее дерево. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:280</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_a74c89619bdaead4f041d4ba30d78d45b"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a74c89619bdaead4f041d4ba30d78d45b">xi::BTreeAdapterTraits::key2Raw</a></div><div class="ttdeci">static void key2Raw(Byte *raw, TArg key)</div><div class="ttdoc">Дефолтная реализация метода преобразования ключа (типом) в поток байт. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:119</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_ad8be2ff9a677c785f4470694cd3a116a"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ad8be2ff9a677c785f4470694cd3a116a">xi::BTreeAdapterTraits::TRef</a></div><div class="ttdeci">T &amp; TRef</div><div class="ttdoc">Тип-ссыка основного типа ключа. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:45</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a58748b6e910150eacff02448d68b022b"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a58748b6e910150eacff02448d68b022b">xi::BTreeAdapter::BTreeAdapter</a></div><div class="ttdeci">BTreeAdapter(const std::string &amp;fileName)</div><div class="ttdoc">Конструирует дерево и загружает его содержимое из файла fileName. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:187</div></div>
+<div class="ttc" id="classxi_1_1_file_base_b_tree_html"><div class="ttname"><a href="../../d9/d7a/classxi_1_1_file_base_b_tree.html">xi::FileBaseBTree</a></div><div class="ttdoc">B-дерево, основанное на файловом потоке. </div><div class="ttdef"><b>Definition:</b> btree.h:758</div></div>
+<div class="ttc" id="classxi_1_1_base_b_tree_1_1_page_wrapper_html"><div class="ttname"><a href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html">xi::BaseBTree::PageWrapper</a></div><div class="ttdoc">Маска (нег.) для выделения флага, что нод — листовой. </div><div class="ttdef"><b>Definition:</b> btree.h:131</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a02b1fa8e8911d7ed1ba7c8bad0217ba8"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a02b1fa8e8911d7ed1ba7c8bad0217ba8">xi::BTreeAdapter::_btree</a></div><div class="ttdeci">FileBaseBTree _btree</div><div class="ttdoc">Подлежащий объект-дерево. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:308</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_comparator_html"><div class="ttname"><a href="../../da/deb/structxi_1_1_b_tree_comparator.html">xi::BTreeComparator</a></div><div class="ttdoc">Реализация компаратора по умолчанию, основанная на соответствуем методе compare() из класса свойств...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:136</div></div>
+<div class="ttc" id="namespacexi_html"><div class="ttname"><a href="../../db/d9c/namespacexi.html">xi</a></div><div class="ttdef"><b>Definition:</b> btree.cpp:19</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a1373651c306df7aece2c787dbc5c920b"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1373651c306df7aece2c787dbc5c920b">xi::BTreeAdapter::create</a></div><div class="ttdeci">void create(UShort order, const std::string &amp;fileName)</div><div class="ttdoc">Конструирует дерево по типу конструктора BTreeAdapter(UShort order, const std::string& fileName)...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:220</div></div>
+<div class="ttc" id="classxi_1_1_base_b_tree_1_1_page_wrapper_html_a623a2d5aa5a04cde050f647fd9888774"><div class="ttname"><a href="../../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a623a2d5aa5a04cde050f647fd9888774">xi::BaseBTree::PageWrapper::getKey</a></div><div class="ttdeci">Byte * getKey(UShort num)</div><div class="ttdoc">Возвращает указатель на область памяти, соответствующую ключу номер num. </div><div class="ttdef"><b>Definition:</b> btree.cpp:587</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_comparator_html_a99a5e03e877f17cf823c2bd09948ac69"><div class="ttname"><a href="../../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69">xi::BTreeComparator::compare</a></div><div class="ttdeci">virtual bool compare(const Byte *lhv, const Byte *rhv, UInt sz) override</div><div class="ttdoc">Выполняет сравнение двух ключей: левого lhv и правого rhv. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:138</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a6bac460b27cbd605e2d3a78fef17a69a"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6bac460b27cbd605e2d3a78fef17a69a">xi::BTreeAdapter::getTree</a></div><div class="ttdeci">FileBaseBTree &amp; getTree()</div><div class="ttdoc">Возвращает подлежащее дерево. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:277</div></div>
+<div class="ttc" id="classxi_1_1_file_base_b_tree_html_a9153fe1600226370477a4083ee34f788"><div class="ttname"><a href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a9153fe1600226370477a4083ee34f788">xi::FileBaseBTree::open</a></div><div class="ttdeci">void open(const std::string &amp;fileName)</div><div class="ttdoc">Загружает дерево из файла. </div><div class="ttdef"><b>Definition:</b> btree.cpp:987</div></div>
+<div class="ttc" id="classxi_1_1_base_b_tree_1_1_i_comparator_html"><div class="ttname"><a href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html">xi::BaseBTree::IComparator</a></div><div class="ttdoc">Интерфейс, определяющий операцию сравнения двух ключей дерева. </div><div class="ttdef"><b>Definition:</b> btree.h:366</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_aa63e0a648dbe9c5660951397c56ae55c"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa63e0a648dbe9c5660951397c56ae55c">xi::BTreeAdapterTraits::TArg</a></div><div class="ttdeci">const T &amp; TArg</div><div class="ttdoc">Тип неизменяемого аргумента: в большинстве случаев — конст. ссылка, но для некоторых (интегральных в...</div><div class="ttdef"><b>Definition:</b> btree_adapters.h:42</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_afd43075357d5c7cb5e2d10ee064d5a17"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#afd43075357d5c7cb5e2d10ee064d5a17">xi::BTreeAdapter::getKey</a></div><div class="ttdeci">TRes getKey(BaseBTree::PageWrapper &amp;pw, UShort num)</div><div class="ttdoc">Получает ключ по значению, номер ключа — num. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:235</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a6773266809699b534572bf49e5e42a13"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a6773266809699b534572bf49e5e42a13">xi::BTreeAdapter::operator=</a></div><div class="ttdeci">BTreeAdapter &amp; operator=(BTreeAdapter &amp;)</div><div class="ttdoc">Оператор присваивания недоступен. </div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a1dcf38b14d7edb1721dffae0d36eea73"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a1dcf38b14d7edb1721dffae0d36eea73">xi::BTreeAdapter::openInternal</a></div><div class="ttdeci">void openInternal(const std::string &amp;fileName)</div><div class="ttdoc">Реализует конструктор BTreeAdapter(const std::string& fileName). </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:286</div></div>
+<div class="ttc" id="classxi_1_1_file_base_b_tree_html_a547c5e269358159dabf74aee83b84b91"><div class="ttname"><a href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a547c5e269358159dabf74aee83b84b91">xi::FileBaseBTree::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Закрывает открытое дерево. </div><div class="ttdef"><b>Definition:</b> btree.cpp:1066</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">xi::BTreeAdapterTraits</a></div><div class="ttdoc">Класс свойств (черт, traits), определяющий необходимые всопомогательные компоненты, ассоциированные с типом данных T. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:34</div></div>
+<div class="ttc" id="classxi_1_1_file_base_b_tree_html_a12dc6df69b20eee7ab02d40883b31db7"><div class="ttname"><a href="../../d9/d7a/classxi_1_1_file_base_b_tree.html#a12dc6df69b20eee7ab02d40883b31db7">xi::FileBaseBTree::create</a></div><div class="ttdeci">void create(UShort order, UShort recSize, const std::string &amp;fileName)</div><div class="ttdoc">Открывает неактивное к моменту вызова метода дерево по типу конструктора с таким же набором параметро...</div><div class="ttdef"><b>Definition:</b> btree.cpp:941</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_ac5bccdcf379ee0461361e1dacf309929"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ac5bccdcf379ee0461361e1dacf309929">xi::BTreeAdapterTraits::compare</a></div><div class="ttdeci">static bool compare(const Byte *lhv, const Byte *rhv, UInt sz)</div><div class="ttdoc">Выполняет сравнение двух ключей дерева B-tree, как это указано в компараторе BaseBTree::IComparator. Наивная реализация приводит указатели к соответствующим указателям на типы, разыменовывает их и сравнивает без учета размера. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:81</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_a230c685052cae5053e6f7bdc16177ef7"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a230c685052cae5053e6f7bdc16177ef7">xi::BTreeAdapterTraits::raw2keyRes</a></div><div class="ttdeci">static void raw2keyRes(const Byte *raw, TRef key)</div><div class="ttdoc">Дефолтная реализация метода преобразования потока байт в тип ключа. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:113</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_a41cc4a5aa59c266e20b86a093b528811"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#a41cc4a5aa59c266e20b86a093b528811">xi::BTreeAdapter::_comparator</a></div><div class="ttdeci">Compar _comparator</div><div class="ttdoc">Компаратор, как отдельный объект </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:311</div></div>
+<div class="ttc" id="structxi_1_1_b_tree_adapter_traits_html_adf0d09b35b8073f7b236774db4299c3a"><div class="ttname"><a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">xi::BTreeAdapterTraits::TConstPtr</a></div><div class="ttdeci">const T * TConstPtr</div><div class="ttdoc">Описывает константный указатель на тип. </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:61</div></div>
+<div class="ttc" id="classxi_1_1_b_tree_adapter_html_acb3dc9ece899bee5c8868d9e02b4f2ca"><div class="ttname"><a href="../../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca">xi::BTreeAdapter::createInternal</a></div><div class="ttdeci">void createInternal(UShort order, const std::string &amp;fileName)</div><div class="ttdoc">Реализует конструктор BTreeAdapter(UShort order, const std::string& fileName). </div><div class="ttdef"><b>Definition:</b> btree_adapters.h:300</div></div>
+<div class="ttc" id="classxi_1_1_base_b_tree_html_a2ca7b922af73d4cb6bfb46f5050aa493"><div class="ttname"><a href="../../d0/d3c/classxi_1_1_base_b_tree.html#a2ca7b922af73d4cb6bfb46f5050aa493">xi::BaseBTree::getRecSize</a></div><div class="ttdeci">UShort getRecSize() const </div><div class="ttdoc">Возвращает длину записи ключа. </div><div class="ttdef"><b>Definition:</b> btree.h:531</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:05. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

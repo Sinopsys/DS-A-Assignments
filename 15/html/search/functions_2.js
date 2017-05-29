@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['checkforopenstream',['checkForOpenStream',['../d0/d3c/classxi_1_1_base_b_tree.html#a74a5e436e333833adfea658728c3697b',1,'xi::BaseBTree']]],
+  ['checkintegrity',['checkIntegrity',['../d5/dea/structxi_1_1_base_b_tree_1_1_header.html#a76d3f4f8d9fd97bb662eed83cb7bdf76',1,'xi::BaseBTree::Header']]],
+  ['checkkeysnumber',['checkKeysNumber',['../d0/d3c/classxi_1_1_base_b_tree.html#a8809a3369750d096372a150b5f685ce1',1,'xi::BaseBTree']]],
+  ['checkkeysnumberexc',['checkKeysNumberExc',['../d0/d3c/classxi_1_1_base_b_tree.html#acd42e066d82001beb4633eb5a83fac76',1,'xi::BaseBTree']]],
+  ['checktreeparams',['checkTreeParams',['../d9/d7a/classxi_1_1_file_base_b_tree.html#af0dbb37a6df9a1c39d2bde7f2e1514cd',1,'xi::FileBaseBTree']]],
+  ['clear',['clear',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#ac551c95d021ddd01d07b0479fac58deb',1,'xi::BaseBTree::PageWrapper']]],
+  ['close',['close',['../d9/d7a/classxi_1_1_file_base_b_tree.html#a547c5e269358159dabf74aee83b84b91',1,'xi::FileBaseBTree']]],
+  ['closeinternal',['closeInternal',['../d9/d7a/classxi_1_1_file_base_b_tree.html#a2bf30a45c8b27e02f31c7d180cfa38ae',1,'xi::FileBaseBTree']]],
+  ['compare',['compare',['../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html#a625fc9440bec076203ecd2394edf3a66',1,'xi::BaseBTree::IComparator::compare()'],['../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ac5bccdcf379ee0461361e1dacf309929',1,'xi::BTreeAdapterTraits::compare()'],['../da/deb/structxi_1_1_b_tree_comparator.html#a99a5e03e877f17cf823c2bd09948ac69',1,'xi::BTreeComparator::compare()'],['../d7/dcc/struct_byte_comparator.html#aab5cfec951320c3cd3e78af00036bf63',1,'ByteComparator::compare()']]],
+  ['copycursors',['copyCursors',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a20b33c819db5ed834e17626103d3267f',1,'xi::BaseBTree::PageWrapper']]],
+  ['copykey',['copyKey',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#aae97472fdfbaa4b8e2a946c5476691ba',1,'xi::BaseBTree::PageWrapper']]],
+  ['copykeys',['copyKeys',['../d3/d38/classxi_1_1_base_b_tree_1_1_page_wrapper.html#a6bb1ae49fecc459c25491f44dc5dc1fa',1,'xi::BaseBTree::PageWrapper']]],
+  ['create',['create',['../d9/d7a/classxi_1_1_file_base_b_tree.html#a12dc6df69b20eee7ab02d40883b31db7',1,'xi::FileBaseBTree::create()'],['../d2/d7e/classxi_1_1_b_tree_adapter.html#a1373651c306df7aece2c787dbc5c920b',1,'xi::BTreeAdapter::create()']]],
+  ['createinternal',['createInternal',['../d9/d7a/classxi_1_1_file_base_b_tree.html#a8c9426a0f569bf1510687923bf8111f9',1,'xi::FileBaseBTree::createInternal()'],['../d2/d7e/classxi_1_1_b_tree_adapter.html#acb3dc9ece899bee5c8868d9e02b4f2ca',1,'xi::BTreeAdapter::createInternal()']]],
+  ['createrootpage',['createRootPage',['../d0/d3c/classxi_1_1_base_b_tree.html#a5f139646ac1829398e9f2fab6a190231',1,'xi::BaseBTree']]],
+  ['createtree',['createTree',['../d0/d3c/classxi_1_1_base_b_tree.html#a6b0cf5d47df75945d1947247e318a88b',1,'xi::BaseBTree']]]
+];

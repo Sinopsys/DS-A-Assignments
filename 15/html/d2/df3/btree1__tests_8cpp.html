@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Файл tests/gtest/src/btree1_tests.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="../../dir_3291c6cb888298ddcba2a410413770df.html">gtest</a></li><li class="navelem"><a class="el" href="../../dir_04ea101b266f0eb9e0fe0f13e09294a3.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл btree1_tests.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Unit-тесты для B-деревьев  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;gtest/gtest.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d1f/individual_8h_source.html">individual.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d13/btree_8h_source.html">btree.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для btree1_tests.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d7f/btree1__tests_8cpp__incl.png" border="0" usemap="#tests_2gtest_2src_2btree1__tests_8cpp" alt=""/></div>
+<map name="tests_2gtest_2src_2btree1__tests_8cpp" id="tests_2gtest_2src_2btree1__tests_8cpp">
+<area shape="rect" id="node3" href="../../d5/d1f/individual_8h.html" title="Описание индивидуальных настроек тестирования, находящих свое отображение в программном коде..." alt="" coords="125,95,210,121"/>
+<area shape="rect" id="node4" href="../../d9/d13/btree_8h.html" title="Определение классов B&#45;дерева " alt="" coords="235,95,297,121"/>
+<area shape="rect" id="node8" href="../../d5/d60/utils_8h.html" title="Вспомогательные определения (типов и др.) " alt="" coords="347,169,404,196"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тестовый класс для тестирования открытых интерфейсов B-tree.  <a href="../../d8/d98/class_b_tree_test.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dcc/struct_byte_comparator.html">ByteComparator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a249280623a1f03968939fd9f8bec9777"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a249280623a1f03968939fd9f8bec9777"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Simplest)</td></tr>
+<tr class="separator:a249280623a1f03968939fd9f8bec9777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cc57ffa95795013dbc0814a390bfca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94cc57ffa95795013dbc0814a390bfca"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Order1)</td></tr>
+<tr class="separator:a94cc57ffa95795013dbc0814a390bfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6363815826358e612bc70ff84d562275"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6363815826358e612bc70ff84d562275"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, AllocPage1)</td></tr>
+<tr class="separator:a6363815826358e612bc70ff84d562275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1fc9b3fa8d7a643160a844d0ee9d00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e1fc9b3fa8d7a643160a844d0ee9d00"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, ReadPage1)</td></tr>
+<tr class="separator:a3e1fc9b3fa8d7a643160a844d0ee9d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aac8be374e8826fd4dc862ceadecf0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4aac8be374e8826fd4dc862ceadecf0f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, WritePage1)</td></tr>
+<tr class="separator:a4aac8be374e8826fd4dc862ceadecf0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c2b75e32a420509c29128e531a5b67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25c2b75e32a420509c29128e531a5b67"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, WritePage2)</td></tr>
+<tr class="separator:a25c2b75e32a420509c29128e531a5b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa678c60476e51fbb0d49cc67fe9c7f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa678c60476e51fbb0d49cc67fe9c7f9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, ReopenFile1)</td></tr>
+<tr class="separator:aaa678c60476e51fbb0d49cc67fe9c7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee9930a1bc824c15009d59ab59038ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ee9930a1bc824c15009d59ab59038ec"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, ReopenFile2)</td></tr>
+<tr class="separator:a4ee9930a1bc824c15009d59ab59038ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9b26f2d361798efef758026f6013f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf9b26f2d361798efef758026f6013f4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, WorkPages1)</td></tr>
+<tr class="separator:adf9b26f2d361798efef758026f6013f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c95141d8b5fdb8d74ea4498114d9a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07c95141d8b5fdb8d74ea4498114d9a3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, KeysNCursors1)</td></tr>
+<tr class="separator:a07c95141d8b5fdb8d74ea4498114d9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213cce8dd6787232c0ad7e77e52dc1ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a213cce8dd6787232c0ad7e77e52dc1ef"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, KeysNCursors2)</td></tr>
+<tr class="separator:a213cce8dd6787232c0ad7e77e52dc1ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e415a656ebe5b945dc78c3014d80d75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e415a656ebe5b945dc78c3014d80d75"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Split1)</td></tr>
+<tr class="separator:a6e415a656ebe5b945dc78c3014d80d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5313e0761c763b8d5208a8ffdd3e50a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5313e0761c763b8d5208a8ffdd3e50a9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Split2)</td></tr>
+<tr class="separator:a5313e0761c763b8d5208a8ffdd3e50a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33634c8b7953efb9b0e01af8c22de5f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33634c8b7953efb9b0e01af8c22de5f8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, InsertNonFull1)</td></tr>
+<tr class="separator:a33634c8b7953efb9b0e01af8c22de5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb41e40bdf554e170c3c58e1021de45f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb41e40bdf554e170c3c58e1021de45f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Insert1)</td></tr>
+<tr class="separator:adb41e40bdf554e170c3c58e1021de45f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1361db49b2db455376e77d9b6326c586"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1361db49b2db455376e77d9b6326c586"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Insert2)</td></tr>
+<tr class="separator:a1361db49b2db455376e77d9b6326c586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fe6bded4fe2690d35f8fc767492401"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39fe6bded4fe2690d35f8fc767492401"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>TEST_F</b> (<a class="el" href="../../d8/d98/class_b_tree_test.html">BTreeTest</a>, Insert3)</td></tr>
+<tr class="separator:a39fe6bded4fe2690d35f8fc767492401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Unit-тесты для B-деревьев </p>
+<dl class="section author"><dt>Автор</dt><dd>Sergey Shershakov </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>0.1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>01.05.2017 This is a part of the course "Algorithms and Data Structures" provided by the School of Software Engineering of the Faculty of Computer Science at the Higher School of Economics.</dd></dl>
+<p>Gtest-based unit test. The naming conventions imply the name of a unit-test module is the same as the name of the corresponding tested module with _test suffix </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

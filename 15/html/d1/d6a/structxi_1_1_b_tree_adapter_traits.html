@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>B-tree / A&amp;DS HSE&#39;s Course: Шаблон структуры xi::BTreeAdapterTraits&lt; T &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">B-tree / A&amp;DS HSE&#39;s Course
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+   <div id="projectbrief">B-tree / A&amp;DS HSE&#39;s Course 2015–2017 © HSE&#39;s A&amp;DS Team &amp; Sergey Shershakov</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="../../pages.html"><span>Описания</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Классы</span></a></li>
+      <li><a href="../../classes.html"><span>Алфавитный&#160;указатель&#160;классов</span></a></li>
+      <li><a href="../../inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="../../functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><b>xi</b></li><li class="navelem"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">BTreeAdapterTraits</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="../../db/d1c/structxi_1_1_b_tree_adapter_traits-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон структуры xi::BTreeAdapterTraits&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс свойств (черт, traits), определяющий необходимые всопомогательные компоненты, ассоциированные с типом данных T.  
+ <a href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d6d/btree__adapters_8h_source.html">btree_adapters.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:aa63e0a648dbe9c5660951397c56ae55c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa63e0a648dbe9c5660951397c56ae55c"></a>
+typedef const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa63e0a648dbe9c5660951397c56ae55c">TArg</a></td></tr>
+<tr class="memdesc:aa63e0a648dbe9c5660951397c56ae55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип неизменяемого аргумента: в большинстве случаев — конст. ссылка, но для некоторых (интегральных в частности) типов дешевле передавать по значению. <br /></td></tr>
+<tr class="separator:aa63e0a648dbe9c5660951397c56ae55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8be2ff9a677c785f4470694cd3a116a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad8be2ff9a677c785f4470694cd3a116a"></a>
+typedef T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ad8be2ff9a677c785f4470694cd3a116a">TRef</a></td></tr>
+<tr class="memdesc:ad8be2ff9a677c785f4470694cd3a116a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип-ссыка основного типа ключа. <br /></td></tr>
+<tr class="separator:ad8be2ff9a677c785f4470694cd3a116a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525199e37b8d19987816d3df7cf4d743"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a525199e37b8d19987816d3df7cf4d743"></a>
+typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a525199e37b8d19987816d3df7cf4d743">TRes</a></td></tr>
+<tr class="memdesc:a525199e37b8d19987816d3df7cf4d743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип результата получения ключа. В большинстве случаев по значению, так как придется выполнять преобразование типов. // TODO: Для случаев, когда дорого дважды копировать, можно рассмотреть семантику перемещения (проверить со string) <br /></td></tr>
+<tr class="separator:a525199e37b8d19987816d3df7cf4d743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57bbcacfb5b3a784438cd1f67c3cfb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab57bbcacfb5b3a784438cd1f67c3cfb8"></a>
+typedef T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ab57bbcacfb5b3a784438cd1f67c3cfb8">TRefRes</a></td></tr>
+<tr class="memdesc:ab57bbcacfb5b3a784438cd1f67c3cfb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Тип для получение значения ключа через ссылку, передаваемую в параметр метода. <br /></td></tr>
+<tr class="separator:ab57bbcacfb5b3a784438cd1f67c3cfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0d09b35b8073f7b236774db4299c3a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf0d09b35b8073f7b236774db4299c3a"></a>
+typedef const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#adf0d09b35b8073f7b236774db4299c3a">TConstPtr</a></td></tr>
+<tr class="memdesc:adf0d09b35b8073f7b236774db4299c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Описывает константный указатель на тип. <br /></td></tr>
+<tr class="separator:adf0d09b35b8073f7b236774db4299c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ac5bccdcf379ee0461361e1dacf309929"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5bccdcf379ee0461361e1dacf309929"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ac5bccdcf379ee0461361e1dacf309929">compare</a> (const Byte *lhv, const Byte *rhv, UInt sz)</td></tr>
+<tr class="memdesc:ac5bccdcf379ee0461361e1dacf309929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет сравнение двух ключей дерева B-tree, как это указано в компараторе <a class="el" href="../../da/d6c/classxi_1_1_base_b_tree_1_1_i_comparator.html" title="Интерфейс, определяющий операцию сравнения двух ключей дерева. ">BaseBTree::IComparator</a>. Наивная реализация приводит указатели к соответствующим указателям на типы, разыменовывает их и сравнивает без учета размера. <br /></td></tr>
+<tr class="separator:ac5bccdcf379ee0461361e1dacf309929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e555fc3b69bf77bde11b8ec92d7480"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5e555fc3b69bf77bde11b8ec92d7480"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEqual</b> (const Byte *lhv, const Byte *rhv, UInt sz)</td></tr>
+<tr class="separator:ac5e555fc3b69bf77bde11b8ec92d7480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a230c685052cae5053e6f7bdc16177ef7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a230c685052cae5053e6f7bdc16177ef7"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a230c685052cae5053e6f7bdc16177ef7">raw2keyRes</a> (const Byte *raw, <a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#ad8be2ff9a677c785f4470694cd3a116a">TRef</a> key)</td></tr>
+<tr class="memdesc:a230c685052cae5053e6f7bdc16177ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дефолтная реализация метода преобразования потока байт в тип ключа. <br /></td></tr>
+<tr class="separator:a230c685052cae5053e6f7bdc16177ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c89619bdaead4f041d4ba30d78d45b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74c89619bdaead4f041d4ba30d78d45b"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#a74c89619bdaead4f041d4ba30d78d45b">key2Raw</a> (Byte *raw, <a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa63e0a648dbe9c5660951397c56ae55c">TArg</a> key)</td></tr>
+<tr class="memdesc:a74c89619bdaead4f041d4ba30d78d45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Дефолтная реализация метода преобразования ключа (типом) в поток байт. <br /></td></tr>
+<tr class="separator:a74c89619bdaead4f041d4ba30d78d45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:aa6f5a3e991e4d38177d830aa555faa9b"><td class="memItemLeft" align="right" valign="top">static const UShort&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html#aa6f5a3e991e4d38177d830aa555faa9b">REC_SIZE</a> = sizeof(T)</td></tr>
+<tr class="memdesc:aa6f5a3e991e4d38177d830aa555faa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер записи, по умолчанию определяется размером типа.  <a href="#aa6f5a3e991e4d38177d830aa555faa9b">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa6f5a3e991e4d38177d830aa555faa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+struct xi::BTreeAdapterTraits&lt; T &gt;</h3>
+
+<p>Класс свойств (черт, traits), определяющий необходимые всопомогательные компоненты, ассоциированные с типом данных T. </p>
+<p>Введение в классы свойств см. <a href="https://accu.org/index.php/journals/442">https://accu.org/index.php/journals/442</a> </p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="aa6f5a3e991e4d38177d830aa555faa9b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const UShort <a class="el" href="../../d1/d6a/structxi_1_1_b_tree_adapter_traits.html">xi::BTreeAdapterTraits</a>&lt; T &gt;::REC_SIZE = sizeof(T)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Размер записи, по умолчанию определяется размером типа. </p>
+<p>Константу необходимо переопределять для сложных типов, например, string </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>src/<a class="el" href="../../d1/d6d/btree__adapters_8h_source.html">btree_adapters.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по B-tree / A&amp;DS HSE&#39;s Course. Последние изменения: Пн 29 Май 2017 13:05:06. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>
