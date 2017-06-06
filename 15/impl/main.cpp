@@ -26,15 +26,16 @@ using namespace std;
 
 
 
-/** \brief Тестирует открытие дерева в новом файле (1). */
+/** \brief ????????? ???????? ?????? ? ????? ????? (1). */
 void stOpenFileBTree()
 {
     using namespace xi;
 
     string fn = "f:\\temp\\20170526\\btrees\\st1.xibt";
-    FileBaseBTree bt(2, 10, nullptr, fn);               // без компаратора!
+    FileBaseBTree bt(2, 10, nullptr, fn);               // ??? ???????????!
     
 }
+
 
 
 
@@ -42,6 +43,7 @@ void stOpenFileBTree()
 int main()
 {
     stOpenFileBTree();
+
 
 
     cout << "Hello, World!" << endl;
