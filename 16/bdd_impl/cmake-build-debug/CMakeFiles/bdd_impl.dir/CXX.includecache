@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/16/bdd_impl/main.cpp
+toyBDD.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/16/bdd_impl/toyBDD.h
+cmath
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/16/bdd_impl/toyBDD.cpp
+toyBDD.h
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/16/bdd_impl/toyBDD.h
+cstring
+-
+limits
+-
+
+/home/kirill/University/HSE/Algo/2 semestr/Homeworks/16/bdd_impl/toyBDD.h
+vector
+-
+set
+-
+map
+-
+iostream
+-
+cassert
+-
+cstdlib
+-
+
